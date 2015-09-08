@@ -1544,3 +1544,418 @@ Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-09-08 12:08:13 +0300
+
+
+Started POST "/tasks" for 127.0.0.1 at 2015-09-08 12:09:48 +0300
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hqsSxpE1EbZ27+OfPYacN/FaW9oNTXFqG9jianePOZLC3TelFyIkyXHtVS147OmoaxBZICHaHY1ufC6uJVvkZw==", "task"=>{"name"=>"bop", "description"=>"bebop", "category"=>"bebopbebop", "level"=>"5", "rating"=>""}, "commit"=>"Create Task"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTask Exists (0.2ms)[0m  SELECT  1 AS one FROM "tasks" WHERE "tasks"."name" = 'bop' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered tasks/_form.html.erb (6.7ms)
+  Rendered tasks/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 104ms (Views: 97.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2015-09-08 12:09:58 +0300
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aCCdYY1tL7p0tJNs5jAA5Rr217NHbGRe76wYc/nVGTAsVrgCC3oaxXO2Jd6jWnV6gLzVSWv7CLmaCNS3qwHExQ==", "task"=>{"name"=>"bop", "description"=>"bebop", "category"=>"bebopbebop", "level"=>"6"}, "commit"=>"Create Task"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTask Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "tasks" WHERE "tasks"."name" = 'bop' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered tasks/_form.html.erb (5.3ms)
+  Rendered tasks/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 112ms (Views: 106.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2015-09-08 12:10:04 +0300
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0ePn22BfxmglEWVxWu3d/t4H4OvQrjBJuFutPaSOCpaVlcK45kjzFyIT08Mfh6hhRE3iEfw5XK7N/2H59lrXYw==", "task"=>{"name"=>"bop", "description"=>"bebop", "category"=>"Java", "level"=>"6"}, "commit"=>"Create Task"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTask Exists (0.2ms)[0m  SELECT  1 AS one FROM "tasks" WHERE "tasks"."name" = 'bop' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "tasks" ("name", "description", "category", "level", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "bop"], ["description", "bebop"], ["category", "Java"], ["level", 6], ["created_at", "2015-09-08 09:10:04.144158"], ["updated_at", "2015-09-08 09:10:04.144158"]]
+  [1m[35m (290.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/tasks/2
+Completed 302 Found in 299ms (ActiveRecord: 291.6ms)
+
+
+Started GET "/tasks/2" for 127.0.0.1 at 2015-09-08 12:10:04 +0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered tasks/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 101ms (Views: 99.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-09-08 12:11:19 +0300
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.4ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 95ms (Views: 90.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tasks/1/edit" for 127.0.0.1 at 2015-09-08 12:11:26 +0300
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tasks/_form.html.erb (4.2ms)
+  Rendered tasks/edit.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 105ms (Views: 102.6ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/tasks/1" for 127.0.0.1 at 2015-09-08 12:11:28 +0300
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"02EmIxl0MI3JjF8zC8KPilo79elSssT/QJRm8N5E6rWXFwNAn2MF8s6O6YFOqPoVwHH3E34lqBg1MKo0jJA3QA==", "task"=>{"name"=>"aaa", "description"=>"babbb", "category"=>"", "level"=>""}, "commit"=>"Update Task", "id"=>"1"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTask Exists (0.3ms)[0m  SELECT  1 AS one FROM "tasks" WHERE ("tasks"."name" = 'aaa' AND "tasks"."id" != 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered tasks/_form.html.erb (9.4ms)
+  Rendered tasks/edit.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 127ms (Views: 113.1ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/tasks/1" for 127.0.0.1 at 2015-09-08 12:11:40 +0300
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Njm8v1h8QxP/jk8D4b0eNeze++8xYXQsgVHDsAtzE1NyT5nc3mt2bPiM+bGk12uqdpT5FR32GMv09Q90WafOpg==", "task"=>{"name"=>"aaa", "description"=>"babbb", "category"=>"Ruby", "level"=>"10"}, "commit"=>"Update Task", "id"=>"1"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mTask Exists (0.2ms)[0m  SELECT  1 AS one FROM "tasks" WHERE ("tasks"."name" = 'aaa' AND "tasks"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "tasks" SET "category" = ?, "level" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["category", "Ruby"], ["level", 10], ["updated_at", "2015-09-08 09:11:40.399630"], ["id", 1]]
+  [1m[35m (260.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/tasks/1
+Completed 302 Found in 272ms (ActiveRecord: 261.6ms)
+
+
+Started GET "/tasks/1" for 127.0.0.1 at 2015-09-08 12:11:40 +0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tasks/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 90ms (Views: 89.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-09-08 12:11:52 +0300
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 100ms (Views: 99.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/2/edit" for 127.0.0.1 at 2015-09-08 12:12:00 +0300
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered tasks/_form.html.erb (3.7ms)
+  Rendered tasks/edit.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 105ms (Views: 101.9ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/tasks/2" for 127.0.0.1 at 2015-09-08 12:12:02 +0300
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nb8nLo8qTDtbytlQwsFho50sZN9YMnF0JGCRS6C3ZgpxyQJNCT15RFzIb+KHqxQ8B2ZmJXSlHZNRxF2P8mO7/w==", "task"=>{"name"=>"bop", "description"=>"bebop", "category"=>"Java", "level"=>"6"}, "commit"=>"Update Task", "id"=>"2"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTask Exists (0.2ms)[0m  SELECT  1 AS one FROM "tasks" WHERE ("tasks"."name" = 'bop' AND "tasks"."id" != 2) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tasks/2
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks/2" for 127.0.0.1 at 2015-09-08 12:12:02 +0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered tasks/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 103ms (Views: 101.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-09-08 12:12:04 +0300
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 108ms (Views: 106.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2015-09-08 12:22:33 +0300
+Processing by TasksController#new as HTML
+  Rendered tasks/_form.html.erb (2.4ms)
+  Rendered tasks/new.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+...nd=( f.select :category, ['Java', 'C++', 'Ruby', 'Python']);...
+...                               ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+...f.select :category, ['Java', 'C++', 'Ruby', 'Python']);@outp...
+...                               ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+...category, ['Java', 'C++', 'Ruby', 'Python']);@output_buffer....
+...                               ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+...['Java', 'C++', 'Ruby', 'Python']);@output_buffer.safe_appen...
+...                               ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:26: syntax error, unexpected '<', expecting ')'
+  </div>
+   ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:30: unknown regexp options - dv
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:31: syntax error, unexpected '<'
+  <div class="actions">
+   ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:33: syntax error, unexpected '<', expecting ')'
+  </div>
+   ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:33: unterminated regexp meets end of file):
+  app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/tasks/_form.html.erb:26: syntax error, unexpected '<', expecting ')'
+  app/views/tasks/_form.html.erb:30: unknown regexp options - dv
+  app/views/tasks/_form.html.erb:31: syntax error, unexpected '<'
+  app/views/tasks/_form.html.erb:33: syntax error, unexpected '<', expecting ')'
+  app/views/tasks/_form.html.erb:33: unterminated regexp meets end of file
+  app/views/tasks/new.html.erb:3:in `_app_views_tasks_new_html_erb__1162886040581763231_70162060517900'
+
+
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.2ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (21.0ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (45.0ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2015-09-08 12:22:34 +0300
+Processing by TasksController#new as HTML
+  Rendered tasks/_form.html.erb (2.0ms)
+  Rendered tasks/new.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+...nd=( f.select :category, ['Java', 'C++', 'Ruby', 'Python']);...
+...                               ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+...f.select :category, ['Java', 'C++', 'Ruby', 'Python']);@outp...
+...                               ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+...category, ['Java', 'C++', 'Ruby', 'Python']);@output_buffer....
+...                               ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+...['Java', 'C++', 'Ruby', 'Python']);@output_buffer.safe_appen...
+...                               ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:26: syntax error, unexpected '<', expecting ')'
+  </div>
+   ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:30: unknown regexp options - dv
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:31: syntax error, unexpected '<'
+  <div class="actions">
+   ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:33: syntax error, unexpected '<', expecting ')'
+  </div>
+   ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:33: unterminated regexp meets end of file):
+  app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/tasks/_form.html.erb:26: syntax error, unexpected '<', expecting ')'
+  app/views/tasks/_form.html.erb:30: unknown regexp options - dv
+  app/views/tasks/_form.html.erb:31: syntax error, unexpected '<'
+  app/views/tasks/_form.html.erb:33: syntax error, unexpected '<', expecting ')'
+  app/views/tasks/_form.html.erb:33: unterminated regexp meets end of file
+  app/views/tasks/new.html.erb:3:in `_app_views_tasks_new_html_erb__1162886040581763231_70162063667000'
+
+
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.1ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.8ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.1ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (22.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (49.2ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2015-09-08 12:23:03 +0300
+Processing by TasksController#new as HTML
+  Rendered tasks/_form.html.erb (2.4ms)
+  Rendered tasks/new.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+...nd=( f.select :category, ['Java', 'C++', 'Ruby', 'Python'] )...
+...                               ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+...f.select :category, ['Java', 'C++', 'Ruby', 'Python'] );@out...
+...                               ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+...category, ['Java', 'C++', 'Ruby', 'Python'] );@output_buffer...
+...                               ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+...['Java', 'C++', 'Ruby', 'Python'] );@output_buffer.safe_appe...
+...                               ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:26: syntax error, unexpected '<', expecting ')'
+  </div>
+   ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:30: unknown regexp options - dv
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:31: syntax error, unexpected '<'
+  <div class="actions">
+   ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:33: syntax error, unexpected '<', expecting ')'
+  </div>
+   ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:33: unterminated regexp meets end of file):
+  app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/tasks/_form.html.erb:26: syntax error, unexpected '<', expecting ')'
+  app/views/tasks/_form.html.erb:30: unknown regexp options - dv
+  app/views/tasks/_form.html.erb:31: syntax error, unexpected '<'
+  app/views/tasks/_form.html.erb:33: syntax error, unexpected '<', expecting ')'
+  app/views/tasks/_form.html.erb:33: unterminated regexp meets end of file
+  app/views/tasks/new.html.erb:3:in `_app_views_tasks_new_html_erb__1162886040581763231_70162063667000'
+
+
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.7ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.7ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (22.0ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (47.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCategories (20150908093122)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150908093122"]]
+  [1m[36m (164.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2015-09-08 12:31:51 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#new as HTML
+  Rendered tasks/_form.html.erb (2.3ms)
+  Rendered tasks/new.html.erb within layouts/application (7.9ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.7ms)
+
+SyntaxError (/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+...nd=( f.select :category, ['Java', 'C++', 'Ruby', 'Python'] )...
+...                               ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+...f.select :category, ['Java', 'C++', 'Ruby', 'Python'] );@out...
+...                               ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+...category, ['Java', 'C++', 'Ruby', 'Python'] );@output_buffer...
+...                               ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+...['Java', 'C++', 'Ruby', 'Python'] );@output_buffer.safe_appe...
+...                               ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:26: syntax error, unexpected '<', expecting ')'
+  </div>
+   ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:30: unknown regexp options - dv
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:31: syntax error, unexpected '<'
+  <div class="actions">
+   ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:33: syntax error, unexpected '<', expecting ')'
+  </div>
+   ^
+/home/swatgetmann/Программирование/workspace/u-task/u-task/app/views/tasks/_form.html.erb:33: unterminated regexp meets end of file):
+  app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/tasks/_form.html.erb:25: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/tasks/_form.html.erb:26: syntax error, unexpected '<', expecting ')'
+  app/views/tasks/_form.html.erb:30: unknown regexp options - dv
+  app/views/tasks/_form.html.erb:31: syntax error, unexpected '<'
+  app/views/tasks/_form.html.erb:33: syntax error, unexpected '<', expecting ')'
+  app/views/tasks/_form.html.erb:33: unterminated regexp meets end of file
+  app/views/tasks/new.html.erb:3:in `_app_views_tasks_new_html_erb__19019519501139932_41447780'
+
+
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.3ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.3ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (25.3ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (49.9ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2015-09-08 12:32:10 +0300
+Processing by TasksController#new as HTML
+  Rendered tasks/_form.html.erb (28.2ms)
+  Rendered tasks/new.html.erb within layouts/application (29.6ms)
+Completed 200 OK in 552ms (Views: 551.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-08 12:32:11 +0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-08 12:32:11 +0300
+
+
+Started GET "/assets/scaffolds.self-0320c7a6e4e23d8b4e7461df36907acb8b953ee16760bb0611748585e25ae6db.css?body=1" for 127.0.0.1 at 2015-09-08 12:32:11 +0300
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-08 12:32:11 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-08 12:32:11 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-08 12:32:11 +0300
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-08 12:32:11 +0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-09-08 12:32:11 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-08 12:32:11 +0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-08 12:32:11 +0300
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-08 12:32:11 +0300
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-08 12:32:11 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-08 12:32:11 +0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-09-08 12:32:11 +0300
+
+
+Started GET "/categories" for 127.0.0.1 at 2015-09-08 12:32:18 +0300
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered categories/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 130ms (Views: 119.2ms | ActiveRecord: 0.4ms)
