@@ -24,8 +24,8 @@
     <%= f.collection_select :category_id, Category.all, :id, :name  %>
   </div>
   <div class="field">
-    <%= f.label :level %><br>
-    <%= f.number_field :level %>
+    <%= f.label :level_id %><br>
+    <%= f.collection_select :level_id, Level.all, :id, :name  %>
   </div>
   <div class="actions">
     <%= f.submit %>
