@@ -10,4 +10,9 @@ class Task < ActiveRecord::Base
 		self.level = Level.last if self.level.nil?
 		self.level.name
 	end
+
+	def show_category
+		self.category = Category.last if self.category.nil?
+		self.category.name
+	end
 end
