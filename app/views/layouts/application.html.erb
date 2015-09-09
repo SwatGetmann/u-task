@@ -18,23 +18,17 @@
 </p>
 
 <p>
-<div id="user_nav">
-  <% if current_user %>
-    Welcome, <%= current_user.name %>!
-    <%= link_to "Sign Out", signout_path %>
-  <% else %>
-    <%= link_to "Sign in with Twitter", "/auth/twitter" %>
-  <% end %>
-</div>
-<div id="user_nav">
-  <%= link_to "Sign in with GitHub", "/auth/github" %>
-</div>
-<div id="user_nav">
-  <%= link_to "Sign in with Facebook", "/auth/facebook" %>
-</div>
-<div id="user_nav">
-  <%= link_to "Sign in with VK", "/auth/vkontakte" %>
-</div>
+  <div id="user_nav">
+    <% if current_user %>
+      Welcome, <%= current_user.name %>!
+      <%= link_to "Sign Out", signout_path %>
+    <% else %>
+      <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+      <%= link_to "Sign in with GitHub", "/auth/github" %>
+      <%= link_to "Sign in with Facebook", "/auth/facebook" %>
+      <%= link_to "Sign in with VK", "/auth/vkontakte" %>
+    <% end %>
+  </div>
 </p>
 
 </body>
