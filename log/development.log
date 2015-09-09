@@ -5764,3 +5764,189 @@ Processing by TasksController#index as HTML
   [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
   Rendered tasks/index.html.erb within layouts/application (7.6ms)
 Completed 200 OK in 130ms (Views: 127.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-09 17:37:19 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 719ms (Views: 691.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-09 17:37:21 +0300
+
+
+Started GET "/assets/levels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-09 17:37:21 +0300
+
+
+Started GET "/assets/scaffolds.self-0320c7a6e4e23d8b4e7461df36907acb8b953ee16760bb0611748585e25ae6db.css?body=1" for 127.0.0.1 at 2015-09-09 17:37:21 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-09 17:37:21 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-09 17:37:21 +0300
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-09 17:37:21 +0300
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-09 17:37:21 +0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-09-09 17:37:21 +0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-09 17:37:21 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-09 17:37:21 +0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-09 17:37:21 +0300
+
+
+Started GET "/assets/levels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-09 17:37:21 +0300
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-09 17:37:21 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-09 17:37:21 +0300
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-09 17:37:21 +0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-09-09 17:37:21 +0300
+
+
+Started GET "/users" for 127.0.0.1 at 2015-09-09 17:37:25 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 215ms (Views: 195.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-09-09 17:37:27 +0300
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered tasks/index.html.erb within layouts/application (81.8ms)
+Completed 200 OK in 244ms (Views: 210.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/tasks/5/edit" for 127.0.0.1 at 2015-09-09 17:37:33 +0300
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mTask Load (0.4ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mLevel Load (0.2ms)[0m  SELECT "levels".* FROM "levels"
+  Rendered tasks/_form.html.erb (111.4ms)
+  Rendered tasks/edit.html.erb within layouts/application (155.9ms)
+Completed 200 OK in 413ms (Views: 282.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2015-09-09 17:37:38 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 145ms (Views: 143.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/levels" for 127.0.0.1 at 2015-09-09 17:37:39 +0300
+Processing by LevelsController#index as HTML
+  [1m[35mLevel Load (0.3ms)[0m  SELECT "levels".* FROM "levels"
+  Rendered levels/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 136ms (Views: 134.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/levels/7/edit" for 127.0.0.1 at 2015-09-09 17:37:41 +0300
+Processing by LevelsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered levels/_form.html.erb (6.3ms)
+  Rendered levels/edit.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 152ms (Views: 149.9ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/levels/7" for 127.0.0.1 at 2015-09-09 17:37:44 +0300
+Processing by LevelsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qP/Iyn86R14MVy5H5zhmLJ24SZqF3h6nog77e+FwRM9fYpvq/vZ48Aln7nWPK1hgE5TAOfjjTK7oTViO9PSv0Q==", "level"=>{"name"=>""}, "commit"=>"Update Level", "id"=>"7"}
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "levels" SET "name" = ?, "updated_at" = ? WHERE "levels"."id" = ?  [["name", ""], ["updated_at", "2015-09-09 14:37:44.849144"], ["id", 7]]
+  [1m[36m (219.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/levels/7
+Completed 302 Found in 240ms (ActiveRecord: 220.6ms)
+
+
+Started GET "/levels/7" for 127.0.0.1 at 2015-09-09 17:37:45 +0300
+Processing by LevelsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered levels/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 141ms (Views: 139.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/levels" for 127.0.0.1 at 2015-09-09 17:37:47 +0300
+Processing by LevelsController#index as HTML
+  [1m[36mLevel Load (0.3ms)[0m  [1mSELECT "levels".* FROM "levels"[0m
+  Rendered levels/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 132ms (Views: 131.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/levels/7/edit" for 127.0.0.1 at 2015-09-09 17:38:35 +0300
+Processing by LevelsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mLevel Load (0.3ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered levels/_form.html.erb (3.3ms)
+  Rendered levels/edit.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 158ms (Views: 145.6ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/levels/7" for 127.0.0.1 at 2015-09-09 17:38:36 +0300
+Processing by LevelsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KqvWu/2ADwnr3QbLEeWOzGtwqLPAhhhVWd6TKOXv3Q7dNoWbfEwwp+7txvl59rCA5VwhEL27SlwTnTDd8Gs2EA==", "level"=>{"name"=>""}, "commit"=>"Update Level", "id"=>"7"}
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  Rendered levels/_form.html.erb (5.6ms)
+  Rendered levels/edit.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 169ms (Views: 161.9ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/levels/7" for 127.0.0.1 at 2015-09-09 17:38:49 +0300
+Processing by LevelsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OTpLCkZSL4nn0d4UZKC0P4seHkrAE+1I3BTlsGDZ7ijOpxgqx54QJ+LhHiYMs4pzBTKX6b0uv0GWV0ZFdV0FNg==", "level"=>{"name"=>"Середнячок"}, "commit"=>"Update Level", "id"=>"7"}
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "levels" SET "name" = ?, "updated_at" = ? WHERE "levels"."id" = ?  [["name", "Середнячок"], ["updated_at", "2015-09-09 14:38:49.029587"], ["id", 7]]
+  [1m[36m (256.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/levels/7
+Completed 302 Found in 268ms (ActiveRecord: 257.4ms)
+
+
+Started GET "/levels/7" for 127.0.0.1 at 2015-09-09 17:38:49 +0300
+Processing by LevelsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered levels/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 123ms (Views: 121.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/levels" for 127.0.0.1 at 2015-09-09 17:38:51 +0300
+Processing by LevelsController#index as HTML
+  [1m[36mLevel Load (0.3ms)[0m  [1mSELECT "levels".* FROM "levels"[0m
+  Rendered levels/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 138ms (Views: 137.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2015-09-09 17:39:45 +0300
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered categories/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 145ms (Views: 139.1ms | ActiveRecord: 1.4ms)
