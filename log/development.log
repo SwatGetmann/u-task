@@ -6358,3 +6358,101 @@ Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde
 
 
 Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-09 17:50:33 +0300
+
+
+Started GET "/users" for 127.0.0.1 at 2015-09-09 17:52:25 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 135ms (Views: 130.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-09-09 18:01:01 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 128ms (Views: 123.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2015-09-09 18:01:05 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 128ms (Views: 126.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at 2015-09-09 18:01:07 +0300
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/_form.html.erb (11.3ms)
+  Rendered users/edit.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 164ms (Views: 162.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/3" for 127.0.0.1 at 2015-09-09 18:01:12 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WqC/YWC/P+yMu88u5rP/PdBRghO5ehOwkhBtc53KBm2tPexB4XMAQomLDxyOoMFxXn0LsMRHQbnYU86GiE7tcw==", "user"=>{"name"=>"jjj", "email"=>"jjj", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update User", "id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["password_digest", "$2a$10$.LSTTjYubYn.L1HFub2vJOq4R8Eg2Xj1zWthQLFzNnekpUMViit9K"], ["updated_at", "2015-09-09 15:01:12.613066"], ["id", 3]]
+  [1m[36m (166.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 263ms (ActiveRecord: 167.6ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2015-09-09 18:01:12 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 119ms (Views: 117.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at 2015-09-09 18:01:26 +0300
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/_form.html.erb (3.3ms)
+  Rendered users/edit.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 124ms (Views: 112.5ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/users/3" for 127.0.0.1 at 2015-09-09 18:01:27 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GSh0lsOeQONX4hKEHRGXYyTBBnf/t8zSFKI32bVYBmLutSe2QlJ/TVLS0rZ1Aqkvqu2P1IKKntte4ZQsoNztfA==", "user"=>{"name"=>"jjj", "email"=>"jjj", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update User", "id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/_form.html.erb (6.8ms)
+  Rendered users/edit.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 142ms (Views: 135.1ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/3" for 127.0.0.1 at 2015-09-09 18:02:07 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/XIC/+Be6FQSPNURUR1/xEA28usr4lTqBKUt3RC5xh4K71HfYZLX+hcMFSM5DkGIzhp7SFbfBuNO5o4oBT0tAA==", "user"=>{"name"=>"jjj", "email"=>"jjj@gop-gop.ru", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update User", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "email" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["email", "jjj@gop-gop.ru"], ["updated_at", "2015-09-09 15:02:07.929718"], ["id", 3]]
+  [1m[35m (246.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 254ms (ActiveRecord: 247.1ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2015-09-09 18:02:08 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 131ms (Views: 129.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at 2015-09-09 18:02:10 +0300
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered users/_form.html.erb (2.8ms)
+  Rendered users/edit.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 127ms (Views: 125.6ms | ActiveRecord: 0.1ms)
