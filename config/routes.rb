@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :categories
   get 'welcome/index'
 
-  match "/auth/:provider/callback" => "users#create"
+  get "/auth/:provider/callback" => "users#create"
 
   resources :users
   resources :tasks
