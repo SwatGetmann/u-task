@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :categories
   get 'welcome/index'
 
-  get "/auth/:provider/callback" => "users#create"
+  get "/auth/:provider/callback" => "sessions#create"
+  get "/signout" => "sessions#destroy", :as => :signout
 
   resources :users
   resources :tasks
