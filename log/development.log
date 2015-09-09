@@ -6456,3 +6456,234 @@ Processing by UsersController#edit as HTML
   Rendered users/_form.html.erb (2.8ms)
   Rendered users/edit.html.erb within layouts/application (4.0ms)
 Completed 200 OK in 127ms (Views: 125.6ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/users/3" for 127.0.0.1 at 2015-09-09 18:03:51 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ghZub528hi5alzTJ5LH6j3fc1BcY0CI7jpzr0pAN0Nx1iz1PHHC5gF+n9PuMosTD+fBdtGXtcDLE30gnhYk7wg==", "user"=>{"name"=>"jjj", "email"=>"jjj@gop-gop.ru", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update User", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  Rendered users/_form.html.erb (3.7ms)
+  Rendered users/edit.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 144ms (Views: 126.9ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/users/3" for 127.0.0.1 at 2015-09-09 18:03:57 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dVJa4fUhAJxIwIa1iKcq2iP+vyOloNh8HI6NLmZ1JlGCzwnBdO0/Mk3wRofgtBSWrdI2gNidinVWzS7bc/HNTw==", "user"=>{"name"=>"jjj", "email"=>"jjj@gop-gop.ru", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update User", "id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["password_digest", "$2a$10$.Bzoev2q2.9woXstyVHv9ufsw6Ip.3jlRGGea6oLUbtYc4ayAzh0a"], ["updated_at", "2015-09-09 15:03:57.140957"], ["id", 3]]
+  [1m[36m (136.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 242ms (ActiveRecord: 137.5ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2015-09-09 18:03:57 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 132ms (Views: 130.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-09-09 18:04:01 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 127ms (Views: 126.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2015-09-09 18:04:05 +0300
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered users/_form.html.erb (2.6ms)
+  Rendered users/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 116ms (Views: 115.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/users/4" for 127.0.0.1 at 2015-09-09 18:04:06 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HqIG4+a/N0WFp4e7v5vhp+YIfG2CC3eRG/PWEBaRttPpP1XDZ3MI64CXR4nXiN/raCT1zv82JZhRsHXlAxVdzQ==", "user"=>{"name"=>"swat", "email"=>"swat@you.ip", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update User", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered users/_form.html.erb (5.8ms)
+  Rendered users/edit.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 144ms (Views: 138.0ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/4" for 127.0.0.1 at 2015-09-09 18:04:10 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UDqR8/lDpwKMfKjp3wG1ZyP0KLjoQBiiDnELm1FqzVqnp8LTeI+YrIlMaNu3EosrrdihG5V9SqtEMqhuRO4mRA==", "user"=>{"name"=>"swat", "email"=>"swat@you.ip", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update User", "id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["password_digest", "$2a$10$assptAg/lVXJXqh9IL0cOOlrupbRN3/VvpNU0bwR1t/R4f96mHDFm"], ["updated_at", "2015-09-09 15:04:10.527582"], ["id", 4]]
+  [1m[36m (255.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 357ms (ActiveRecord: 255.9ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2015-09-09 18:04:10 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 133ms (Views: 131.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2015-09-09 18:04:41 +0300
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+ArgumentError (Range unspecified. Specify the :in, :within, :maximum, :minimum, or :is option.):
+  app/models/user.rb:13:in `<class:User>'
+  app/models/user.rb:9:in `<top (required)>'
+  app/controllers/users_controller.rb:68:in `set_user'
+
+
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.9ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.7ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (24.9ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (48.5ms)
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2015-09-09 18:04:41 +0300
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+ArgumentError (Range unspecified. Specify the :in, :within, :maximum, :minimum, or :is option.):
+  app/models/user.rb:13:in `<class:User>'
+  app/models/user.rb:9:in `<top (required)>'
+  app/controllers/users_controller.rb:68:in `set_user'
+
+
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.9ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.8ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (22.7ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (47.3ms)
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2015-09-09 18:04:59 +0300
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered users/_form.html.erb (4.7ms)
+  Rendered users/edit.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 225ms (Views: 210.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-09 18:05:00 +0300
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-09 18:05:00 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-09 18:05:00 +0300
+
+
+Started GET "/assets/levels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-09 18:05:00 +0300
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-09 18:05:00 +0300
+
+
+Started GET "/assets/scaffolds.self-0320c7a6e4e23d8b4e7461df36907acb8b953ee16760bb0611748585e25ae6db.css?body=1" for 127.0.0.1 at 2015-09-09 18:05:00 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-09 18:05:00 +0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-09-09 18:05:00 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-09 18:05:00 +0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-09 18:05:00 +0300
+
+
+Started GET "/assets/levels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-09 18:05:00 +0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-09 18:05:00 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-09 18:05:00 +0300
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-09 18:05:00 +0300
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-09 18:05:00 +0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-09-09 18:05:00 +0300
+
+
+Started PATCH "/users/4" for 127.0.0.1 at 2015-09-09 18:05:02 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YjdGVzQ1UuS9i6xuf2DrPI1KgoqedU3zm6e+A4fyw8+VqhV3tfltSri7bFwXc9VwA2YLKeNIH/rR5B32knYo0Q==", "user"=>{"name"=>"swat", "email"=>"swat@you.ip", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update User", "id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/_form.html.erb (7.9ms)
+  Rendered users/edit.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 162ms (Views: 153.0ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/users/4" for 127.0.0.1 at 2015-09-09 18:05:10 +0300
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vn+X2dkIuxBYxKU69cTBo0wXQXcg6rq+ueDZbC4Mbayh4sT5WMSEvl30ZQid1//vwjvI1F3X6Lfzo3qZO4iGsg==", "user"=>{"name"=>"swat", "email"=>"swat@you.ip", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update User", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "$2a$10$gF4MOmy8JIQ5nrChtgG8M.VHtJyvNmP7/YP/vtsl4ju09JWwjj/uK"], ["updated_at", "2015-09-09 15:05:10.383043"], ["id", 4]]
+  [1m[35m (157.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 254ms (ActiveRecord: 157.9ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2015-09-09 18:05:10 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 146ms (Views: 143.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-09-09 18:05:25 +0300
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered tasks/index.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 156ms (Views: 149.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-09-09 18:05:27 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 113ms (Views: 112.0ms | ActiveRecord: 0.3ms)
