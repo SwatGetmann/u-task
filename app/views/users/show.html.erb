@@ -20,5 +20,10 @@
 	<%= render 'tasks' %>
 </p>
 
+<p>
+	<strong>Create a new task:</strong>
+	<%= link_to "Create!", new_user_task_path(@user) %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

@@ -15,7 +15,8 @@ class TasksController < ApplicationController
 
   # GET /tasks/new
   def new
-    @task = Task.new
+    @user = User.where(id: params[:user_id])
+    @task = Task.new(user_id: params[:user_id])
   end
 
   # GET /tasks/1/edit
