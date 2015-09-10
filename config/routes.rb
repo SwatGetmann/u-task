@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
   resources :levels
   resources :categories
+  resources :tasks
+  resources :users do
+    resources :tasks
+  end
+  
   get 'welcome/index'
 
   get "/auth/:provider/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout
 
-  resources :users do
-    resources :tasks
-  end
 
-  resources :tasks
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

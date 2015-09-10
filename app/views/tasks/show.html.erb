@@ -25,10 +25,12 @@
   <%= @task.rating %>
 </p>
 
+<% if @task.user %>
 <p>
   <strong>Author:</strong>
   <%= @task.user.name %>
 </p>
+<% end %>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>
