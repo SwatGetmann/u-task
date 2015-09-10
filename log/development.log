@@ -12577,3 +12577,108 @@ Processing by UsersController#new as HTML
   Rendered users/_form.html.erb (3.2ms)
   Rendered users/new.html.erb within layouts/application (4.6ms)
 Completed 200 OK in 138ms (Views: 136.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-09-10 17:26:48 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IRVw9S2sEJxA5pe43rbi9fgupkID+Hjbc/BUrMA/LdYqFx6iGW+XN017gXcGNVQWUQwH3qTrlaSVyGCD+lQszg==", "user"=>{"name"=>"sjobs", "email"=>"steve@apple.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "sjobs"], ["email", "steve@apple.com"], ["password_digest", "$2a$10$SJYtDaFBjKwkKu0xHp9tFue3ccojVRldqhfF6oSlwtkr9DEioQgii"], ["rating", 0.0], ["created_at", "2015-09-10 14:26:48.743787"], ["updated_at", "2015-09-10 14:26:48.743787"]]
+  [1m[36m (195.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/9
+Completed 302 Found in 295ms (ActiveRecord: 196.1ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2015-09-10 17:26:48 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 131ms (Views: 129.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-09-10 17:26:52 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 111ms (Views: 109.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2015-09-10 17:27:03 +0300
+Processing by WelcomeController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."id" = ?  [["id", 7]]
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 140ms (Views: 138.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-09-10 17:33:04 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 140ms (Views: 133.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-09-10 17:33:06 +0300
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered tasks/index.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 144ms (Views: 137.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/tasks" for 127.0.0.1 at 2015-09-10 17:33:11 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"tasks"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=tasks):
+  app/controllers/users_controller.rb:68:in `set_user'
+
+
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.9ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (21.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (45.9ms)
+
+
+Started GET "/users/1/tasks" for 127.0.0.1 at 2015-09-10 17:33:17 +0300
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered tasks/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 146ms (Views: 143.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/3/tasks" for 127.0.0.1 at 2015-09-10 17:33:31 +0300
+Processing by TasksController#index as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered tasks/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 138ms (Views: 135.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2015-09-10 17:33:59 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 130ms (Views: 129.1ms | ActiveRecord: 0.3ms)
