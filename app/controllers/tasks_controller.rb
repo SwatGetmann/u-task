@@ -31,6 +31,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     @task.rating = 0
+    @task.user_id = params[:user_id]
 
     respond_to do |format|
       if @task.save
