@@ -1,10 +1,12 @@
 class Task < ActiveRecord::Base
+	belongs_to :user
+	belongs_to :category
+	belongs_to :level
+
 	validates :name, 	presence: true,
 		uniqueness: true
 	validates :description, presence:true
-	# validates :category, presence: true
-	belongs_to :category
-	belongs_to :level
+	validates :category, presence: true
 
 	def default_level
 		return Level.new(name: "NO LEVEL, PLEASE EDIT")
