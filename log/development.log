@@ -14762,3 +14762,13 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 199ms (Views: 197.6ms | ActiveRecord: 0.4ms)
 =======
 >>>>>>> 85b126fa208112125a67cbc3c1f44901beca3492
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 9]]
+  [1m[35mTask Load (0.4ms)[0m  SELECT  "tasks".* FROM "tasks"  ORDER BY "tasks"."id" DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mTask Exists (0.4ms)[0m  SELECT  1 AS one FROM "tasks" WHERE ("tasks"."name" = 'aaaa' AND "tasks"."id" != 8) LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mSQL (0.4ms)[0m  UPDATE "tasks" SET "user_id" = ?, "updated_at" = ? WHERE "tasks"."id" = ?  [["user_id", 9], ["updated_at", "2015-09-10 18:51:54.790065"], ["id", 8]]
+  [1m[36m (157.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 9]]

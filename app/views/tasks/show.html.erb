@@ -26,8 +26,8 @@
 </p>
 
 <p>
-  <strong>Author [doesn't work]:</strong>
-  <%= @task.user %>
+  <strong>Author:</strong>
+  <%= @task.user.name %>
 </p>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
