@@ -14557,6 +14557,7 @@ Processing by UsersController#index as HTML
   [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
   Rendered users/index.html.erb within layouts/application (2.9ms)
 Completed 200 OK in 162ms (Views: 160.5ms | ActiveRecord: 0.3ms)
+<<<<<<< HEAD
 
 
 Started GET "/" for 127.0.0.1 at 2015-09-10 21:19:40 +0300
@@ -14759,3 +14760,5 @@ Processing by UsersController#index as HTML
   [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
   Rendered users/index.html.erb within layouts/application (7.7ms)
 Completed 200 OK in 199ms (Views: 197.6ms | ActiveRecord: 0.4ms)
+=======
+>>>>>>> 85b126fa208112125a67cbc3c1f44901beca3492
