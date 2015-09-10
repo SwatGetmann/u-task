@@ -33,3 +33,6 @@
 <br>
 
 <%= link_to 'New Task', new_task_path %>
+<% if !params[:user_id].nil? %>
+<%= link_to 'New Task', new_user_task_path(:user_id => params[:user_id]) %>
+<% end %>

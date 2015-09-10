@@ -8,10 +8,6 @@ class TasksController < ApplicationController
     @tasks = Task.where(user_id: params[:user_id])
   end
 
-  def user_index
-    @tasks = Task.where(user_id: params[:user_id])
-  end
-
   # GET /tasks/1
   # GET /tasks/1.json
   def show
@@ -31,7 +27,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     @task.rating = 0
-    @task.user_id = params[:user_id]
+    # @task.user ||= User.find(params[:user_id])      WTF?!
 
     respond_to do |format|
       if @task.save
@@ -76,6 +72,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :description, :category_id, :level_id, :rating)
+      params.require(:task).permit(:name, :description, :category_id, :level_id, :user_id, :rating)
     end
 end

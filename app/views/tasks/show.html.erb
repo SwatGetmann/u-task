@@ -25,5 +25,10 @@
   <%= @task.rating %>
 </p>
 
+<p>
+  <strong>Author [doesn't work]:</strong>
+  <%= @task.user %>
+</p>
+
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>
