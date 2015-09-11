@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'admin' => 'admin#index'
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+
+  get 'sessions/create'
+  get "sessions/destroy"
+
   resources :levels
   resources :categories
   resources :tasks
@@ -8,7 +18,7 @@ Rails.application.routes.draw do
   
   get 'welcome/index'
 
-  get "/auth/:provider/callback" => "sessions#create"
+  get "/auth/:provider/callback" => "sessions#create_by_provider"
   get "/signout" => "sessions#destroy", :as => :signout
 
 
