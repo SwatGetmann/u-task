@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_secure_password
   
   validates :name, presence: true
-  # validates :email, presence: true, email: true      Trouble
+  # validates :email, presence: true, email: true
   validates :password, presence: true, length: { minimum: 6 }
 
   def self.create_with_omniauth(auth)
