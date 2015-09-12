@@ -10,6 +10,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @tasks = Task.where(:category => @category)
   end
 
   # GET /categories/new
