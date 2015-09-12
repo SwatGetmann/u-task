@@ -10,6 +10,7 @@ class LevelsController < ApplicationController
   # GET /levels/1
   # GET /levels/1.json
   def show
+    @tasks = Task.where(:level => @level)
   end
 
   # GET /levels/new

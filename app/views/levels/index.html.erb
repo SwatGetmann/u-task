@@ -14,7 +14,7 @@
   <tbody>
     <% @levels.each do |level| %>
       <tr>
-        <td><%= level.name %></td>
+        <td><%= link_to level.name, level_path(level) %></td>
         <td><%= level.value %></td>
       </tr>
     <% end %>
