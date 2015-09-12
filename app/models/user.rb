@@ -8,18 +8,21 @@ end
 
 class User < ActiveRecord::Base
   has_many :tasks
-  has_secure_password
+  # has_secure_password
   
-  validates :name, presence: true
+  # validates :name, presence: true
   # validates :email, presence: true, email: true
-  validates :password, presence: true, length: { minimum: 6 }
+  # validates :password, presence: true, length: { minimum: 6 }
+
+  def self.from_omniauth(auth)
+    find_by_provider_and_uid(auth["provider"], auth["uid"]) || create_with_omniauth(auth)
+  end
 
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.name = auth["info"]["name"]
-      user.password = SecureRandom.urlsafe_base64(n=6)
       user.rating = 0.0
     end
   end

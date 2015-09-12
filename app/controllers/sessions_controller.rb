@@ -1,26 +1,22 @@
 class SessionsController < ApplicationController
-
-	def create
-		user = User.find_by(email: params[:email])
-		if user and user.authenticate(params[:password])
-			session[:user_id] = user.id
-			redirect_to admin_url
-		else
-			redirect_to login_url, alert: "Inavlid user|password combination"
-		end
-	end
+	skip_before_action :verify_authenticity_token, only: :create
 	
-	def create_by_provider
-    auth = request.env["omniauth.auth"]
-    user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
-    session[:user_id] = user.id
-    # redirect_to edit_user_path(id: user.id), :notice => "Please edit your password and email"
-    redirect_to new_user_path(name: user.name), :notice => "Please enter your email & password"
+	def new
   end
 
-	def destroy
-	  session[:user_id] = nil
-	  redirect_to :back, :notice => "Signed out!"
-	end
+  def create
+    user = User.from_omniauth(env["omniauth.auth"])
+    session[:user_id] = user.id
+    redirect_to root_url, notice: "Signed in!"
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_url, notice: "Signed out!"
+  end
+
+  def failure
+    redirect_to root_url, alert: "Authentication failed, please try again."
+  end
 	
 end

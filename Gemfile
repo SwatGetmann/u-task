@@ -31,6 +31,7 @@ gem 'omniauth-github'
 gem 'omniauth-vkontakte'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+gem 'omniauth-identity'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
