@@ -27,5 +27,14 @@
 
 <%= render 'author' %>
 
+<% # if !@task.tags.empty? %>
+<p>
+  <strong>Tags:</strong>
+  <% @task.tag_list.each do |f| %>
+  <%= f %>
+  <% end %>
+</p>
+<% # end %>
+
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>

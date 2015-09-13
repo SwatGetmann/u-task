@@ -66,6 +66,12 @@ class TasksController < ApplicationController
     end
   end
 
+  def autocomplete_tag_name
+    @task.tag_list_on(:tag_list)
+    @task.save
+    @task.reload
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task

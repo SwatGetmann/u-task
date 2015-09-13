@@ -27,6 +27,11 @@
     <%= f.label :level_id %><br>
     <%= f.collection_select :level_id, Level.all, :id, :name  %>
   </div>
+  <div class="field">
+    <%= f.label :tag_list %><br>
+    <%= f.autocomplete_field :tag_list, autocomplete_tag_name_tasks_path, :"data-delimiter" => ', ', :multiple => true %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
