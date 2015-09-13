@@ -33,6 +33,10 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-identity'
 
+# Use this gems for tagging and autocomplete
+gem 'acts-as-taggable-on'
+gem 'rails3-jquery-autocomplete'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
