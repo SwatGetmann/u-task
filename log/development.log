@@ -39815,3 +39815,15 @@ DEPRECATION WARNING: `#timestamps` was called without specifying an option for `
             FROM sqlite_temp_master
             WHERE name='index_tags_on_name' AND type='index'
 [0m
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT  "tasks".* FROM "tasks"  ORDER BY "tasks"."id" DESC LIMIT 1[0m
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ?  ORDER BY created_at ASC  [["commentable_id", 9], ["commentable_type", "Task"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "comments" ("commentable_id", "commentable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["commentable_id", 9], ["commentable_type", "Task"], ["created_at", "2015-09-13 20:34:05.126970"], ["updated_at", "2015-09-13 20:34:05.126970"]]
+  [1m[36m (180.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "comments" SET "title" = ?, "updated_at" = ? WHERE "comments"."id" = ?[0m  [["title", "First comment"], ["updated_at", "2015-09-13 20:34:52.814106"], ["id", 1]]
+  [1m[35m (136.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "comments" SET "comment" = ?, "updated_at" = ? WHERE "comments"."id" = ?  [["comment", "Ooops! It works in console pretty well, let's be sure it works as well in browser"], ["updated_at", "2015-09-13 20:36:11.139235"], ["id", 1]]
+  [1m[36m (145.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments"  ORDER BY created_at ASC

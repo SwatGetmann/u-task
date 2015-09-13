@@ -9,6 +9,7 @@ class Task < ActiveRecord::Base
 	validates :category, presence: true
 
 	acts_as_taggable_on :tags
+	acts_as_commentable
 
 	def default_level
 		return Level.new(name: "NO LEVEL, PLEASE EDIT")
