@@ -67,9 +67,6 @@ class TasksController < ApplicationController
   end
 
   def autocomplete_tag_name
-    @task.tag_list_on(:tag_list)
-    @task.save
-    @task.reload
   end
 
   private
