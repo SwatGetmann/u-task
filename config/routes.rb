@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :levels
   resources :categories
-  resources :tasks
+  resources :tasks do
+    get :autocomplete_tag_name, :on => :collection
+  end
   resources :sessions
   resources :users do
     resources :tasks
