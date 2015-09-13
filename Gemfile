@@ -36,7 +36,7 @@ gem 'omniauth-identity'
 
 # Use this gems for tagging and autocomplete
 gem 'acts-as-taggable-on'
-gem 'rails-jquery-autocomplete'
+gem 'rails4-autocomplete'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

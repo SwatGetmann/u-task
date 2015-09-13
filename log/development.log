@@ -38365,3 +38365,708 @@ Processing by TasksController#show as HTML
   [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)  [["taggable_id", 9], ["taggable_type", "Task"]]
   Rendered tasks/show.html.erb within layouts/application (13.5ms)
 Completed 200 OK in 496ms (Views: 493.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2015-09-13 23:14:48 +0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCategory Load (0.3ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered tasks/_author.html.erb (4.0ms)
+  [1m[35mActsAsTaggableOn::Tag Exists (0.3ms)[0m  SELECT  1 AS one FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND "taggings"."context" = ? LIMIT 1  [["taggable_id", 9], ["taggable_type", "Task"], ["context", "tags"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  Rendered tasks/show.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 454ms (Views: 432.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-13 23:14:48 +0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-13 23:14:48 +0300
+
+
+Started GET "/assets/custom-theme/jquery-ui.structure.self-65dc3d01fb802f30a305e6c5f1d62a540c2260444e7df7eb299d46079ec2a205.css?body=1" for 127.0.0.1 at 2015-09-13 23:14:48 +0300
+
+
+Started GET "/assets/custom-theme/jquery-ui.theme.self-1c1f1a2cb6ed57d1622c2465beae9fcaae4efeba2a79681fc134e7d53574096b.css?body=1" for 127.0.0.1 at 2015-09-13 23:14:48 +0300
+
+
+Started GET "/assets/custom-theme/jquery-ui.self-763dd889ae97ad4fb0a26f09eb8f714d958590b8d76ba9dfc3fba114793623b9.css?body=1" for 127.0.0.1 at 2015-09-13 23:14:48 +0300
+
+
+Started GET "/assets/custom-theme/jquery-ui.theme.min.self-2dcc7b3bd7c17b49be358ae3a14b7cd2f5fea2497b850a6c5e2b1ed6581134c7.css?body=1" for 127.0.0.1 at 2015-09-13 23:14:48 +0300
+
+
+Started GET "/assets/custom-theme/jquery-ui.min.self-38915f158ed30fb22b402919b1ed1cb3371a257dccc993e8dbbd9cbc3d725bc0.css?body=1" for 127.0.0.1 at 2015-09-13 23:14:48 +0300
+
+
+Started GET "/assets/custom-theme/jquery-ui.structure.min.self-fb7a03b45ab8f3fd7e35af284f66fa97aded990ae81528b84c33c9075c5125d2.css?body=1" for 127.0.0.1 at 2015-09-13 23:14:48 +0300
+
+
+Started GET "/assets/identities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-13 23:14:48 +0300
+
+
+Started GET "/assets/jquery-ui.self-830ce2d48d9e6e23d5d6470e6df34fb99183e3e68482782a30752990ec54148a.css?body=1" for 127.0.0.1 at 2015-09-13 23:14:48 +0300
+
+
+Started GET "/assets/levels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/scaffolds.self-ab2ec8d743e0e07020652e6d4eee8c015d3446801c35551547783af754f78327.css?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/jquery.self-c0aeac38aa941ec2dd88d290485efad29308ca522d2809b14f6e2e4831501937.js?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/jquery-ui.self-fbb4d2ada222b94ebb63135d185f03b7d3f8d53ee7976ab2268a24167723255c.js?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/jquery-ui/menu.self-7abc1c9401509a7e4fc609b1e461be6fd17e8116e8fda19cc59d05ba79aefb68.js?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-3befc48aba87cead090cfd014562b2771a662ac6d2c8197b24c08b2d9f3d9f2d.js?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/autocomplete-rails.self-864cc2192e74efa2e1c7085b81760919e66ec063803a4d4aa3f32a905a63bf99.js?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/identities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/jquery-ui.min.self-9f0a40e79fbfa2db8299a7c72642f50667733aa6dea01fa508c69fba25909ae8.js?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/levels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2015-09-13 23:14:49 +0300
+
+
+Started GET "/tasks/9/edit" for 127.0.0.1 at 2015-09-13 23:14:50 +0300
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mLevel Load (0.2ms)[0m  SELECT "levels".* FROM "levels"
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  Rendered tasks/_form.html.erb (9.9ms)
+  Rendered tasks/edit.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 384ms (Views: 381.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/ui-bg_highlight-hard_100_f9f9f9_1x100.png" for 127.0.0.1 at 2015-09-13 23:14:51 +0300
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Jackie+Chan%2C" for 127.0.0.1 at 2015-09-13 23:14:52 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Jackie Chan,"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Jackie+Chan" for 127.0.0.1 at 2015-09-13 23:14:52 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Jackie Chan"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Jackie+Cha" for 127.0.0.1 at 2015-09-13 23:16:57 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Jackie Cha"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Jackie+Ch" for 127.0.0.1 at 2015-09-13 23:16:59 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Jackie Ch"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Jackie+C" for 127.0.0.1 at 2015-09-13 23:16:59 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Jackie C"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Jackie+" for 127.0.0.1 at 2015-09-13 23:16:59 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Jackie "}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Jackie" for 127.0.0.1 at 2015-09-13 23:17:00 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Jackie"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.2ms)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Jacki" for 127.0.0.1 at 2015-09-13 23:17:00 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Jacki"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Jack" for 127.0.0.1 at 2015-09-13 23:17:00 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Jack"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Jac" for 127.0.0.1 at 2015-09-13 23:17:00 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Jac"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Ja" for 127.0.0.1 at 2015-09-13 23:17:01 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Ja"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=ju" for 127.0.0.1 at 2015-09-13 23:17:05 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"ju"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=jun" for 127.0.0.1 at 2015-09-13 23:17:06 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"jun"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=junk" for 127.0.0.1 at 2015-09-13 23:17:07 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"junk"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=jun" for 127.0.0.1 at 2015-09-13 23:17:51 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"jun"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.6ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'jun%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=ju" for 127.0.0.1 at 2015-09-13 23:17:53 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"ju"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'ju%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=ju" for 127.0.0.1 at 2015-09-13 23:17:58 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"ju"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'ju%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=jun" for 127.0.0.1 at 2015-09-13 23:17:58 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"jun"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'jun%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=junk" for 127.0.0.1 at 2015-09-13 23:17:58 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"junk"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'junk%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=jun" for 127.0.0.1 at 2015-09-13 23:17:59 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"jun"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'jun%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=ju" for 127.0.0.1 at 2015-09-13 23:17:59 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"ju"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'ju%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Ja" for 127.0.0.1 at 2015-09-13 23:18:04 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Ja"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'ja%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Jac" for 127.0.0.1 at 2015-09-13 23:18:04 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Jac"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'jac%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Jack" for 127.0.0.1 at 2015-09-13 23:18:04 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Jack"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'jack%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/ui-bg_glass_55_1c1c1c_1x400.png" for 127.0.0.1 at 2015-09-13 23:18:05 +0300
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Jac" for 127.0.0.1 at 2015-09-13 23:18:23 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Jac"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'jac%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Ja" for 127.0.0.1 at 2015-09-13 23:18:23 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Ja"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'ja%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=sh" for 127.0.0.1 at 2015-09-13 23:18:25 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"sh"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'sh%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+autocomplete%2C" for 127.0.0.1 at 2015-09-13 23:18:28 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the autocomplete,"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show me the autocomplete,%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+autocomplete" for 127.0.0.1 at 2015-09-13 23:18:29 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the autocomplete"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show me the autocomplete%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+autocomplet" for 127.0.0.1 at 2015-09-13 23:18:29 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the autocomplet"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show me the autocomplet%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+autocomple" for 127.0.0.1 at 2015-09-13 23:18:29 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the autocomple"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show me the autocomple%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+autocompl" for 127.0.0.1 at 2015-09-13 23:18:30 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the autocompl"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show me the autocompl%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+autocomp" for 127.0.0.1 at 2015-09-13 23:18:30 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the autocomp"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show me the autocomp%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+autocom" for 127.0.0.1 at 2015-09-13 23:18:30 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the autocom"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.5ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show me the autocom%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+autoco" for 127.0.0.1 at 2015-09-13 23:18:30 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the autoco"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show me the autoco%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+autoc" for 127.0.0.1 at 2015-09-13 23:18:30 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the autoc"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show me the autoc%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+auto" for 127.0.0.1 at 2015-09-13 23:18:30 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the auto"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.5ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show me the auto%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+aut" for 127.0.0.1 at 2015-09-13 23:18:30 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the aut"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show me the aut%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+au" for 127.0.0.1 at 2015-09-13 23:18:30 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the au"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show me the au%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+a" for 127.0.0.1 at 2015-09-13 23:18:30 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the a"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show me the a%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+" for 127.0.0.1 at 2015-09-13 23:18:30 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the "}
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show me the %')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the" for 127.0.0.1 at 2015-09-13 23:18:30 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show me the%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+th" for 127.0.0.1 at 2015-09-13 23:18:30 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me th"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show me th%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+t" for 127.0.0.1 at 2015-09-13 23:18:30 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me t"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.5ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show me t%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+" for 127.0.0.1 at 2015-09-13 23:18:30 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me "}
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show me %')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me" for 127.0.0.1 at 2015-09-13 23:18:30 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show me%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+m" for 127.0.0.1 at 2015-09-13 23:18:30 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show m"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show m%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+" for 127.0.0.1 at 2015-09-13 23:18:30 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show "}
+  [1m[36mActsAsTaggableOn::Tag Load (0.5ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show %')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show" for 127.0.0.1 at 2015-09-13 23:18:30 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'show%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Sho" for 127.0.0.1 at 2015-09-13 23:18:30 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Sho"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'sho%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Sh" for 127.0.0.1 at 2015-09-13 23:18:30 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Sh"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'sh%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Li" for 127.0.0.1 at 2015-09-13 23:18:32 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Li"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'li%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Lim" for 127.0.0.1 at 2015-09-13 23:18:32 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Lim"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'lim%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Li" for 127.0.0.1 at 2015-09-13 23:18:33 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Li"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'li%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Th" for 127.0.0.1 at 2015-09-13 23:18:34 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Th"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.6ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'th%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Be" for 127.0.0.1 at 2015-09-13 23:18:36 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Be"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'be%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Beh" for 127.0.0.1 at 2015-09-13 23:18:36 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Beh"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'beh%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Behi" for 127.0.0.1 at 2015-09-13 23:18:36 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Behi"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'behi%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Behin" for 127.0.0.1 at 2015-09-13 23:18:37 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Behin"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'behin%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Behind" for 127.0.0.1 at 2015-09-13 23:18:37 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Behind"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'behind%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Behind+" for 127.0.0.1 at 2015-09-13 23:18:37 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Behind "}
+  [1m[35mActsAsTaggableOn::Tag Load (0.6ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'behind %')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Behind+B" for 127.0.0.1 at 2015-09-13 23:18:38 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Behind B"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'behind b%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Behind+Bl" for 127.0.0.1 at 2015-09-13 23:18:38 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Behind Bl"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'behind bl%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Behind+Blu" for 127.0.0.1 at 2015-09-13 23:18:38 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Behind Blu"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'behind blu%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Behind+Blur" for 127.0.0.1 at 2015-09-13 23:18:38 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Behind Blur"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'behind blur%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Behind+Blur+" for 127.0.0.1 at 2015-09-13 23:18:39 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Behind Blur "}
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'behind blur %')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Behind+Blur" for 127.0.0.1 at 2015-09-13 23:18:39 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Behind Blur"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'behind blur%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Behind+Blu" for 127.0.0.1 at 2015-09-13 23:18:40 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Behind Blu"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'behind blu%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Behind+Blue" for 127.0.0.1 at 2015-09-13 23:18:40 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Behind Blue"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'behind blue%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Behind+Blue+" for 127.0.0.1 at 2015-09-13 23:18:40 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Behind Blue "}
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'behind blue %')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Behind+Blue+P" for 127.0.0.1 at 2015-09-13 23:18:40 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Behind Blue P"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'behind blue p%')  ORDER BY LOWER(tags.name) ASC LIMIT 10
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Behind+Blue+Py" for 127.0.0.1 at 2015-09-13 23:18:41 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Behind Blue Py"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT  tags.id, tags.name FROM "tags" WHERE (LOWER(tags.name) LIKE 'behind blue py%')  ORDER BY LOWER(tags.name) ASC LIMIT 10[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/tasks/9" for 127.0.0.1 at 2015-09-13 23:18:42 +0300
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"teURxVdXxugAmb5O98VdUzw/75e0CHhYMUixqZ4PcyyBn9+JmtzGLDOPOMfYfzQDkTtxlEgjJRwPkfjxd5R/wg==", "task"=>{"name"=>"Noone knows", "description"=>"What it's like", "category_id"=>"4", "level_id"=>"6", "tag_list"=>"Behind Blue Py"}, "commit"=>"Update Task", "id"=>"9"}
+  [1m[35mTask Load (0.4ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[36mTask Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "tasks" WHERE ("tasks"."name" = 'Noone knows' AND "tasks"."id" != 9) LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "tasks" SET "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["updated_at", "2015-09-13 20:18:42.837776"], ["id", 9]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('behind blue py'))
+  [1m[36mActsAsTaggableOn::Tag Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = 'Behind Blue Py' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Behind Blue Py"], ["created_at", "2015-09-13 20:18:42.842486"], ["updated_at", "2015-09-13 20:18:42.842486"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[35mActsAsTaggableOn::Tagging Load (0.5ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL AND "taggings"."context" = ? AND "taggings"."tag_id" IN (6, 11)  [["taggable_id", 9], ["taggable_type", "Task"], ["context", "tags"]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "taggings" WHERE "taggings"."id" = ?[0m  [["id", 7]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "tags" SET "taggings_count" = COALESCE("taggings_count", 0) - 1 WHERE "tags"."id" = ?[0m  [["id", 6]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "taggings" WHERE "taggings"."id" = ?  [["id", 8]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "tags" SET "taggings_count" = COALESCE("taggings_count", 0) - 1 WHERE "tags"."id" = ?  [["id", 11]]
+  [1m[36mActsAsTaggableOn::Tagging Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "taggings" WHERE ("taggings"."tag_id" = 12 AND "taggings"."taggable_type" = 'Task' AND "taggings"."taggable_id" = 9 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "taggings" ("tag_id", "context", "taggable_id", "taggable_type", "created_at") VALUES (?, ?, ?, ?, ?)  [["tag_id", 12], ["context", "tags"], ["taggable_id", 9], ["taggable_type", "Task"], ["created_at", "2015-09-13 20:18:42.859282"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "tags" SET "taggings_count" = COALESCE("taggings_count", 0) + 1 WHERE "tags"."id" = ?  [["id", 12]]
+  [1m[36m (152.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tasks/9
+Completed 302 Found in 233ms (ActiveRecord: 158.0ms)
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2015-09-13 23:18:43 +0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered tasks/_author.html.erb (4.4ms)
+  [1m[36mActsAsTaggableOn::Tag Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND "taggings"."context" = ? LIMIT 1[0m  [["taggable_id", 9], ["taggable_type", "Task"], ["context", "tags"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)  [["taggable_id", 9], ["taggable_type", "Task"]]
+  Rendered tasks/show.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 543ms (Views: 540.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-09-13 23:19:32 +0300
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" IS NULL[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered tasks/index.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 330ms (Views: 327.4ms | ActiveRecord: 1.3ms)
