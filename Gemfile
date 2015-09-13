@@ -38,6 +38,9 @@ gem 'omniauth-identity'
 gem 'acts-as-taggable-on'
 gem 'rails4-autocomplete'
 
+# Use for providing an attachable Comment model to any model
+gem 'acts_as_commentable'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
