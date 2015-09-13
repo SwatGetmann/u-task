@@ -37737,3 +37737,631 @@ Processing by TasksController#show as HTML
   [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
   Rendered tasks/show.html.erb within layouts/application (9.4ms)
 Completed 200 OK in 275ms (Views: 272.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-09-13 22:51:17 +0300
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" IS NULL
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered tasks/index.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 286ms (Views: 283.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2015-09-13 22:51:20 +0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered tasks/_author.html.erb (0.8ms)
+  [1m[35mActsAsTaggableOn::Tag Exists (0.2ms)[0m  SELECT  1 AS one FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND "taggings"."context" = ? LIMIT 1  [["taggable_id", 9], ["taggable_type", "Task"], ["context", "tags"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  Rendered tasks/show.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 263ms (Views: 261.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-09-13 22:51:25 +0300
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" IS NULL
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered tasks/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 285ms (Views: 282.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tasks/7" for 127.0.0.1 at 2015-09-13 22:51:27 +0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tasks/_author.html.erb (0.1ms)
+  [1m[35mActsAsTaggableOn::Tag Exists (0.1ms)[0m  SELECT  1 AS one FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND "taggings"."context" = ? LIMIT 1  [["taggable_id", 7], ["taggable_type", "Task"], ["context", "tags"]]
+  Rendered tasks/show.html.erb within layouts/application (7.1ms)
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 7], ["taggable_type", "Task"]]
+Completed 200 OK in 259ms (Views: 256.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-09-13 22:51:30 +0300
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" IS NULL
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered tasks/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 300ms (Views: 297.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-09-13 22:59:34 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" IS NULL
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mLevel Load (0.3ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered tasks/index.html.erb within layouts/application (78.1ms)
+Completed 500 Internal Server Error in 866ms (ActiveRecord: 2.8ms)
+
+ActionView::Template::Error (couldn't find file 'jquery-ui/autocomplete' with type 'application/javascript'):
+    3: <head>
+    4:   <title>UTask</title>
+    5:   <%= stylesheet_link_tag 'application', "jquery-ui" %>
+    6:   <%= javascript_include_tag 'application', 'jquery-ui', 'autocomplete-rails.js', 'jquery' %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+    9: <body>
+  app/assets/javascripts/application.js:16
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___2844743071109399903_27930120'
+
+
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.1ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (44.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (23.3ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (52.8ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-09-13 23:00:52 +0300
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.4ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" IS NULL[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered tasks/index.html.erb within layouts/application (19.4ms)
+Completed 500 Internal Server Error in 193ms (ActiveRecord: 1.7ms)
+
+ActionView::Template::Error (couldn't find file 'jquery-ui/autocomplete' with type 'application/javascript'):
+    3: <head>
+    4:   <title>UTask</title>
+    5:   <%= stylesheet_link_tag 'application', "jquery-ui" %>
+    6:   <%= javascript_include_tag 'application', 'jquery-ui', 'autocomplete-rails', 'jquery' %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+    9: <body>
+  app/assets/javascripts/application.js:16
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___2844743071109399903_70235883905740'
+
+
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.2ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.8ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (42.9ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (23.0ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (48.8ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-09-13 23:01:53 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" IS NULL
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mLevel Load (0.3ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered tasks/index.html.erb within layouts/application (78.4ms)
+Completed 200 OK in 2016ms (Views: 1967.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/custom-theme/jquery-ui.structure.min.self-fb7a03b45ab8f3fd7e35af284f66fa97aded990ae81528b84c33c9075c5125d2.css?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/custom-theme/jquery-ui.self-763dd889ae97ad4fb0a26f09eb8f714d958590b8d76ba9dfc3fba114793623b9.css?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/custom-theme/jquery-ui.theme.self-1c1f1a2cb6ed57d1622c2465beae9fcaae4efeba2a79681fc134e7d53574096b.css?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/custom-theme/jquery-ui.min.self-38915f158ed30fb22b402919b1ed1cb3371a257dccc993e8dbbd9cbc3d725bc0.css?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/custom-theme/jquery-ui.structure.self-65dc3d01fb802f30a305e6c5f1d62a540c2260444e7df7eb299d46079ec2a205.css?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/custom-theme/jquery-ui.theme.min.self-2dcc7b3bd7c17b49be358ae3a14b7cd2f5fea2497b850a6c5e2b1ed6581134c7.css?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/identities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/jquery-ui.self-830ce2d48d9e6e23d5d6470e6df34fb99183e3e68482782a30752990ec54148a.css?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/scaffolds.self-ab2ec8d743e0e07020652e6d4eee8c015d3446801c35551547783af754f78327.css?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/levels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/jquery.self-c0aeac38aa941ec2dd88d290485efad29308ca522d2809b14f6e2e4831501937.js?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/jquery-ui.self-fbb4d2ada222b94ebb63135d185f03b7d3f8d53ee7976ab2268a24167723255c.js?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/autocomplete-rails.self-864cc2192e74efa2e1c7085b81760919e66ec063803a4d4aa3f32a905a63bf99.js?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/identities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/jquery-ui.min.self-9f0a40e79fbfa2db8299a7c72642f50667733aa6dea01fa508c69fba25909ae8.js?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/levels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/jquery-ui/menu.self-7abc1c9401509a7e4fc609b1e461be6fd17e8116e8fda19cc59d05ba79aefb68.js?body=1" for 127.0.0.1 at 2015-09-13 23:01:55 +0300
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2015-09-13 23:01:56 +0300
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-3befc48aba87cead090cfd014562b2771a662ac6d2c8197b24c08b2d9f3d9f2d.js?body=1" for 127.0.0.1 at 2015-09-13 23:01:56 +0300
+
+
+Started GET "/users" for 127.0.0.1 at 2015-09-13 23:01:59 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 409ms (Views: 401.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-13 23:02:01 +0300
+Processing by WelcomeController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."id" IS NULL
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered welcome/_tasks.html.erb (20.4ms)
+  Rendered welcome/index.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 436ms (Views: 432.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2015-09-13 23:02:03 +0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mTask Load (0.4ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered tasks/_author.html.erb (3.9ms)
+  [1m[36mActsAsTaggableOn::Tag Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND "taggings"."context" = ? LIMIT 1[0m  [["taggable_id", 9], ["taggable_type", "Task"], ["context", "tags"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)  [["taggable_id", 9], ["taggable_type", "Task"]]
+  Rendered tasks/show.html.erb within layouts/application (77.5ms)
+Completed 200 OK in 506ms (Views: 500.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/tasks/9/edit" for 127.0.0.1 at 2015-09-13 23:02:06 +0300
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mLevel Load (0.3ms)[0m  [1mSELECT "levels".* FROM "levels"[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)  [["taggable_id", 9], ["taggable_type", "Task"]]
+  Rendered tasks/_form.html.erb (40.3ms)
+  Rendered tasks/edit.html.erb within layouts/application (42.7ms)
+Completed 200 OK in 446ms (Views: 443.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/ui-bg_highlight-hard_100_f9f9f9_1x100.png" for 127.0.0.1 at 2015-09-13 23:02:07 +0300
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+autocompletev" for 127.0.0.1 at 2015-09-13 23:02:08 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the autocompletev"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (3.0ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+autocomplete" for 127.0.0.1 at 2015-09-13 23:02:10 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the autocomplete"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.2ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+autocomplet" for 127.0.0.1 at 2015-09-13 23:02:11 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the autocomplet"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+autocomple" for 127.0.0.1 at 2015-09-13 23:02:11 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the autocomple"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+autocompl" for 127.0.0.1 at 2015-09-13 23:02:11 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the autocompl"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.2ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+autocomp" for 127.0.0.1 at 2015-09-13 23:02:11 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the autocomp"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.2ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+autocom" for 127.0.0.1 at 2015-09-13 23:02:11 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the autocom"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+autoco" for 127.0.0.1 at 2015-09-13 23:02:12 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the autoco"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+autoc" for 127.0.0.1 at 2015-09-13 23:02:12 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the autoc"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+auto" for 127.0.0.1 at 2015-09-13 23:02:12 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the auto"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+aut" for 127.0.0.1 at 2015-09-13 23:02:12 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the aut"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+au" for 127.0.0.1 at 2015-09-13 23:02:12 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the au"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+a" for 127.0.0.1 at 2015-09-13 23:02:12 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the a"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the+" for 127.0.0.1 at 2015-09-13 23:02:12 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the "}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.2ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+the" for 127.0.0.1 at 2015-09-13 23:02:12 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me the"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+th" for 127.0.0.1 at 2015-09-13 23:02:13 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me th"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+t" for 127.0.0.1 at 2015-09-13 23:02:13 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me t"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me+" for 127.0.0.1 at 2015-09-13 23:02:13 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me "}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+me" for 127.0.0.1 at 2015-09-13 23:02:13 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show me"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.2ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+m" for 127.0.0.1 at 2015-09-13 23:02:13 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show m"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show+" for 127.0.0.1 at 2015-09-13 23:02:13 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show "}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Show" for 127.0.0.1 at 2015-09-13 23:02:13 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Show"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Sho" for 127.0.0.1 at 2015-09-13 23:02:13 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Sho"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Sh" for 127.0.0.1 at 2015-09-13 23:02:13 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Sh"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Ja" for 127.0.0.1 at 2015-09-13 23:02:16 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Ja"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Ja" for 127.0.0.1 at 2015-09-13 23:02:20 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Ja"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Jac" for 127.0.0.1 at 2015-09-13 23:02:20 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Jac"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Jack" for 127.0.0.1 at 2015-09-13 23:02:21 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Jack"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.2ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Jacki" for 127.0.0.1 at 2015-09-13 23:02:21 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Jacki"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.2ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Jackie" for 127.0.0.1 at 2015-09-13 23:02:22 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Jackie"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Jackie%2C" for 127.0.0.1 at 2015-09-13 23:02:22 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Jackie,"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.2ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Ch" for 127.0.0.1 at 2015-09-13 23:02:24 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Ch"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Cha" for 127.0.0.1 at 2015-09-13 23:02:24 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Cha"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/autocomplete_tag_name?term=Chan" for 127.0.0.1 at 2015-09-13 23:02:24 +0300
+Processing by TasksController#autocomplete_tag_name as JSON
+  Parameters: {"term"=>"Chan"}
+  Rendered tasks/autocomplete_tag_name.json.jbuilder (0.1ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/tasks/9" for 127.0.0.1 at 2015-09-13 23:02:26 +0300
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M/9o15LNoAA3tox406F/fnERByltcrf2jOvpVZNm8qUHhaabX0agxASgCvH8GxYu3BWZKpFZ6rKyMqANev3+Sw==", "task"=>{"name"=>"Noone knows", "description"=>"What it's like", "category_id"=>"4", "level_id"=>"6", "tag_list"=>"Jackie, Chan"}, "commit"=>"Update Task", "id"=>"9"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[35mTask Exists (0.2ms)[0m  SELECT  1 AS one FROM "tasks" WHERE ("tasks"."name" = 'Noone knows' AND "tasks"."id" != 9) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mSQL (0.8ms)[0m  UPDATE "tasks" SET "updated_at" = ? WHERE "tasks"."id" = ?  [["updated_at", "2015-09-13 20:02:26.296496"], ["id", 9]]
+  [1m[36mActsAsTaggableOn::Tag Load (1.3ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('jackie') OR LOWER(name) = LOWER('chan'))[0m
+  [1m[35mActsAsTaggableOn::Tag Exists (0.3ms)[0m  SELECT  1 AS one FROM "tags" WHERE "tags"."name" = 'Chan' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Chan"], ["created_at", "2015-09-13 20:02:26.507184"], ["updated_at", "2015-09-13 20:02:26.507184"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[36mActsAsTaggableOn::Tagging Load (0.4ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL AND "taggings"."context" = ? AND "taggings"."tag_id" = 10[0m  [["taggable_id", 9], ["taggable_type", "Task"], ["context", "tags"]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "taggings" WHERE "taggings"."id" = ?  [["id", 6]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mSQL (0.4ms)[0m  UPDATE "tags" SET "taggings_count" = COALESCE("taggings_count", 0) - 1 WHERE "tags"."id" = ?  [["id", 10]]
+  [1m[36mActsAsTaggableOn::Tagging Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "taggings" WHERE ("taggings"."tag_id" = 6 AND "taggings"."taggable_type" = 'Task' AND "taggings"."taggable_id" = 9 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "taggings" ("tag_id", "context", "taggable_id", "taggable_type", "created_at") VALUES (?, ?, ?, ?, ?)  [["tag_id", 6], ["context", "tags"], ["taggable_id", 9], ["taggable_type", "Task"], ["created_at", "2015-09-13 20:02:26.536654"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mSQL (0.3ms)[0m  UPDATE "tags" SET "taggings_count" = COALESCE("taggings_count", 0) + 1 WHERE "tags"."id" = ?  [["id", 6]]
+  [1m[36mActsAsTaggableOn::Tagging Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "taggings" WHERE ("taggings"."tag_id" = 11 AND "taggings"."taggable_type" = 'Task' AND "taggings"."taggable_id" = 9 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "taggings" ("tag_id", "context", "taggable_id", "taggable_type", "created_at") VALUES (?, ?, ?, ?, ?)  [["tag_id", 11], ["context", "tags"], ["taggable_id", 9], ["taggable_type", "Task"], ["created_at", "2015-09-13 20:02:26.546939"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "tags" SET "taggings_count" = COALESCE("taggings_count", 0) + 1 WHERE "tags"."id" = ?  [["id", 11]]
+  [1m[36m (128.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tasks/9
+Completed 302 Found in 406ms (ActiveRecord: 135.8ms)
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2015-09-13 23:02:26 +0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered tasks/_author.html.erb (0.6ms)
+  [1m[36mActsAsTaggableOn::Tag Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND "taggings"."context" = ? LIMIT 1[0m  [["taggable_id", 9], ["taggable_type", "Task"], ["context", "tags"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)  [["taggable_id", 9], ["taggable_type", "Task"]]
+  Rendered tasks/show.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 496ms (Views: 493.9ms | ActiveRecord: 0.9ms)
