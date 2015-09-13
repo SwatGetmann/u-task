@@ -36,5 +36,16 @@
 </p>
 <% end %>
 
+<% if !@task.comments.empty? %>
+  <strong>COMMENTS</strong>
+  <p>
+    <% @task.comments.each do |f| %>
+    <p>User : <%= f.user.name if f.user %>  </p>
+    <p>Title : <%= f.title if f %></p>
+    <p>Comment : <%= f.comment if f %></p>
+    <% end %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>
