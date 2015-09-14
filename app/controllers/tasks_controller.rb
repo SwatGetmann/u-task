@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-  autocomplete :tag, :name, :class_name => 'ActsAsTaggableOn::Tag'
+  autocomplete :tag, :name, :class_name => 'ActsAsTaggableOn::Tag', :full => true
 
   # GET /tasks
   # GET /tasks.json
