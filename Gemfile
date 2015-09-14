@@ -42,7 +42,6 @@ gem 'rails4-autocomplete'
 gem 'acts_as_commentable'
 
 # Use for Markdown
-gem "markdown-rails"
 gem 'redcarpet'
 gem "pygments.rb"
 
