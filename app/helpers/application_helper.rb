@@ -1,3 +1,9 @@
+class HTMLwithPygments < Redcarpet::Render::HTML
+  def block_code(code, language)
+    Pygments.highlight(code, lexer: language)
+  end
+end
+
 module ApplicationHelper
 	def markdown(text)
 		options = {
@@ -22,9 +28,10 @@ module ApplicationHelper
     	:footnotes => true
     }
 
-    renderer = Redcarpet::Render::HTML.new(options)
-    markdown = Redcarpet::Markdown.new(renderer, extensions)
-
+    # renderer = Redcarpet::Render::HTML::new(options)
+    # markdown = Redcarpet::Markdown.new(renderer, extensions)
+    renderer = HTMLwithPygments.new(options)
+		markdown = Redcarpet::Markdown.new(renderer, extensions)
 
     markdown.render(text).html_safe
 	end
