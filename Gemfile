@@ -41,6 +41,9 @@ gem 'rails4-autocomplete'
 # Use for providing an attachable Comment model to any model
 gem 'acts_as_commentable'
 
+# Use for Markdown
+gem 'redcarpet'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
