@@ -18,7 +18,7 @@
     <% @tasks.each do |task| %>
       <tr>
         <td><%= task.name %></td>
-        <td><%= task.description %></td>
+        <td><%= markdown(task.description) %></td>
         <td><%= task.show_category %></td>
         <td><%= task.show_level %></td>
         <td><%= task.rating %></td>
