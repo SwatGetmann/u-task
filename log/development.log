@@ -40777,3 +40777,497 @@ Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde
 
 
 Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2015-09-14 09:20:56 +0300
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2015-09-14 09:25:28 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered tasks/show.html.erb within layouts/application (20.5ms)
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 0.9ms)
+
+ActionView::Template::Error (undefined method `new' for Redcarpet:Module):
+     7: 
+     8: <p>
+     9:   <strong>Description:</strong>
+    10:   <%= Redcarpet.new(@task.description).to_html %>
+    11: </p>
+    12: 
+    13: <p>
+  app/views/tasks/show.html.erb:10:in `_app_views_tasks_show_html_erb___3187345716258716856_43679340'
+
+
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (19.0ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (61.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (30.9ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (65.2ms)
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2015-09-14 09:28:23 +0300
+
+ActionController::RoutingError (undefined local variable or method `renderer' for ApplicationHelper:Module):
+  app/helpers/application_helper.rb:2:in `<module:ApplicationHelper>'
+  app/helpers/application_helper.rb:1:in `<top (required)>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/tasks_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (36.7ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (462.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (23.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.2ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (46.7ms)
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2015-09-14 09:29:56 +0300
+
+ArgumentError (wrong number of arguments (0 for 1..2)):
+  app/helpers/application_helper.rb:2:in `new'
+  app/helpers/application_helper.rb:2:in `<module:ApplicationHelper>'
+  app/helpers/application_helper.rb:1:in `<top (required)>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/tasks_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (4.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (24.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (50.7ms)
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2015-09-14 09:31:35 +0300
+
+ArgumentError (wrong number of arguments (0 for 1..2)):
+  app/helpers/application_helper.rb:2:in `new'
+  app/helpers/application_helper.rb:2:in `<module:ApplicationHelper>'
+  app/helpers/application_helper.rb:1:in `<top (required)>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/tasks_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.3ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (21.0ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (47.6ms)
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2015-09-14 09:33:24 +0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered tasks/show.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.1ms)
+
+ActionView::Template::Error (undefined method `render' for Redcarpet::Markdown:Class):
+     7: 
+     8: <p>
+     9:   <strong>Description:</strong>
+    10:   <%= markdown_desc(@task.description) %>
+    11: </p>
+    12: 
+    13: <p>
+  app/helpers/application_helper.rb:3:in `markdown_desc'
+  app/views/tasks/show.html.erb:10:in `_app_views_tasks_show_html_erb___3187345716258716856_70072364580720'
+
+
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.7ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.9ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (23.8ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (49.8ms)
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2015-09-14 09:37:49 +0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered tasks/show.html.erb within layouts/application (19.0ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 1.4ms)
+
+ActionView::Template::Error (undefined method `markdown_desc' for #<#<Class:0x007f75fc967b60>:0x007f75fc966ee0>):
+     7: 
+     8: <p>
+     9:   <strong>Description:</strong>
+    10:   <%= markdown_desc(@task.description) %>
+    11: </p>
+    12: 
+    13: <p>
+  app/views/tasks/show.html.erb:10:in `_app_views_tasks_show_html_erb___3187345716258716856_70072364580720'
+
+
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.7ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (38.2ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (21.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/swatgetmann/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (48.0ms)
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2015-09-14 09:38:02 +0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered tasks/_author.html.erb (5.5ms)
+  [1m[35mActsAsTaggableOn::Tag Exists (0.4ms)[0m  SELECT  1 AS one FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND "taggings"."context" = ? LIMIT 1  [["taggable_id", 9], ["taggable_type", "Task"], ["context", "tags"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[35mComment Exists (0.3ms)[0m  SELECT  1 AS one FROM "comments" WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ? LIMIT 1  [["commentable_id", 9], ["commentable_type", "Task"]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ?  ORDER BY created_at ASC[0m  [["commentable_id", 9], ["commentable_type", "Task"]]
+  Rendered tasks/show.html.erb within layouts/application (107.8ms)
+Completed 200 OK in 702ms (Views: 696.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-14 09:38:02 +0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-14 09:38:02 +0300
+
+
+Started GET "/assets/identities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-14 09:38:02 +0300
+
+
+Started GET "/assets/jquery-ui.self-830ce2d48d9e6e23d5d6470e6df34fb99183e3e68482782a30752990ec54148a.css?body=1" for 127.0.0.1 at 2015-09-14 09:38:02 +0300
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-14 09:38:02 +0300
+
+
+Started GET "/assets/levels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-14 09:38:02 +0300
+
+
+Started GET "/assets/scaffolds.self-ab2ec8d743e0e07020652e6d4eee8c015d3446801c35551547783af754f78327.css?body=1" for 127.0.0.1 at 2015-09-14 09:38:02 +0300
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-14 09:38:02 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-14 09:38:02 +0300
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-14 09:38:02 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-14 09:38:02 +0300
+
+
+Started GET "/assets/jquery.self-c0aeac38aa941ec2dd88d290485efad29308ca522d2809b14f6e2e4831501937.js?body=1" for 127.0.0.1 at 2015-09-14 09:38:02 +0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-14 09:38:02 +0300
+
+
+Started GET "/assets/jquery-ui.self-fbb4d2ada222b94ebb63135d185f03b7d3f8d53ee7976ab2268a24167723255c.js?body=1" for 127.0.0.1 at 2015-09-14 09:38:03 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-14 09:38:03 +0300
+
+
+Started GET "/assets/autocomplete-rails.self-864cc2192e74efa2e1c7085b81760919e66ec063803a4d4aa3f32a905a63bf99.js?body=1" for 127.0.0.1 at 2015-09-14 09:38:03 +0300
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-14 09:38:03 +0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-14 09:38:03 +0300
+
+
+Started GET "/assets/identities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-14 09:38:03 +0300
+
+
+Started GET "/assets/jquery-ui.min.self-9f0a40e79fbfa2db8299a7c72642f50667733aa6dea01fa508c69fba25909ae8.js?body=1" for 127.0.0.1 at 2015-09-14 09:38:03 +0300
+
+
+Started GET "/assets/levels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-14 09:38:03 +0300
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-14 09:38:03 +0300
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-14 09:38:03 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-14 09:38:03 +0300
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-14 09:38:03 +0300
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2015-09-14 09:38:03 +0300
+
+
+Started GET "/tasks/9/edit" for 127.0.0.1 at 2015-09-14 09:38:11 +0300
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mLevel Load (1.9ms)[0m  SELECT "levels".* FROM "levels"
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  Rendered tasks/_form.html.erb (93.4ms)
+  Rendered tasks/edit.html.erb within layouts/application (111.3ms)
+Completed 200 OK in 426ms (Views: 422.4ms | ActiveRecord: 2.6ms)
+
+
+Started PATCH "/tasks/9" for 127.0.0.1 at 2015-09-14 09:38:34 +0300
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lKmXnCwjA8r5IRvnBF7nfLNYonAxTraGNNUuM5myzqCg01nQ4agDDso3nW4r5I4sHlw8c81l68IKDGdrcCnCTg==", "task"=>{"name"=>"Noone knows", "description"=>"### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!", "category_id"=>"4", "level_id"=>"6", "tag_list"=>"Behind Blue Py Jackie Chan junk"}, "commit"=>"Update Task", "id"=>"9"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[36mTask Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "tasks" WHERE ("tasks"."name" = 'Noone knows' AND "tasks"."id" != 9) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "tasks" SET "description" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["description", "### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!"], ["updated_at", "2015-09-14 06:38:34.744083"], ["id", 9]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('behind blue py jackie chan junk'))
+  [1m[36mActsAsTaggableOn::Tag Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = 'Behind Blue Py Jackie Chan junk' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Behind Blue Py Jackie Chan junk"], ["created_at", "2015-09-14 06:38:34.912461"], ["updated_at", "2015-09-14 06:38:34.912461"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[35mActsAsTaggableOn::Tagging Load (0.3ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL AND "taggings"."context" = ? AND "taggings"."tag_id" IN (12, 5, 1)  [["taggable_id", 9], ["taggable_type", "Task"], ["context", "tags"]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "taggings" WHERE "taggings"."id" = ?[0m  [["id", 14]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "tags" SET "taggings_count" = COALESCE("taggings_count", 0) - 1 WHERE "tags"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "taggings" WHERE "taggings"."id" = ?  [["id", 13]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "tags" SET "taggings_count" = COALESCE("taggings_count", 0) - 1 WHERE "tags"."id" = ?  [["id", 5]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "taggings" WHERE "taggings"."id" = ?[0m  [["id", 12]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "tags" SET "taggings_count" = COALESCE("taggings_count", 0) - 1 WHERE "tags"."id" = ?[0m  [["id", 12]]
+  [1m[35mActsAsTaggableOn::Tagging Exists (0.2ms)[0m  SELECT  1 AS one FROM "taggings" WHERE ("taggings"."tag_id" = 13 AND "taggings"."taggable_type" = 'Task' AND "taggings"."taggable_id" = 9 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "taggings" ("tag_id", "context", "taggable_id", "taggable_type", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["tag_id", 13], ["context", "tags"], ["taggable_id", 9], ["taggable_type", "Task"], ["created_at", "2015-09-14 06:38:34.950596"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "tags" SET "taggings_count" = COALESCE("taggings_count", 0) + 1 WHERE "tags"."id" = ?[0m  [["id", 13]]
+  [1m[35m (232.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/tasks/9
+Completed 302 Found in 459ms (ActiveRecord: 236.7ms)
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2015-09-14 09:38:35 +0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered tasks/_author.html.erb (0.1ms)
+  [1m[35mActsAsTaggableOn::Tag Exists (0.2ms)[0m  SELECT  1 AS one FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND "taggings"."context" = ? LIMIT 1  [["taggable_id", 9], ["taggable_type", "Task"], ["context", "tags"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[35mComment Exists (0.1ms)[0m  SELECT  1 AS one FROM "comments" WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ? LIMIT 1  [["commentable_id", 9], ["commentable_type", "Task"]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ?  ORDER BY created_at ASC[0m  [["commentable_id", 9], ["commentable_type", "Task"]]
+  Rendered tasks/show.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 426ms (Views: 422.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tasks/9/edit" for 127.0.0.1 at 2015-09-14 09:38:51 +0300
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mLevel Load (1.2ms)[0m  SELECT "levels".* FROM "levels"
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  Rendered tasks/_form.html.erb (10.7ms)
+  Rendered tasks/edit.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 270ms (Views: 266.7ms | ActiveRecord: 1.9ms)
+
+
+Started PATCH "/tasks/9" for 127.0.0.1 at 2015-09-14 09:39:13 +0300
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PGUNjmrzpjt8nym5Z0oCtUq74zDokbqXA/SEaXh3vWEIH8PCp3im/0+JrzBI8Gvl5799MxS659M9Lc0xkeyxjw==", "task"=>{"name"=>"Noone knows", "description"=>"### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n*My Name is Swat", "category_id"=>"4", "level_id"=>"6", "tag_list"=>"Behind Blue Py Jackie Chan junk"}, "commit"=>"Update Task", "id"=>"9"}
+  [1m[35mTask Load (0.9ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[36mTask Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "tasks" WHERE ("tasks"."name" = 'Noone knows' AND "tasks"."id" != 9) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "tasks" SET "description" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["description", "### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n*My Name is Swat"], ["updated_at", "2015-09-14 06:39:13.525817"], ["id", 9]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('behind blue py jackie chan junk'))
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[35m (252.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/tasks/9
+Completed 302 Found in 284ms (ActiveRecord: 254.9ms)
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2015-09-14 09:39:13 +0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered tasks/_author.html.erb (0.1ms)
+  [1m[35mActsAsTaggableOn::Tag Exists (0.1ms)[0m  SELECT  1 AS one FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND "taggings"."context" = ? LIMIT 1  [["taggable_id", 9], ["taggable_type", "Task"], ["context", "tags"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[35mComment Exists (0.2ms)[0m  SELECT  1 AS one FROM "comments" WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ? LIMIT 1  [["commentable_id", 9], ["commentable_type", "Task"]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ?  ORDER BY created_at ASC[0m  [["commentable_id", 9], ["commentable_type", "Task"]]
+  Rendered tasks/show.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 288ms (Views: 285.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tasks/9/edit" for 127.0.0.1 at 2015-09-14 09:39:17 +0300
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mLevel Load (0.4ms)[0m  SELECT "levels".* FROM "levels"
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  Rendered tasks/_form.html.erb (12.8ms)
+  Rendered tasks/edit.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 296ms (Views: 293.4ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/tasks/9" for 127.0.0.1 at 2015-09-14 09:39:21 +0300
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IxFu/mJfdeJ2x9iBX86rcIS21mF4n9LuAkh7qDgo8z4Xa6Cyr9R1JkXRXghwdMIgKbJIYoS0j6o8kTLw0bP/0A==", "task"=>{"name"=>"Noone knows", "description"=>"### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n* My Name is Swat", "category_id"=>"4", "level_id"=>"6", "tag_list"=>"Behind Blue Py Jackie Chan junk"}, "commit"=>"Update Task", "id"=>"9"}
+  [1m[35mTask Load (1.3ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[36mTask Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "tasks" WHERE ("tasks"."name" = 'Noone knows' AND "tasks"."id" != 9) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "tasks" SET "description" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["description", "### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n* My Name is Swat"], ["updated_at", "2015-09-14 06:39:22.000654"], ["id", 9]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('behind blue py jackie chan junk'))
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[35m (269.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/tasks/9
+Completed 302 Found in 289ms (ActiveRecord: 272.1ms)
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2015-09-14 09:39:22 +0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered tasks/_author.html.erb (0.1ms)
+  [1m[35mActsAsTaggableOn::Tag Exists (0.2ms)[0m  SELECT  1 AS one FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND "taggings"."context" = ? LIMIT 1  [["taggable_id", 9], ["taggable_type", "Task"], ["context", "tags"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[35mComment Exists (0.1ms)[0m  SELECT  1 AS one FROM "comments" WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ? LIMIT 1  [["commentable_id", 9], ["commentable_type", "Task"]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ?  ORDER BY created_at ASC[0m  [["commentable_id", 9], ["commentable_type", "Task"]]
+  Rendered tasks/show.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 267ms (Views: 264.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tasks/9/edit" for 127.0.0.1 at 2015-09-14 09:39:25 +0300
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mLevel Load (0.3ms)[0m  SELECT "levels".* FROM "levels"
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  Rendered tasks/_form.html.erb (10.7ms)
+  Rendered tasks/edit.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 285ms (Views: 283.0ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/tasks/9" for 127.0.0.1 at 2015-09-14 09:40:08 +0300
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CwO6OABtQZ8CAkIsiQu6EftdoM6NzZdT0USA21GK8X0/eXR0zeZBWzEUxKWmsdNBVlk+zXHmyhfvncmDuBH9kw==", "task"=>{"name"=>"Noone knows", "description"=>"### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n* My Name is Swat\r\n\r\n``` ruby\r\nputs \"hello world!\"\r\n```", "category_id"=>"4", "level_id"=>"6", "tag_list"=>"Behind Blue Py Jackie Chan junk"}, "commit"=>"Update Task", "id"=>"9"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (1.7ms)[0m  [1mbegin transaction[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[36mTask Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "tasks" WHERE ("tasks"."name" = 'Noone knows' AND "tasks"."id" != 9) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "tasks" SET "description" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["description", "### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n* My Name is Swat\r\n\r\n``` ruby\r\nputs \"hello world!\"\r\n```"], ["updated_at", "2015-09-14 06:40:08.542650"], ["id", 9]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('behind blue py jackie chan junk'))
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[35m (143.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/tasks/9
+Completed 302 Found in 162ms (ActiveRecord: 145.9ms)
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2015-09-14 09:40:08 +0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered tasks/_author.html.erb (0.1ms)
+  [1m[35mActsAsTaggableOn::Tag Exists (0.1ms)[0m  SELECT  1 AS one FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND "taggings"."context" = ? LIMIT 1  [["taggable_id", 9], ["taggable_type", "Task"], ["context", "tags"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[35mComment Exists (0.2ms)[0m  SELECT  1 AS one FROM "comments" WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ? LIMIT 1  [["commentable_id", 9], ["commentable_type", "Task"]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ?  ORDER BY created_at ASC[0m  [["commentable_id", 9], ["commentable_type", "Task"]]
+  Rendered tasks/show.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 263ms (Views: 260.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tasks/9/edit" for 127.0.0.1 at 2015-09-14 09:40:15 +0300
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mLevel Load (0.3ms)[0m  SELECT "levels".* FROM "levels"
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  Rendered tasks/_form.html.erb (13.1ms)
+  Rendered tasks/edit.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 311ms (Views: 308.4ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/tasks/9" for 127.0.0.1 at 2015-09-14 09:40:20 +0300
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lewbYxazZDeauh9mx5ZrX9gXedr4jefvxKxHE+JHb6ChltUv2zhk86msme/oLAIPdRPn2QSmuqv6dQ5LC9xjTg==", "task"=>{"name"=>"Noone knows", "description"=>"### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n* My Name is Swat\r\n\r\n```ruby\r\nputs \"hello world!\"\r\n```", "category_id"=>"4", "level_id"=>"6", "tag_list"=>"Behind Blue Py Jackie Chan junk"}, "commit"=>"Update Task", "id"=>"9"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[36mTask Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "tasks" WHERE ("tasks"."name" = 'Noone knows' AND "tasks"."id" != 9) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "tasks" SET "description" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["description", "### There Is Something You Should Know!\r\n\r\n  This is my very first post using markdown!\r\n\r\n  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!\r\n\r\n* My Name is Swat\r\n\r\n```ruby\r\nputs \"hello world!\"\r\n```"], ["updated_at", "2015-09-14 06:40:20.395035"], ["id", 9]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('behind blue py jackie chan junk'))
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[35m (144.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/tasks/9
+Completed 302 Found in 163ms (ActiveRecord: 145.9ms)
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2015-09-14 09:40:20 +0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered tasks/_author.html.erb (0.1ms)
+  [1m[35mActsAsTaggableOn::Tag Exists (0.2ms)[0m  SELECT  1 AS one FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND "taggings"."context" = ? LIMIT 1  [["taggable_id", 9], ["taggable_type", "Task"], ["context", "tags"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[35mComment Exists (0.2ms)[0m  SELECT  1 AS one FROM "comments" WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ? LIMIT 1  [["commentable_id", 9], ["commentable_type", "Task"]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ?  ORDER BY created_at ASC[0m  [["commentable_id", 9], ["commentable_type", "Task"]]
+  Rendered tasks/show.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 265ms (Views: 262.0ms | ActiveRecord: 1.1ms)
