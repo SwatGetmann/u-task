@@ -30,9 +30,7 @@
 <% if !@task.tags.empty? %>
 <p>
   <strong>Tags:</strong>
-  <% @task.tag_list.each do |f| %>
-  <%= f %>, 
-  <% end %>
+  <%= @task.tag_list.map { |t| link_to t, tag_path(t) }.join(', ').html_safe %>
 </p>
 <% end %>
 
