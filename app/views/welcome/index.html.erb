@@ -1,3 +1,19 @@
-<h1>Welcome!</h1>
+<div class="starter-template">
+  <h1>UTASK.</h1>
+  <p>You task. You answer.</p>
+</div>
 
-<%= render 'tasks' %>
+<div class="row">
+	<div class="col-md-4">
+		<h3>MOST RATED USERS</h3>
+		<%= render 'users' %>
+	</div>
+	<div class="col-md-4">
+		<h3>TOP RATED TASKS</h3>
+		<% render 'tasks' %>
+	</div>
+	<div class="col-md-4">
+		<h3>TAG CLOUD</h3>
+	</div>
+</div>
+
