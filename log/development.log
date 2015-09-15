@@ -46650,3 +46650,1747 @@ Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 
 Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2015-09-15 08:27:08 +0300
+
+
+Started GET "/levels" for 127.0.0.1 at 2015-09-15 08:28:14 +0300
+Processing by LevelsController#index as HTML
+  [1m[36mLevel Load (0.3ms)[0m  [1mSELECT "levels".* FROM "levels"  ORDER BY value[0m
+  Rendered levels/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 409ms (Views: 408.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2015-09-15 08:28:17 +0300
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered categories/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 428ms (Views: 426.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-09-15 08:28:20 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 425ms (Views: 424.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-15 08:28:23 +0300
+Processing by WelcomeController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."id" IS NULL
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered welcome/_tasks.html.erb (44.6ms)
+  Rendered welcome/index.html.erb within layouts/application (47.3ms)
+Completed 200 OK in 461ms (Views: 458.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/tasks/8" for 127.0.0.1 at 2015-09-15 08:28:54 +0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered tasks/_author.html.erb (1.8ms)
+  [1m[35mActsAsTaggableOn::Tag Exists (0.1ms)[0m  SELECT  1 AS one FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND "taggings"."context" = ? LIMIT 1  [["taggable_id", 8], ["taggable_type", "Task"], ["context", "tags"]]
+  [1m[36mComment Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "comments" WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ? LIMIT 1[0m  [["commentable_id", 8], ["commentable_type", "Task"]]
+  Rendered tasks/show.html.erb within layouts/application (10.5ms)
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)  [["taggable_id", 8], ["taggable_type", "Task"]]
+Completed 200 OK in 457ms (Views: 454.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-09-15 08:29:03 +0300
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" IS NULL[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered tasks/index.html.erb within layouts/application (43.8ms)
+Completed 200 OK in 471ms (Views: 468.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2015-09-15 08:29:13 +0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered tasks/_author.html.erb (0.1ms)
+  [1m[36mActsAsTaggableOn::Tag Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND "taggings"."context" = ? LIMIT 1[0m  [["taggable_id", 9], ["taggable_type", "Task"], ["context", "tags"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[36mComment Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "comments" WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ? LIMIT 1[0m  [["commentable_id", 9], ["commentable_type", "Task"]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ?  ORDER BY created_at ASC  [["commentable_id", 9], ["commentable_type", "Task"]]
+  Rendered tasks/show.html.erb within layouts/application (41.2ms)
+Completed 200 OK in 449ms (Views: 446.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tasks/9" for 127.0.0.1 at 2015-09-15 08:29:57 +0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered tasks/_author.html.erb (0.7ms)
+  [1m[35mActsAsTaggableOn::Tag Exists (0.1ms)[0m  SELECT  1 AS one FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND "taggings"."context" = ? LIMIT 1  [["taggable_id", 9], ["taggable_type", "Task"], ["context", "tags"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = ? AND "taggings"."taggable_type" = ? AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 9], ["taggable_type", "Task"]]
+  [1m[35mComment Exists (0.2ms)[0m  SELECT  1 AS one FROM "comments" WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ? LIMIT 1  [["commentable_id", 9], ["commentable_type", "Task"]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_id" = ? AND "comments"."commentable_type" = ?  ORDER BY created_at ASC[0m  [["commentable_id", 9], ["commentable_type", "Task"]]
+  Rendered tasks/show.html.erb within layouts/application (49.5ms)
+Completed 200 OK in 500ms (Views: 497.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/levels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/identities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/custom.self-50780658ab42730e78453bd4c739dfa6c34f85e3a889305c528259ff3027a187.css?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/jquery-ui.self-bb33456567347ecc392de8b1e32a8f16eb9deab3fa8e94bf127a3e6171d56d82.css?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/jquery.self-c0aeac38aa941ec2dd88d290485efad29308ca522d2809b14f6e2e4831501937.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/jquery-ui.self-fbb4d2ada222b94ebb63135d185f03b7d3f8d53ee7976ab2268a24167723255c.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/autocomplete-rails.self-864cc2192e74efa2e1c7085b81760919e66ec063803a4d4aa3f32a905a63bf99.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/levels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/jquery-ui.min.self-9f0a40e79fbfa2db8299a7c72642f50667733aa6dea01fa508c69fba25909ae8.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/identities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:58 +0300
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2015-09-15 08:29:59 +0300
+
+
+Started GET "/users" for 127.0.0.1 at 2015-09-15 08:30:06 +0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 462ms (Views: 460.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-15 08:30:08 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."id" IS NULL[0m
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered welcome/_tasks.html.erb (65.2ms)
+  Rendered welcome/index.html.erb within layouts/application (68.6ms)
+Completed 200 OK in 494ms (Views: 490.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-15 08:31:56 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."id" IS NULL[0m
+  [1m[35mTask Load (0.5ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered welcome/_tasks.html.erb (48.1ms)
+  Rendered welcome/index.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 517ms (Views: 514.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/identities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/levels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/jquery-ui.self-bb33456567347ecc392de8b1e32a8f16eb9deab3fa8e94bf127a3e6171d56d82.css?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/custom.self-50780658ab42730e78453bd4c739dfa6c34f85e3a889305c528259ff3027a187.css?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/jquery.self-c0aeac38aa941ec2dd88d290485efad29308ca522d2809b14f6e2e4831501937.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/jquery-ui.self-fbb4d2ada222b94ebb63135d185f03b7d3f8d53ee7976ab2268a24167723255c.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/autocomplete-rails.self-864cc2192e74efa2e1c7085b81760919e66ec063803a4d4aa3f32a905a63bf99.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/identities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/jquery-ui.min.self-9f0a40e79fbfa2db8299a7c72642f50667733aa6dea01fa508c69fba25909ae8.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/levels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:31:57 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-15 08:32:25 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."id" IS NULL[0m
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered welcome/_tasks.html.erb (44.9ms)
+  Rendered welcome/index.html.erb within layouts/application (48.5ms)
+Completed 200 OK in 487ms (Views: 484.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:32:25 +0300
+
+
+Started GET "/assets/levels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:32:25 +0300
+
+
+Started GET "/assets/identities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:32:25 +0300
+
+
+Started GET "/assets/custom.self-50780658ab42730e78453bd4c739dfa6c34f85e3a889305c528259ff3027a187.css?body=1" for 127.0.0.1 at 2015-09-15 08:32:25 +0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:32:25 +0300
+
+
+Started GET "/assets/jquery-ui.self-bb33456567347ecc392de8b1e32a8f16eb9deab3fa8e94bf127a3e6171d56d82.css?body=1" for 127.0.0.1 at 2015-09-15 08:32:25 +0300
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:32:25 +0300
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:32:25 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:32:25 +0300
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:32:25 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-15 08:32:25 +0300
+
+
+Started GET "/assets/jquery.self-c0aeac38aa941ec2dd88d290485efad29308ca522d2809b14f6e2e4831501937.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:25 +0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:25 +0300
+
+
+Started GET "/assets/jquery-ui.self-fbb4d2ada222b94ebb63135d185f03b7d3f8d53ee7976ab2268a24167723255c.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/autocomplete-rails.self-864cc2192e74efa2e1c7085b81760919e66ec063803a4d4aa3f32a905a63bf99.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/identities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/jquery-ui.min.self-9f0a40e79fbfa2db8299a7c72642f50667733aa6dea01fa508c69fba25909ae8.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/levels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2015-09-15 08:32:26 +0300
+
+
+Started GET "/login" for 127.0.0.1 at 2015-09-15 08:32:31 +0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 407ms (Views: 406.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/identity/callback" for 127.0.0.1 at 2015-09-15 08:32:35 +0300
+  [1m[36mIdentity Load (0.4ms)[0m  [1mSELECT  "identities".* FROM "identities" WHERE "identities"."email" = ?  ORDER BY "identities"."id" ASC LIMIT 1[0m  [["email", ""]]
+
+
+Started GET "/auth/failure?message=invalid_credentials&strategy=identity" for 127.0.0.1 at 2015-09-15 08:32:35 +0300
+Processing by SessionsController#failure as HTML
+  Parameters: {"message"=>"invalid_credentials", "strategy"=>"identity"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-15 08:32:35 +0300
+Processing by WelcomeController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."id" IS NULL
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered welcome/_tasks.html.erb (44.3ms)
+  Rendered welcome/index.html.erb within layouts/application (47.3ms)
+Completed 200 OK in 511ms (Views: 508.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2015-09-15 08:32:38 +0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 418ms (Views: 417.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/vkontakte" for 127.0.0.1 at 2015-09-15 08:32:41 +0300
+
+
+Started GET "/auth/vkontakte" for 127.0.0.1 at 2015-09-15 08:32:41 +0300
+
+
+Started GET "/auth/vkontakte/callback?code=d5bfcd9cce6a5360fe&state=cf2c704cdc022c622e8d4c05acc81e69b1f025df8ed8cd79" for 127.0.0.1 at 2015-09-15 08:32:41 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"d5bfcd9cce6a5360fe", "state"=>"cf2c704cdc022c622e8d4c05acc81e69b1f025df8ed8cd79", "provider"=>"vkontakte"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? LIMIT 1  [["provider", "vkontakte"], ["uid", "215467007"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-15 08:32:43 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."id" = ?[0m  [["id", 17]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 17]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."id" = ?[0m  [["id", 17]]
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered welcome/_tasks.html.erb (47.3ms)
+  Rendered welcome/index.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 496ms (Views: 492.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2015-09-15 08:32:46 +0300
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-15 08:32:46 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."id" IS NULL[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered welcome/_tasks.html.erb (42.7ms)
+  Rendered welcome/index.html.erb within layouts/application (45.8ms)
+Completed 200 OK in 476ms (Views: 473.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-15 08:33:12 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."id" IS NULL[0m
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered welcome/_tasks.html.erb (45.7ms)
+  Rendered welcome/index.html.erb within layouts/application (48.2ms)
+Completed 200 OK in 488ms (Views: 485.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/custom.self-50780658ab42730e78453bd4c739dfa6c34f85e3a889305c528259ff3027a187.css?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/identities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/jquery-ui.self-bb33456567347ecc392de8b1e32a8f16eb9deab3fa8e94bf127a3e6171d56d82.css?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/levels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/jquery.self-c0aeac38aa941ec2dd88d290485efad29308ca522d2809b14f6e2e4831501937.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/jquery-ui.self-fbb4d2ada222b94ebb63135d185f03b7d3f8d53ee7976ab2268a24167723255c.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/autocomplete-rails.self-864cc2192e74efa2e1c7085b81760919e66ec063803a4d4aa3f32a905a63bf99.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/identities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/jquery-ui.min.self-9f0a40e79fbfa2db8299a7c72642f50667733aa6dea01fa508c69fba25909ae8.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/levels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2015-09-15 08:33:13 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-15 08:34:12 +0300
+Processing by WelcomeController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."id" IS NULL[0m
+  [1m[35mTask Load (0.4ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLevel Load (0.2ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mLevel Load (0.1ms)[0m  SELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered welcome/_tasks.html.erb (58.4ms)
+  Rendered welcome/index.html.erb within layouts/application (61.1ms)
+Completed 200 OK in 504ms (Views: 500.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:12 +0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/custom.self-50780658ab42730e78453bd4c739dfa6c34f85e3a889305c528259ff3027a187.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/identities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/levels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/jquery-ui.self-bb33456567347ecc392de8b1e32a8f16eb9deab3fa8e94bf127a3e6171d56d82.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/jquery.self-c0aeac38aa941ec2dd88d290485efad29308ca522d2809b14f6e2e4831501937.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/jquery-ui.self-fbb4d2ada222b94ebb63135d185f03b7d3f8d53ee7976ab2268a24167723255c.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/autocomplete-rails.self-864cc2192e74efa2e1c7085b81760919e66ec063803a4d4aa3f32a905a63bf99.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/identities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/jquery-ui.min.self-9f0a40e79fbfa2db8299a7c72642f50667733aa6dea01fa508c69fba25909ae8.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/levels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:13 +0300
+
+
+Started GET "/levels" for 127.0.0.1 at 2015-09-15 08:34:20 +0300
+Processing by LevelsController#index as HTML
+  [1m[36mLevel Load (0.3ms)[0m  [1mSELECT "levels".* FROM "levels"  ORDER BY value[0m
+  Rendered levels/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 400ms (Views: 398.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-15 08:34:44 +0300
+Processing by WelcomeController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."id" IS NULL
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (7.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered welcome/_tasks.html.erb (87.5ms)
+  Rendered welcome/index.html.erb within layouts/application (92.2ms)
+Completed 200 OK in 514ms (Views: 500.0ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/custom.self-50780658ab42730e78453bd4c739dfa6c34f85e3a889305c528259ff3027a187.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/identities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/levels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/jquery-ui.self-bb33456567347ecc392de8b1e32a8f16eb9deab3fa8e94bf127a3e6171d56d82.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/jquery.self-c0aeac38aa941ec2dd88d290485efad29308ca522d2809b14f6e2e4831501937.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/autocomplete-rails.self-864cc2192e74efa2e1c7085b81760919e66ec063803a4d4aa3f32a905a63bf99.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/jquery-ui.self-fbb4d2ada222b94ebb63135d185f03b7d3f8d53ee7976ab2268a24167723255c.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:45 +0300
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:46 +0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:46 +0300
+
+
+Started GET "/assets/identities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:46 +0300
+
+
+Started GET "/assets/jquery-ui.min.self-9f0a40e79fbfa2db8299a7c72642f50667733aa6dea01fa508c69fba25909ae8.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:46 +0300
+
+
+Started GET "/assets/levels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:46 +0300
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:46 +0300
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:46 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:46 +0300
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:46 +0300
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2015-09-15 08:34:46 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+Processing by WelcomeController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."id" IS NULL
+  [1m[36mTask Load (0.5ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.4ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered welcome/_tasks.html.erb (49.7ms)
+  Rendered welcome/index.html.erb within layouts/application (52.4ms)
+Completed 200 OK in 461ms (Views: 458.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+
+
+Started GET "/assets/levels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+
+
+Started GET "/assets/jquery-ui.self-bb33456567347ecc392de8b1e32a8f16eb9deab3fa8e94bf127a3e6171d56d82.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+
+
+Started GET "/assets/identities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+
+
+Started GET "/assets/custom.self-50780658ab42730e78453bd4c739dfa6c34f85e3a889305c528259ff3027a187.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+
+
+Started GET "/assets/jquery.self-c0aeac38aa941ec2dd88d290485efad29308ca522d2809b14f6e2e4831501937.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+
+
+Started GET "/assets/jquery-ui.self-fbb4d2ada222b94ebb63135d185f03b7d3f8d53ee7976ab2268a24167723255c.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+
+
+Started GET "/assets/autocomplete-rails.self-864cc2192e74efa2e1c7085b81760919e66ec063803a4d4aa3f32a905a63bf99.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:22 +0300
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:23 +0300
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:23 +0300
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:23 +0300
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:23 +0300
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:23 +0300
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:23 +0300
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:23 +0300
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:23 +0300
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:23 +0300
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:23 +0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:23 +0300
+
+
+Started GET "/assets/identities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:23 +0300
+
+
+Started GET "/assets/jquery-ui.min.self-9f0a40e79fbfa2db8299a7c72642f50667733aa6dea01fa508c69fba25909ae8.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:23 +0300
+
+
+Started GET "/assets/levels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:23 +0300
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:23 +0300
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:23 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:23 +0300
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:23 +0300
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:23 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-15 08:35:57 +0300
+Processing by WelcomeController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."id" IS NULL
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered welcome/_tasks.html.erb (54.7ms)
+  Rendered welcome/index.html.erb within layouts/application (59.2ms)
+Completed 200 OK in 493ms (Views: 490.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/jquery-ui.self-bb33456567347ecc392de8b1e32a8f16eb9deab3fa8e94bf127a3e6171d56d82.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/identities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/custom.self-50780658ab42730e78453bd4c739dfa6c34f85e3a889305c528259ff3027a187.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/levels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/jquery.self-c0aeac38aa941ec2dd88d290485efad29308ca522d2809b14f6e2e4831501937.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/jquery-ui.self-fbb4d2ada222b94ebb63135d185f03b7d3f8d53ee7976ab2268a24167723255c.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/autocomplete-rails.self-864cc2192e74efa2e1c7085b81760919e66ec063803a4d4aa3f32a905a63bf99.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/identities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/jquery-ui.min.self-9f0a40e79fbfa2db8299a7c72642f50667733aa6dea01fa508c69fba25909ae8.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/levels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2015-09-15 08:35:58 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-15 08:36:28 +0300
+Processing by WelcomeController#index as HTML
+  [1m[35m (2.7ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."id" IS NULL
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.3ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered welcome/_tasks.html.erb (52.2ms)
+  Rendered welcome/index.html.erb within layouts/application (57.3ms)
+Completed 200 OK in 491ms (Views: 485.6ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/levels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/jquery-ui.self-bb33456567347ecc392de8b1e32a8f16eb9deab3fa8e94bf127a3e6171d56d82.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/identities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/custom.self-50780658ab42730e78453bd4c739dfa6c34f85e3a889305c528259ff3027a187.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/jquery.self-c0aeac38aa941ec2dd88d290485efad29308ca522d2809b14f6e2e4831501937.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/jquery-ui.self-fbb4d2ada222b94ebb63135d185f03b7d3f8d53ee7976ab2268a24167723255c.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/autocomplete-rails.self-864cc2192e74efa2e1c7085b81760919e66ec063803a4d4aa3f32a905a63bf99.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/identities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/jquery-ui.min.self-9f0a40e79fbfa2db8299a7c72642f50667733aa6dea01fa508c69fba25909ae8.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/levels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:29 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-15 08:36:50 +0300
+Processing by WelcomeController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."id" IS NULL
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered welcome/_tasks.html.erb (60.4ms)
+  Rendered welcome/index.html.erb within layouts/application (66.8ms)
+Completed 200 OK in 532ms (Views: 528.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/custom.self-50780658ab42730e78453bd4c739dfa6c34f85e3a889305c528259ff3027a187.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/jquery-ui.self-bb33456567347ecc392de8b1e32a8f16eb9deab3fa8e94bf127a3e6171d56d82.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/identities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/levels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/jquery.self-c0aeac38aa941ec2dd88d290485efad29308ca522d2809b14f6e2e4831501937.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/jquery-ui.self-fbb4d2ada222b94ebb63135d185f03b7d3f8d53ee7976ab2268a24167723255c.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/autocomplete-rails.self-864cc2192e74efa2e1c7085b81760919e66ec063803a4d4aa3f32a905a63bf99.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/identities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/jquery-ui.min.self-9f0a40e79fbfa2db8299a7c72642f50667733aa6dea01fa508c69fba25909ae8.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/levels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:36:51 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-15 08:37:33 +0300
+Processing by WelcomeController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."id" IS NULL
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLevel Load (0.2ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLevel Load (0.1ms)[0m  [1mSELECT  "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered welcome/_tasks.html.erb (90.1ms)
+  Rendered welcome/index.html.erb within layouts/application (93.0ms)
+Completed 200 OK in 531ms (Views: 528.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:37:33 +0300
+
+
+Started GET "/assets/categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:37:33 +0300
+
+
+Started GET "/assets/identities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:37:33 +0300
+
+
+Started GET "/assets/jquery-ui.self-bb33456567347ecc392de8b1e32a8f16eb9deab3fa8e94bf127a3e6171d56d82.css?body=1" for 127.0.0.1 at 2015-09-15 08:37:33 +0300
+
+
+Started GET "/assets/custom.self-50780658ab42730e78453bd4c739dfa6c34f85e3a889305c528259ff3027a187.css?body=1" for 127.0.0.1 at 2015-09-15 08:37:33 +0300
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/levels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/jquery.self-c0aeac38aa941ec2dd88d290485efad29308ca522d2809b14f6e2e4831501937.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/jquery-ui.self-fbb4d2ada222b94ebb63135d185f03b7d3f8d53ee7976ab2268a24167723255c.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/autocomplete-rails.self-864cc2192e74efa2e1c7085b81760919e66ec063803a4d4aa3f32a905a63bf99.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/identities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/jquery-ui.min.self-9f0a40e79fbfa2db8299a7c72642f50667733aa6dea01fa508c69fba25909ae8.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/levels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-15 08:37:34 +0300
