@@ -1,3 +1,28 @@
+<% @tasks.each do |task| %>
+  <div class="row">
+    <b><h1><%= task.name %></h1></b>
+    <p>
+      <%= markdown(task.description[0..100]) %>
+    </p>
+    <p>
+      <h6>Category:</h6>
+      <%= task.show_category %>
+    </p>
+    <p>
+      <h6>Level:</h6>
+      <%= task.show_level %>
+    </p>
+    <p>
+      <h6>Rating:</h6>
+      <%= task.rating %>
+    </p>
+    <%= link_to 'Show', task, class: "btn btn-success" %>
+  </div>
+<% end %>
+
+
+
+
 <table class="table table-hover">
   <thead>
     <tr>
