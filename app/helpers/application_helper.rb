@@ -35,4 +35,12 @@ module ApplicationHelper
 
     markdown.render(text).html_safe
 	end
+
+    include ActsAsTaggableOn::TagsHelper
+end
+
+class String
+  def numeric?
+    Float(self) != nil rescue false
+  end
 end

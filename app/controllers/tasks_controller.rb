@@ -5,8 +5,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    # @tasks = Task.all
-    @tasks = Task.where(user_id: params[:user_id])
+    @tasks = Task.all
   end
 
   # GET /tasks/1
@@ -66,10 +65,14 @@ class TasksController < ApplicationController
     end
   end
 
+  def tag
+    @tasks = Task.where(params[:id] => params[:tag]) 
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
-      @task = Task.find(params[:id])
+      @task = Task.where(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

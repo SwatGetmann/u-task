@@ -1,5 +1,5 @@
 <div class="container">
 		<% @users.each do |u| %>
-		<p><%= link_to u.name, user_path(u) %></p>
+		<h4><%= link_to u.name, user_path(u) %></h4>
 		<% end %>
 </div>
