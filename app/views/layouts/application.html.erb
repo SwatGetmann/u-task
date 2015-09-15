@@ -36,14 +36,12 @@
   </div>
 </nav>
 
-<div id="main-container" class="container">
-  <div class="row">
-    <div id="sidebar" class="col-xs-3">
-    </div>
-    <div id="main-content" class="col-xs-9">
-      <%= yield %>
-    </div>
+<div class="container">
+  <div class="starter-template">
+    <h1>UTASK.</h1>
+    <p>You task. You answer.</p>
   </div>
+  <%= yield %>
 </div>
 
 <%= debug @task.tag_list if @task %>
