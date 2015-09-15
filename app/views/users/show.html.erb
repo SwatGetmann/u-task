@@ -1,24 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div class="alert alert-success"><%= notice %></div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-	<strong>Rating:</strong>
-  <%= @user.rating %>
-</p>
-
-<p>
-	<strong>Tasks:</strong>
-	<%= render 'tasks' %>
-</p>
+<div class="container">
+	<div class="col-md-12">
+		<h1><%= @user.name %></h1>
+		<h3><%= @user.email %></h3>
+	</div>
+	<div class="row">
+		<h5>_rating: <%= @user.rating %></h5>
+		<% if !@user.tasks.empty? %>
+		<h2>_user_tasks</h2>
+		<%= render 'tasks' %>
+		<% end %>
+	</div>
+</div>
 
 <p>
 	<strong>Create a new task:</strong>
