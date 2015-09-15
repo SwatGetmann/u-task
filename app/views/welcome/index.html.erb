@@ -15,7 +15,7 @@
 	<div class="col-md-4">
 		<h3>TAG CLOUD</h3>
 		<% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-  		<%= link_to tag.name, { :action => :tag, :controller => :tasks, :tag => tag.name }, :class => [css_class, "btn btn-default"] %>
+  		<%= link_to tag.name, "#", :class => [css_class, "btn btn-default"] %>
 		<% end %>
 	</div>
 </div>
