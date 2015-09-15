@@ -32,7 +32,8 @@
 
 <br>
 
-<%= link_to 'New Task', new_task_path %>
-<% if !params[:user_id].nil? %>
-<%= link_to 'New Task', new_user_task_path(:user_id => params[:user_id]) %>
+<% if !session[:user_id].nil? %>
+  <%= link_to new_user_task_path(User.find(session[:user_id])), class: "btn btn-success" do %>
+    <i class="glyphicon glyphicon-plus"></i> New Task
+  <% end %>
 <% end %>
