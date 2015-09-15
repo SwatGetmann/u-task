@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'sessions/create'
   get "sessions/destroy"
 
-  get '/tasks/tag'
+  get 'tags/:tag', to: 'welcome#index', as: :tag
   
   get 'welcome/index'
 
