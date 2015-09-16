@@ -1,14 +1,12 @@
 <div class="col-md-12">
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-12">
       <h1><%= @task.name %></h1>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-12">
       <% if @task.user && session[:user_id] == @task.user.id %>
-        <div class = "row">
-          <%= link_to 'Edit', edit_user_task_path(@task.user, @task), class: "btn btn-primary" %> 
-          <%= link_to 'Destroy', @task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %> 
-        </div>
+        <%= link_to 'Edit', edit_user_task_path(@task.user, @task), class: "btn btn-primary" %> 
+        <%= link_to 'Destroy', @task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %> 
       <% end %>
     </div>
   </div>
@@ -20,20 +18,20 @@
         </div>
     <% end %>
     <div class="col-md-4">
-      <h3>_category</h3>
+      <h4>_category</h4>
       <%= @task.show_category %>
     </div>
     <div class="col-md-4">
-      <h3>_level</h3>
+      <h4>_level</h4>
       <%= @task.show_level %>
     </div>
     <div class="col-md-4">
-      <h3>_rating</h3>
+      <h4>_rating</h4>
       <%= @task.rating %>
     </div>
     <div class="col-md-4">
       <% if @task.user %>
-        <h3>_author</h3>
+        <h4>_author</h4>
         <%= link_to @task.user.name, @task.user, class: "btn btn-default" %>
       <% end %>
     </div>

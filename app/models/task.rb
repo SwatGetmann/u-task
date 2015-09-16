@@ -28,4 +28,8 @@ class Task < ActiveRecord::Base
 		self.category = default_category if self.category.nil?
 		self.category.name
 	end
+
+	def show_tags
+		self.tag_list.map { |t| t }.join(', ')
+	end
 end
