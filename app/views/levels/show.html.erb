@@ -1,18 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="col-md-12">
+    <h1><%= @level.name %></h1>
+    <h3>_hardness = <%= @level.value %></h3>
+  </div>
+  <div class="row">
+    <% if @tasks %>
+      <h2>_tasks with this level</h2>
+      <%= render 'tasks' %>
+    <% end %>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @level.name %>
-</p>
-
-<p>
-  <strong>Hardness (in points):</strong>
-  <%= @level.value %>
-</p>
-
-<%= link_to 'Edit', edit_level_path(@level) %> |
-<%= link_to 'Back', levels_path %>
-
-<% if !@tasks.empty? %>
-<%= render 'tasks' %>
-<% end %>
+<div class="row"> 
+  <div class="col-md-12">
+    <br>
+    <%= link_to 'Back', :back, class: "btn btn-primary" %>
+  </div>
+</div>
