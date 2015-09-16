@@ -10,9 +10,9 @@ class User < ActiveRecord::Base
   has_many :tasks
   has_secure_password
   
-  validates :name, presence: true
-  validates :email, presence: true, email: true
-  validates :password, presence: true, length: { minimum: 6 }
+  # validates :name, presence: true
+  # validates :email, presence: true, email: true
+  # validates :password, presence: true, length: { minimum: 6 }
 
   def self.from_omniauth(auth)
     find_by_provider_and_uid(auth["provider"], auth["uid"]) || create_with_omniauth(auth)

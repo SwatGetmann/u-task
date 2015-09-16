@@ -5,7 +5,11 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    if params[:user_id]
+      @tasks = Task.where(user_id: params[:user_id])
+    else
+      @tasks = Task.all
+    end
   end
 
   # GET /tasks/1
@@ -28,6 +32,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     @task.rating = 0
+    @task.user = User.find(session[:user_id])
     # @task.user ||= User.find(params[:user_id])      WTF?!
 
     respond_to do |format|
