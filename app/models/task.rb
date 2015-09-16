@@ -3,6 +3,8 @@ class Task < ActiveRecord::Base
 	belongs_to :category
 	belongs_to :level
 
+	has_many :answers
+
 	validates :name, 	presence: true,
 		uniqueness: true
 	validates :description, presence:true
