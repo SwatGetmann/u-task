@@ -1,24 +1,16 @@
-<p id="notice"><%= notice %></p>
+<h1>_CATEGORIES</h1>
 
-<h1>Listing Categories</h1>
+<div class="row">
+  <% @categories.each do |category| %>
+  <div class="col-md-1">
+    <%= link_to category.name, category_path(category), class: "btn btn-default" %>
+  </div>
+<% end %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= link_to category.name, category_path(category) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Category', new_category_path %>
+<div class="row">
+  <div class = "col-md-12">
+    <br>
+    <%= link_to 'New Category', new_category_path, class: "btn btn-success" %>
+  </div>
+</div>
