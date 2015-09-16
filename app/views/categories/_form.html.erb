@@ -1,8 +1,7 @@
 <%= form_for(@category) do |f| %>
   <% if @category.errors.any? %>
-    <div id="error_explanation">
+    <div class="alert alert-danger">
       <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
-
       <ul>
       <% @category.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,11 +10,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
+  <form role="form">
+    <div class="form-group">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
     <%= f.submit %>
-  </div>
+  </form>
+
 <% end %>

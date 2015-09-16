@@ -1,0 +1,37 @@
+<% @tasks.each do |task| %>
+  <div class="col-md-12">
+    <h1><%= task.name %></h1>
+    <%= task.description[0..250] %>
+    <div class="row">
+      <% if !task.tags.empty? %>
+          <div class="col-md-12">
+            <h4>_tags:</h4>
+              <% task.tag_list.each do |tag| %>
+              <div class="btn btn-default">
+                <%= tag %>
+              </div>
+              <% end %>
+          </div>
+      <% end %>
+      <div class="col-md-4">
+        <h3>_category</h3>
+        <%= task.show_category %>
+      </div>
+      <div class="col-md-4">
+        <h3>_level</h3>
+        <%= task.show_level %>
+      </div>
+      <div class="col-md-4">
+        <h3>_rating</h3>
+        <%= task.rating %>
+      </div>
+    </div>
+    <% if task.user %>
+      <%=link_to 'Show', user_task_path(task.user, task), class: "btn btn-success" %> 
+      <% if task.user.id == session[:user_id] %>
+        <%= link_to 'Edit', edit_user_task_path(task.user, task), class: "btn btn-primary" %> 
+        <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %> 
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
