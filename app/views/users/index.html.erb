@@ -1,29 +1,16 @@
-<p id="notice"><%= notice %></p>
+<h1>_USERS</h1>
 
-<h1>Listing Users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Rating</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.rating %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<% @users.each do |user| %>
+  <div class="col-md-3">
+    <div class="col-md-12">
+      <h3><%= user.name %></h3>
+      <h4>_rating</h4>
+      <h3><%= user.rating %></h3>
+    </div>
+    <%= link_to 'Show', user, class: "btn btn-success" %>
+    <% if session[:user_id] == user.id %>
+      <%= link_to 'Edit', edit_user_path(user), class: "btn btn-primary" %>
+      <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
     <% end %>
-  </tbody>
-</table>
-
-<br>
+  </div>
+<% end %>

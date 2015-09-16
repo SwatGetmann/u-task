@@ -42,13 +42,17 @@
   <div class="comments container">
     <% if !@task.comments.empty? %>
       <h3>COMMENTS</h3>
-      <p>
         <% @task.comments.each do |f| %>
-        <p>User : <%= f.user.name if f.user %>  </p>
-        <p>Title : <%= f.title if f %></p>
-        <p>Comment : <%= f.comment if f %></p>
+        <p>
+          <h4><%= f.user.name if f.user %></h4>
+        </p>
+        <p>
+          <h3><%= f.title if f %></h3>
+        </p>
+        <p>
+          <div>Comment : <%= f.comment if f %></div>
+        </p>
         <% end %>
-      </p>
     <% end %>
   </div>
 </div>
