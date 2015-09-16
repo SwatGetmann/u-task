@@ -26,8 +26,12 @@
         <%= task.rating %>
       </div>
     </div>
-    <%= link_to 'Show', user_task_path(@user, task), class: "btn btn-success" %> 
-    <%= link_to 'Edit', edit_user_task_path(@user, task), class: "btn btn-primary" %> 
-    <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %> 
+    <% if task.user %>
+      <%=link_to 'Show Task', user_task_path(task.user, task), class: "btn btn-success" %> 
+      <% if task.user.id == session[:user_id] %>
+        <%= link_to 'Edit Task', edit_user_task_path(task.user, task), class: "btn btn-primary" %> 
+        <%= link_to 'Destroy Task', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %> 
+      <% end %>
+    <% end %>
   </div>
 <% end %>
