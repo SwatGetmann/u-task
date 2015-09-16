@@ -31,6 +31,13 @@
       <%= f.label :tag_list %><br>
       <%= f.autocomplete_field :tag_list, autocomplete_tag_name_tasks_path, :"data-delimiter" => ', ', class: "form-control" %> 
     </div>
+
+    <div class="form-group">
+      <%= f.fields_for :answers do |builder| %>
+        <%= render "answers.html.erb", :f => builder %>
+      <% end %>
+    </div>      
+
     <%= f.submit %>
   </form>
 <% end %>

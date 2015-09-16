@@ -9,6 +9,7 @@ class Task < ActiveRecord::Base
 		uniqueness: true
 	validates :description, presence:true
 	validates :category, presence: true
+	validates :answers, presence: true
 
 	acts_as_taggable_on :tags
 	acts_as_commentable

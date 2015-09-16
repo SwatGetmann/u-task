@@ -21,6 +21,7 @@ class TasksController < ApplicationController
   def new
     @user = User.where(id: params[:user_id])
     @task = Task.new(user_id: params[:user_id])
+    @task.answers.build
   end
 
   # GET /tasks/1/edit
