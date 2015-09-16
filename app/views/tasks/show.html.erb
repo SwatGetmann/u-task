@@ -1,13 +1,15 @@
 <div class="col-md-12">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-3">
       <h1><%= @task.name %></h1>
     </div>
-    <div class="col-md-6">
-      <% if !@task.user.nil? %>
-        <%= link_to 'Edit', edit_user_task_path(@task.user, @task), class: "btn btn-primary" %> 
+    <div class="col-md-9">
+      <% if @task.user && session[:user_id] == @task.user.id %>
+        <div class = "row">
+          <%= link_to 'Edit', edit_user_task_path(@task.user, @task), class: "btn btn-primary" %> 
+          <%= link_to 'Destroy', @task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %> 
+        </div>
       <% end %>
-      <%= link_to 'Destroy', @task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %> 
     </div>
   </div>
   <div class="row">
@@ -32,7 +34,7 @@
     <div class="col-md-4">
       <% if @task.user %>
         <h3>_author</h3>
-        <%= link_to @task.user.name, @task.user, class: "btn btn-info" %>
+        <%= link_to @task.user.name, @task.user, class: "btn btn-default" %>
       <% end %>
     </div>
   </div>
