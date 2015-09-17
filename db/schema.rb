@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150916230152) do
+ActiveRecord::Schema.define(version: 20150917172410) do
 
   create_table "answers", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "context"
+    t.string   "content"
     t.integer  "task_id"
+    t.integer  "user_id"
+    t.boolean  "correct"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -87,6 +89,7 @@ ActiveRecord::Schema.define(version: 20150916230152) do
     t.integer  "category_id"
     t.integer  "level_id"
     t.integer  "user_id"
+    t.string   "answer"
   end
 
   create_table "users", force: :cascade do |t|
