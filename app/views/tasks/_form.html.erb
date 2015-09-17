@@ -34,7 +34,8 @@
 
     <div class="form-group">
       <%= f.fields_for :answers do |builder| %>
-        <%= render "answers.html.erb", :f => builder %>
+        <%= builder.label :context, "Answer" %>
+        <%= builder.text_field :context %>
       <% end %>
     </div>      
 

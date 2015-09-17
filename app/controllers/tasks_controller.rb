@@ -26,6 +26,7 @@ class TasksController < ApplicationController
 
   # GET /tasks/1/edit
   def edit
+    @task.answers.build
   end
 
   # POST /tasks
@@ -34,6 +35,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.rating = 0
     @task.user = User.find(session[:user_id])
+    @task.answers.new(params[:answers])
     # @task.user ||= User.find(params[:user_id])      WTF?!
 
     respond_to do |format|
@@ -79,6 +81,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :description, :category_id, :level_id, :user_id, :rating, :tag_list)
+      params.require(:task).permit(:name, :description, :category_id, :level_id, :user_id, :rating, :tag_list, :answers)
     end
 end

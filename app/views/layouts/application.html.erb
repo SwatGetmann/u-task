@@ -43,10 +43,7 @@
   <%= yield %>
 </div>
 
-<%= debug @answer if @answer %>
-<%= debug @task.tag_list if @task %>
-<%= debug @task if @task %>
-<%= debug @user if @user %>
+<% debug @task.answers if @task.answers %>
 
 </body>
 </html>

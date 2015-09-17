@@ -3,7 +3,8 @@ class Task < ActiveRecord::Base
 	belongs_to :category
 	belongs_to :level
 
-	has_many :answers
+	has_many :answers, :dependent => :destroy
+	accepts_nested_attributes_for :answers
 
 	validates :name, 	presence: true,
 		uniqueness: true
