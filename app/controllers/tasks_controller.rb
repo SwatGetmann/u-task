@@ -21,7 +21,9 @@ class TasksController < ApplicationController
   def new
     @user = User.where(id: params[:user_id])
     @task = Task.new(user_id: params[:user_id])
-    @answer = @task.answers.new
+    5.times do
+      @task.answers.build
+    end
   end
 
   # GET /tasks/1/edit
