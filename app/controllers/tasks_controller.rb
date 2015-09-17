@@ -15,15 +15,13 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+    @answer = Answer.new(:user_id => session[:user_id], :task_id => @task.id)
   end
 
   # GET /tasks/new
   def new
     @user = User.where(id: params[:user_id])
     @task = Task.new(user_id: params[:user_id])
-    5.times do
-      @task.answers.build
-    end
   end
 
   # GET /tasks/1/edit

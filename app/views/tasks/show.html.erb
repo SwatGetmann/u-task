@@ -35,18 +35,22 @@
         <%= link_to @task.user.name, @task.user, class: "btn btn-default" %>
       <% end %>
     </div>
+    
     <div class="col-md-12">
-      <% if !@task.answers.empty? %>
-      <h4>_answers</h4>
-        <% @task.answers.each do |answer| %>
-          <p>
-            <h4>
-              <%= answer.content %>
-            </h4>
-          </p>
+      <% if session[:user_id] %> 
+        <% if session[:user_id] == @task.user.id %>
+          
+          <h4>ANSWER: </h4>
+          <%= @task.answer %>
+
+        <% else %>
+
+          <%= link_to "Give your answer", "#" %>
+
         <% end %>
       <% end %>
     </div>
+
   </div>
   <div class="description">
     <%= markdown(@task.description) %>
