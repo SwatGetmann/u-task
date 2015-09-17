@@ -33,12 +33,10 @@
     </div>
 
     <div class="form-group">
-      <%= f.fields_for :answers do |builder| %>
-        <%= builder.label :context, "Answer" %>
-        <%= builder.text_field :context %>
+      <%= f.fields_for :answers do |answer_fields| %>
+        Answer: <%= answer_fields.text_field :context %>
       <% end %>
     </div>      
-
     <%= f.submit %>
   </form>
 <% end %>
