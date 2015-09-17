@@ -34,9 +34,16 @@
 
     <div class="form-group">
       <%= f.fields_for :answers do |answer_fields| %>
-        Answer: <%= answer_fields.text_field :context %>
+        <div class="col-md-12">
+          Answer: <%= answer_fields.text_field :context, class: "form-control" %>
+        </div>
       <% end %>
     </div>      
-    <%= f.submit %>
+    <div class="row">
+      <div class="col-md-12">
+        <br>
+        <%= f.submit %>
+      </div>
+    </div>
   </form>
 <% end %>
