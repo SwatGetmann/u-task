@@ -45,9 +45,13 @@
 
         <% else %>
 
-          <%= link_to "Give your answer", new_task_answer_path(@task), class: "btn btn-primary" %>
+          // add check if user has already got a correct answer
+
+          <%= link_to "Give your answer", "#", class: "btn btn-primary" %>
 
         <% end %>
+      <% else %>
+        You have to <%= link_to "Sign In", login_path %> to answer this task.
       <% end %>
     </div>
 
