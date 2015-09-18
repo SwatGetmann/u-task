@@ -1,17 +1,17 @@
 class AnswersController < ApplicationController
+	@task_answering 
+  @user_answering
+
   def new
-  	@task = Task.find(params[:task_id])
-  	@user = User.find(session[:user_id])
-  	@answer = Answer.new(:task => @task, :user => @user, :correct => false)
+  	@task_answering = Task.find(params[:task_id])
+  	@user_answering = User.find(session[:user_id])
+  	@answer = Answer.new(:task => @task_answering, :user => @user_answering, :correct => false)
   end
 
   def create
-  	@answer = Answer.new(:task => @task, :user => @user, :correct => false)
+  	@answer = Answer.new(:task => @task_answering, :user => @user_answering, :correct => false)
   	@answer.update(answer_params)
-  	@asnwer.user = @user
-  	@answer.task = @task
-  	if @book.save
-      redirect_to root
+  	if @answer.save
     else
       render :action => 'new'
     end

@@ -1,4 +1,4 @@
-<%= form_for @answer, url:  do |f| %>
+<%= form_for (@answer) do |f| %>
   <% if @answer.errors.any? %>
     <div class="alert alert-danger">
       <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
