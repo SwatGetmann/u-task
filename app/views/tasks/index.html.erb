@@ -1,53 +1,17 @@
-<h1>_TASKS</h1>
+<h1><%= t('.tasks') %></h1>
 
 <%= form_tag search_tasks_path, :method => :get do %>
 <p>
-  <%= text_field_tag :query, params[:query], class: "form-control" %> <%= submit_tag "Search!", class: "btn btn-primary" %>
+  <%= text_field_tag :query, params[:query], placeholder: t('.search'), class: "form-control" %> <%= submit_tag t('.search-submit'), class: "btn btn-primary" %>
 </p>
 <% end %>
 
-<% @tasks.each do |task| %>
-  <div class="col-md-12">
-    <h1><%= task.name %></h1>
-    <%= task.description[0..250] %>
-    <div class="row">
-      <% if !task.tags.empty? %>
-          <div class="col-md-12">
-            <h4>_tags:</h4>
-              <% task.tag_list.each do |tag| %>
-              <div class="btn btn-default">
-                <%= tag %>
-              </div>
-              <% end %>
-          </div>
-      <% end %>
-      <div class="col-md-4">
-        <h3>_category</h3>
-        <%= task.show_category %>
-      </div>
-      <div class="col-md-4">
-        <h3>_level</h3>
-        <%= task.show_level %>
-      </div>
-      <div class="col-md-4">
-        <h3>_rating</h3>
-        <%= task.rating %>
-      </div>
-    </div>
-    <% if task.user %>
-      <%=link_to 'Show Task', user_task_path(task.user, task), class: "btn btn-success" %> 
-      <% if task.user.id == session[:user_id] %>
-        <%= link_to 'Edit Task', edit_user_task_path(task.user, task), class: "btn btn-primary" %> 
-        <%= link_to 'Destroy Task', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %> 
-      <% end %>
-    <% end %>
-  </div>
-<% end %>
+<%= render 'layouts/tasks' %>
 
 <br>
 
 <% if !session[:user_id].nil? %>
   <%= link_to new_user_task_path(User.find(session[:user_id])), class: "btn btn-success" do %>
-    <i class="glyphicon glyphicon-plus"></i> New Task
+    <i class="glyphicon glyphicon-plus"></i> <%= t('.new-task') %>
   <% end %>
 <% end %>

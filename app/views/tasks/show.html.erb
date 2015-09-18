@@ -5,33 +5,33 @@
     </div>
     <div class="col-md-12">
       <% if @task.user && session[:user_id] == @task.user.id %>
-        <%= link_to 'Edit', edit_user_task_path(@task.user, @task), class: "btn btn-primary" %> 
-        <%= link_to 'Destroy', @task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %> 
+        <%= link_to t('.edit'), edit_user_task_path(@task.user, @task), class: "btn btn-primary" %> 
+        <%= link_to t('.destroy'), @task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %> 
       <% end %>
     </div>
   </div>
   <div class="row">
     <% if !@task.tags.empty? %>
         <div class="col-md-12">
-          <h4>_tags:</h4>
+          <h4><%= t('.tags') %></h4>
           <%= @task.tag_list.map { |t| link_to t, tag_path(t), class: "btn btn-default" }.join(', ').html_safe %>
         </div>
     <% end %>
     <div class="col-md-4">
-      <h4>_category</h4>
+      <h4><%= t('.category') %></h4>
       <%= @task.show_category %>
     </div>
     <div class="col-md-4">
-      <h4>_level</h4>
+      <h4><%= t('.level') %></h4>
       <%= @task.show_level %>
     </div>
     <div class="col-md-4">
-      <h4>_rating</h4>
+      <h4><%= t('.rating') %></h4>
       <%= @task.rating %>
     </div>
     <div class="col-md-4">
       <% if @task.user %>
-        <h4>_author</h4>
+        <h4><%= t('.author') %></h4>
         <%= link_to @task.user.name, @task.user, class: "btn btn-default" %>
       <% end %>
     </div>
@@ -40,18 +40,18 @@
       <% if session[:user_id] %> 
         <% if session[:user_id] == @task.user.id %>
           
-          <h4>ANSWER: </h4>
+          <h4><%= t('.answer') %></h4>
           <%= @task.answer %>
 
         <% else %>
 
           // add check if user has already got a correct answer
 
-          <%= link_to "Give your answer", "#", class: "btn btn-primary" %>
+          <%= link_to t('.give-answer'), "#", class: "btn btn-primary" %>
 
         <% end %>
       <% else %>
-        You have to <%= link_to "Sign In", login_path %> to answer this task.
+        You have to <%= link_to t('.signin'), login_path %> to answer this task.
       <% end %>
     </div>
 
@@ -62,7 +62,7 @@
 
   <div class="comments container">
     <% if !@task.comments.empty? %>
-      <h3>COMMENTS</h3>
+      <h3><%= t('.comments') %></h3>
         <% @task.comments.each do |f| %>
         <p>
           <h4><%= f.user.name if f.user %></h4>
@@ -71,7 +71,7 @@
           <h3><%= f.title if f %></h3>
         </p>
         <p>
-          <div>Comment : <%= f.comment if f %></div>
+          <div><%= t('.comment') %><%= f.comment if f %></div>
         </p>
         <% end %>
     <% end %>
@@ -82,6 +82,6 @@
 <div class="row"> 
   <div class="col-md-12">
     <br>
-    <%= link_to 'Back', user_tasks_path(@task.user), class: "btn btn-primary" %>
+    <%= link_to t('.back'), user_tasks_path(@task.user), class: "btn btn-primary" %>
   </div>
 </div>

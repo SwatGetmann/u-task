@@ -123,4 +123,36 @@ en:
     form:
       name: "Name"
       submit: "Submit"
-    
+  tasks:
+    new:
+      back: "Back"
+    edit:
+      show: "Show Task"
+      back: "Back"
+    show:
+      edit: "Edit Task"
+      destroy: "Destroy Task"
+      tags: "Tags"
+      category: "Category"
+      level: "Level"
+      rating: "Rating"
+      author: "Author"
+      answer: "Answer"
+      give-answer: "Give your answer"
+      signin: "Sign in"
+      comments: "Comments"
+      comment: "Comment"
+      back: "Back to user's tasks"
+    index:
+      tasks: "TASKS"
+      search: "Search Tasks"
+      search-submit: "Search!"
+      new-task: "Create New Task"
+    form:
+      name: "Name"
+      description: "Description (in markdown)"
+      category: "Category"
+      level: "Level"
+      tags: "Tags"
+      answer: "Answer"
+      submit: "Submit"

@@ -94,3 +94,36 @@ ru:
     form:
       name: "Имя"
       submit: "Подтвердить"
+  tasks:
+    new:
+      back: "Назад"
+    edit:
+      show: "Показать задание"
+      back: "Назад"
+    show:
+      edit: "Редактировать задание"
+      destroy: "Удалить задание"
+      tags: "Тэги"
+      category: "Категория"
+      level: "Уровень сложности"
+      rating: "Рейтинг"
+      author: "Автор"
+      answer: "Ответ"
+      give-answer: "Дать свой ответ"
+      signin: "Войти в систему"
+      comments: "Комментарии"
+      comment: "Комментарий"
+      back: "Назад к заданиям участника"
+    index:
+      tasks: "ЗАДАНИЯ"
+      search: "Поиск заданий"
+      search-submit: "Искать"
+      new-task: "Создать новое задание"
+    form:
+      name: "Имя"
+      description: "Описание (markdown)"
+      category: "Категория"
+      level: "Уровень"
+      tags: "Тэги"
+      answer: "Ответ"
+      submit: "Подтвердить"
