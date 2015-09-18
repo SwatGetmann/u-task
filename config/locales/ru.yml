@@ -1,0 +1,11 @@
+ru:
+
+  layouts:
+    application:
+      users:   "Участники"
+      categories:  "Категории"
+      levels: "Уровни сложности"
+      tasks:  "Задания"
+      signout: "Выйти из системы"
+      welcome: "Привет"
+      signin: "Войти в систему"

@@ -15,23 +15,23 @@
     </div>
     <ul class="nav navbar-nav">
       <li>
-        <%= link_to "Users", users_path %>
+        <%= link_to t('.users'), users_path %>
       </li>      
       <li>
-        <%= link_to "Categories", categories_path %>
+        <%= link_to t('.categories'), categories_path %>
       </li> 
       <li>
-        <%= link_to "Levels", levels_path %>
+        <%= link_to t(".levels"), levels_path %>
       </li>
       <li>
-        <%= link_to "Tasks", tasks_path %>
+        <%= link_to t('.tasks'), tasks_path %>
       </li>
       <li>
         <% if current_user %>
-          <li><%= link_to "Sign Out", signout_path %></li>
-          <p class="navbar-text" >Welcome, <%= link_to current_user.name, current_user %>!</p>
+          <li><%= link_to t('.signout'), signout_path %></li>
+          <p class="navbar-text" ><%= t('.welcome') %>, <%= link_to current_user.name, current_user %>!</p>
         <% else %>
-          <%= link_to "Sign in", login_path %>
+          <%= link_to t('.signin'), login_path %>
         <% end %>
       </li>
     </ul>
@@ -45,9 +45,6 @@
   
   <%= yield %>
 </div>
-
-<% debug @task.answers if @task %>
-<% debug params %>
 
 </body>
 </html>
