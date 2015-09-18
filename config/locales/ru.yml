@@ -15,6 +15,14 @@ ru:
       level: "Уровень сложности"
       rating: "Рейтинг задачи"
       show-task: "Показать задачу"
+    tasks:
+      tags: "Тэги"
+      category: "Категория"
+      level: "Уровень"
+      rating: "Рейтинг"
+      show-task: "Показать задание"
+      edit-task: "Редактировать задание"
+      destroy-task: "Удалить задание"
   welcome:
     index:
       slogan: "Ты создаёшь. Ты отвечаешь."
@@ -71,11 +79,18 @@ ru:
       harndess: "Очки сложности"
       name: "Имя уровня"
       submit: "Подтвердить"
-    tasks:
-      tags: "Тэги"
-      category: "Категория"
-      level: "Уровень"
-      rating: "Рейтинг"
-      show-task: "Показать задание"
-      edit-task: "Редактировать задание"
-      destroy-task: "Удалить задание"
+  categories:
+    index:
+      categories: "КАТЕГОРИИ"
+      new-category: "Создать категорию"
+    edit:
+      show: "Показать категорию"
+      back: "Назад к категориям"
+    new:
+      back: "Назад к категориям"
+    show:
+      tasks: "Задания такой категории"
+      back: "Назад к категориям"
+    form:
+      name: "Имя"
+      submit: "Подтвердить"

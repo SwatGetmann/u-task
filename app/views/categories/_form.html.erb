@@ -12,9 +12,9 @@
 
   <form role="form">
     <div class="form-group">
-      <%= f.label :name %><br>
+      <%= f.label :name, t('.name') %><br>
       <%= f.text_field :name, class: "form-control" %>
     </div>
-    <%= f.submit %>
+    <%= f.submit t('.submit') %>
   </form>
 <% end %>

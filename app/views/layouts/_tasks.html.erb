@@ -1,3 +1,4 @@
+<% @tasks.each do |task| %>
   <div class="col-md-12">
     <h1><%= task.name %></h1>
     <%= task.description[0..250] %>
@@ -34,3 +35,4 @@
       <% end %>
     <% end %>
   </div>
+<% end %>

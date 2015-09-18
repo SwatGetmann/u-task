@@ -36,6 +36,14 @@ en:
       level: "Level"
       rating: "Rating"
       show-task: "Show Task"
+    tasks:
+      tags: "Tags"
+      category: "Category"
+      level: "Level"
+      rating: "Rating"
+      show-task: "Show Task"
+      edit-task: "Edit Task"
+      destroy-task: "Destroy Task"
   welcome:
     index:
       slogan: "You task. You answer."
@@ -91,6 +99,7 @@ en:
     form:
       harndess: "Hardness points"
       name: "Name"
+      submit: "Submit"
     tasks:
       tags: "Tags"
       category: "Category"
@@ -99,3 +108,19 @@ en:
       show-task: "Show Task"
       edit-task: "Edit Task"
       destroy-task: "Destroy Task"
+  categories:
+    index:
+      categories: "CATEGORIES"
+      new-category: "Create New Category"
+    edit:
+      show: "Show Category"
+      back: "Back to Categories"
+    new:
+      back: "Back to Categories"
+    show:
+      tasks: "Tasks with this category"
+      back: "Back to Levels"
+    form:
+      name: "Name"
+      submit: "Submit"
+    

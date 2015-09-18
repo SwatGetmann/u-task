@@ -1,4 +1,4 @@
-<h1>_CATEGORIES</h1>
+<h1><%= t('.categories') %></h1>
 
 <div class="row">
   <% @categories.each do |category| %>
@@ -9,6 +9,6 @@
 <div class="row">
   <div class = "col-md-12">
     <br>
-    <%= link_to 'New Category', new_category_path, class: "btn btn-success" %>
+    <%= link_to t('.new-category'), new_category_path, class: "btn btn-success" %>
   </div>
 </div>
