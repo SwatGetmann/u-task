@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
   get 'tags/:tag', to: 'welcome#index', as: :tag
   
-  get 'welcome/index'
+  match 'welcome/index', via: [:get, :post]
 
   get "/auth/:provider/callback" => "sessions#create"
   post "/auth/:provider/callback" => "sessions#create"
@@ -43,7 +43,7 @@ Rails.application.routes.draw do
     resources :users do
       resources :tasks
     end
-    root 'welcome#index'
+    root 'welcome#index', via: [:get, :post]
   end
 
 
