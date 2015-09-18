@@ -1,23 +1,23 @@
-<p><%= link_to "Sign in with Twitter", "/auth/twitter" %></p>
-<p><%= link_to "Sign in with GitHub", "/auth/github" %></p>
-<p><%= link_to "Sign in with Facebook", "/auth/facebook" %></p>
-<p><%= link_to "Sign in with VK", "/auth/vkontakte" %></p>
+<p><%= link_to t('.twitter'), "/auth/twitter" %></p>
+<p><%= link_to t('.github'), "/auth/github" %></p>
+<p><%= link_to t('.facebook'), "/auth/facebook" %></p>
+<p><%= link_to t('.vk'), "/auth/vkontakte" %></p>
 
 <p>
-  <strong>Don&rsquo;t use these services?</strong>
-  <%= link_to "Create an account", new_identity_path %> or login below.
+  <strong><%= t('.dont_use') %></strong>
+  <%= link_to t('.create'), new_identity_path %> <%= t('.login_below') %>
 </p>
   
 <%= form_tag "/auth/identity/callback" do %>
   <div class="field">
-    <%= label_tag :auth_key, "Email" %><br>
+    <%= label_tag :auth_key, t('.email') %><br>
     <%= text_field_tag :auth_key %>
   </div>
   <div class="field">
-    <%= label_tag :password %><br>
+    <%= label_tag :password, t('.password') %><br>
     <%= password_field_tag :password %>
   </div>
-  <div class="actions"><%= submit_tag "Login" %></div>
+  <div class="actions"><%= submit_tag t('.login') %></div>
 <% end %>
 
 

@@ -156,3 +156,23 @@ en:
       tags: "Tags"
       answer: "Answer"
       submit: "Submit"
+  sessions:
+    new:
+      twitter: "Sign Up via Twitter"
+      github: "Sign Up via GitHub"
+      facebook: "Sign Up via Facebook"
+      vk: "Sign Up via VKontakte"
+      dont_use: "Don't use this services?"
+      create: "Create an account"
+      login_below: " or login below"
+      email: "Email"
+      password: "Password"
+      login: "Log In"
+  identities:
+    new:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Password Confirmation"
+      register: "Register"
+      title: "New Account"

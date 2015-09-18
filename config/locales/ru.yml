@@ -127,3 +127,23 @@ ru:
       tags: "Тэги"
       answer: "Ответ"
       submit: "Подтвердить"
+  sessions:
+    new:
+      twitter: "Войти через Twitter"
+      github: "Войти через GitHub"
+      facebook: "Войти через Facebook"
+      vk: "Войти через VKontakte"
+      dont_use: "Не используете сети выше?"
+      create: "Создайте аккаунт"
+      login_below: " или войдите ниже"
+      email: "Электронная почта"
+      password: "Пароль"
+      login: "Войти"
+  identities:
+    new:
+      name: "Имя (никнейм)"
+      email: "Электронная почта"
+      password: "Пароль"
+      password_confirmation: "Подтверждение пароля"
+      register: "Зарегистрироваться"
+      title: "Новый аккаунт"
