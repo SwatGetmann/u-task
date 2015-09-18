@@ -1,20 +1,20 @@
 <div class="starter-template">
   <h1>UTASK.</h1>
-  <p>You task. You answer.</p>
+  <p><%= t('.slogan') %></p>
   <p></p>
 </div>
 
 <div class="row">
 	<div class="col-md-4">
-		<h3>MOST RATED USERS</h3>
+		<h3><%= t('.top-rated-users') %></h3>
 		<%= render 'users' %>
 	</div>
 	<div class="col-md-4">
-		<h3>TOP RATED TASKS</h3>
-		<%= render 'tasks' %>
+		<h3><%= t('.top-rated-tasks') %></h3>
+		<%= render 'layouts/front_tasks' %>
 	</div>
 	<div class="col-md-4">
-		<h3>TAG CLOUD</h3>
+		<h3><%= t('.tag-cloud') %></h3>
 		<% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
   		<%= link_to tag.name, tag_path(tag.name), :class => [css_class, "btn btn-default"] %>
 		<% end %>

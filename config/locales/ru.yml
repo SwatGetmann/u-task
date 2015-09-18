@@ -9,3 +9,15 @@ ru:
       signout: "Выйти из системы"
       welcome: "Привет"
       signin: "Войти в систему"
+    front_tasks:
+      tags: "Тэги"
+      category: "Категория"
+      level: "Уровень сложности"
+      rating: "Рейтинг задачи"
+      show-task: "Показать задачу"
+  welcome:
+    index:
+      slogan: "Ты создаёшь. Ты отвечаешь."
+      top-rated-users: "ТОП УЧАСТНИКИ"
+      top-rated-tasks: "ТОП ЗАДАНИЯ"
+      tag-cloud: "ОБЛАКО ТЭГОВ"

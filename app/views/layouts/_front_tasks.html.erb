@@ -1,11 +1,11 @@
 <% @tasks.each do |task| %>
   <div class="col-md-12">
-    <h1><%= task.name %></h1>
+    <h1><%= link_to task.name, user_task_path(task.user, task) %></h1>
     <%= task.description[0..250] %>
     <div class="row">
       <% if !task.tags.empty? %>
           <div class="col-md-12">
-            <h4>_tags:</h4>
+            <h4><%= t('.tags') %></h4>
               <% task.tag_list.each do |tag| %>
               <div class="btn btn-default">
                 <%= tag %>
@@ -14,18 +14,19 @@
           </div>
       <% end %>
       <div class="col-md-4">
-        <h3>_category</h3>
+        <h4><%= t('.category') %></h4>
         <%= task.show_category %>
       </div>
       <div class="col-md-4">
-        <h3>_level</h3>
+        <h4><%= t('.level') %></h4>
         <%= task.show_level %>
       </div>
       <div class="col-md-4">
-        <h3>_rating</h3>
+        <h4><%= t('.rating') %></h4>
         <%= task.rating %>
       </div>
     </div>
-    <%= link_to 'Show Task', user_task_path(task.user, task), class: "btn btn-success" %> 
+    <br></br>
+    <%= link_to t('.show-task'), user_task_path(task.user, task), class: "btn btn-success" %> 
   </div>
 <% end %>

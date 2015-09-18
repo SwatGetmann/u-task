@@ -30,3 +30,15 @@ en:
       signout: "Sign Out"
       welcome: "Welcome"
       signin: "Sign In"
+    front_tasks:
+      tags: "Tags"
+      category: "Category"
+      level: "Level"
+      rating: "Rating"
+      show-task: "Show Task"
+  welcome:
+    index:
+      slogan: "You task. You answer."
+      top-rated-users: "TOP RATED USERS"
+      top-rated-tasks: "TOP RATED TASKS"
+      tag-cloud: "TAG CLOUD"
