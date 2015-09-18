@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'answer/create'
+
+  get 'answer/new'
+
   resources :levels
   resources :categories
   resources :tasks do

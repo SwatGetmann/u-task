@@ -8,6 +8,7 @@ end
 
 class User < ActiveRecord::Base
   has_many :tasks
+  has_many :answers
   has_secure_password
   
   # validates :name, presence: true
