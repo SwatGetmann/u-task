@@ -49,6 +49,9 @@ gem 'acts_as_commentable'
 gem 'redcarpet'
 gem "pygments.rb"
 
+# Use for full-text search
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
