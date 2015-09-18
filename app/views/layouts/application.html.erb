@@ -31,6 +31,15 @@
           <%= link_to "Sign in", login_path %>
         <% end %>
       </li>
+      <li>
+      <form class="navbar-search pull-right">
+        <%= form_tag( search_tasks_path, :method => :get, class: "navbar-form" ) do %>
+        <div class="search">
+          <%= text_field_tag :query, params[:query], placeholder: "Search Tasks", class: "form-control" %> 
+        </div>
+        <% end %>
+      </form>
+      </li>
     </ul>
   </div>
 </nav>
