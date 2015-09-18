@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :tasks do
     get :autocomplete_tag_name, :on => :collection
+    resources :answers
   end
   resources :sessions
   resources :users do
