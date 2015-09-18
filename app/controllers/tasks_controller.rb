@@ -74,7 +74,9 @@ class TasksController < ApplicationController
 
   def search
     @tasks = Task.search do
-      keywords params[:query]
+      fulltext params[:query] do
+        query_phrase_slop 1
+      end
     end.results
 
     respond_to do |format|
