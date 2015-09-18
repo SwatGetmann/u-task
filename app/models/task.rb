@@ -15,12 +15,9 @@ class Task < ActiveRecord::Base
 	acts_as_commentable
 
 	searchable  do 
-		text :description, :name
+		text :description
+		text :name
   end
-		
-	end
-		
-	end
 
 	def default_level
 		return Level.new(name: "NO LEVEL, PLEASE EDIT")

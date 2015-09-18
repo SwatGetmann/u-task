@@ -72,6 +72,17 @@ class TasksController < ApplicationController
     end
   end
 
+  def search
+    @tasks = Task.search do
+      keywords params[:query]
+    end.results
+
+    respond_to do |format|
+      format.html { render :action => "index" }
+      format.xml { render :xml => @tasks }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task

@@ -1,5 +1,11 @@
 <h1>_TASKS</h1>
 
+<%= form_tag search_tasks_path, :method => :get do %>
+<p>
+  <%= text_field_tag :query, params[:query] %> <%= submit_tag "Search!" %>
+</p>
+<% end %>
+
 <% @tasks.each do |task| %>
   <div class="col-md-12">
     <h1><%= task.name %></h1>
