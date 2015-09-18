@@ -1,19 +1,17 @@
 Rails.application.routes.draw do
-  get 'answer/create'
-
-  get 'answer/new'
 
   resources :levels
   resources :categories
   resources :tasks do
     get :autocomplete_tag_name, :on => :collection
-    resources :answers
+    collection do
+      get :search
+    end
   end
   resources :sessions
   resources :users do
     resources :tasks
   end
-  resources :answers
 
 
   get 'admin' => 'admin#index'
