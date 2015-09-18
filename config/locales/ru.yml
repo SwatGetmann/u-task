@@ -21,3 +21,61 @@ ru:
       top-rated-users: "ТОП УЧАСТНИКИ"
       top-rated-tasks: "ТОП ЗАДАНИЯ"
       tag-cloud: "ОБЛАКО ТЭГОВ"
+  users:
+    index:
+      users: "УЧАСТНИКИ"
+      rating: "Рейтинг"
+      show-user: "Показать участника"
+      edit-user: "Редактировать"
+      destroy-user: "Удалить"
+    new:
+      back: "Назад к участникам"
+    show:
+      new-task: "Создать задание"
+      rating: "Рейтинг участника"
+      user-tasks: "Задачи, созданные участником"
+      edit-user: "Редактировать профиль"
+      back: "Назад к участникам"
+    edit:
+      show: "Показать участника"
+      back: "Назад к участникам"
+    form:
+      name: "Имя (никнейм)"
+      email: "Электронная почта"
+      password: "Пароль"
+      password-confirmation: "Подтверждение пароля"
+      submit: "Подтвердить"
+    tasks:      
+      tags: "Тэги"
+      category: "Категория"
+      level: "Уровень"
+      rating: "Рейтинг"
+      show-task: "Показать задание"
+      edit-task: "Редактировать задание"
+      destroy-task: "Удалить задание"
+  levels:
+    index:
+      levels: "УРОВНИ СЛОЖНОСТИ"
+      how-hard: "Очки"
+      new-level: "Создать новый уровень"
+    edit:
+      show-level: "Показать уровень"
+      back: "Назад к уровням"
+    new:
+      back: "Назад к уровням"
+    show:
+      how-hard: "Очки за ответ на задачу этой сложности"
+      tasks: "Задачи с такой сложностью"
+      back: "Назад к уровням"
+    form:
+      harndess: "Очки сложности"
+      name: "Имя уровня"
+      submit: "Подтвердить"
+    tasks:
+      tags: "Тэги"
+      category: "Категория"
+      level: "Уровень"
+      rating: "Рейтинг"
+      show-task: "Показать задание"
+      edit-task: "Редактировать задание"
+      destroy-task: "Удалить задание"

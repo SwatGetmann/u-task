@@ -1,16 +1,16 @@
-<h1>_USERS</h1>
+<h1><%= t('.users') %></h1>
 
 <% @users.each do |user| %>
   <div class="col-md-3">
     <div class="col-md-12 btn btn-default">
       <h3><%= user.name %></h3>
-      <h4>_rating</h4>
+      <h4><%= t('.rating') %></h4>
       <h3><%= user.rating %></h3>
     </div>
-    <%= link_to 'Show', user, class: "btn btn-success" %>
+    <%= link_to t('.show-user'), user, class: "btn btn-success" %>
     <% if session[:user_id] == user.id %>
-      <%= link_to 'Edit', edit_user_path(user), class: "btn btn-primary" %>
-      <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
+      <%= link_to t('.edit-user'), edit_user_path(user), class: "btn btn-primary" %>
+      <%= link_to t('.destroy-user'), user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
     <% end %>
   </div>
 <% end %>

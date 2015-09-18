@@ -5,7 +5,7 @@
     <div class="row">
       <% if !task.tags.empty? %>
           <div class="col-md-12">
-            <h4>_tags:</h4>
+            <h4><%= t('.tags') %></h4>
               <% task.tag_list.each do |tag| %>
               <div class="btn btn-default">
                 <%= tag %>
@@ -14,23 +14,24 @@
           </div>
       <% end %>
       <div class="col-md-4">
-        <h3>_category</h3>
+        <h3><%= t('.category') %></h3>
         <%= task.show_category %>
       </div>
       <div class="col-md-4">
-        <h3>_level</h3>
+        <h3><%= t('.level') %></h3>
         <%= task.show_level %>
       </div>
       <div class="col-md-4">
-        <h3>_rating</h3>
+        <h3><%= t('.rating') %></h3>
         <%= task.rating %>
       </div>
     </div>
+    <br>
     <% if task.user %>
-      <%=link_to 'Show Task', user_task_path(task.user, task), class: "btn btn-success" %> 
+      <%=link_to t('.show-task'), user_task_path(task.user, task), class: "btn btn-success" %> 
       <% if task.user.id == session[:user_id] %>
-        <%= link_to 'Edit Task', edit_user_task_path(task.user, task), class: "btn btn-primary" %> 
-        <%= link_to 'Destroy Task', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %> 
+        <%= link_to t('.edit-task'), edit_user_task_path(task.user, task), class: "btn btn-primary" %> 
+        <%= link_to t('.destroy-task'), task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %> 
       <% end %>
     <% end %>
   </div>

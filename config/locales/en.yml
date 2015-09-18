@@ -42,3 +42,60 @@ en:
       top-rated-users: "TOP RATED USERS"
       top-rated-tasks: "TOP RATED TASKS"
       tag-cloud: "TAG CLOUD"
+  users:
+    index:
+      users: "USERS"
+      rating: "Rating"
+      show-user: "Show User"
+      edit-user: "Edit"
+      destroy-user: "Destroy"
+    new:
+      back: "Back to Users"
+    show:
+      new-task: "Create New Task"
+      rating: "User's Rating"
+      user-tasks: "User's Tasks"
+      edit-user: "Edit"
+      back: "Back to Users"
+    edit:
+      show: "Show User"
+      back: "Back to Users"
+    form:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password-confirmation: "Password Confirmation"
+      submit: "Submit"
+    tasks:      
+      tags: "Tags"
+      category: "Category"
+      level: "Level"
+      rating: "Rating"
+      show-task: "Show Task"
+      edit-task: "Edit Task"
+      destroy-task: "Destroy Task"
+  levels:
+    index:
+      levels: "LEVELS"
+      how-hard: "Points for answering this kind of task"
+      new-level: "Create New Level"
+    edit:
+      show-level: "Show Level"
+      back: "Back to Levels"
+    new:
+      back: "Back to Levels"
+    show:
+      how-hard: "Points for answering this kind of task"
+      tasks: "Tasks with this level"
+      back: "Back to Levels"
+    form:
+      harndess: "Hardness points"
+      name: "Name"
+    tasks:
+      tags: "Tags"
+      category: "Category"
+      level: "Level"
+      rating: "Rating"
+      show-task: "Show Task"
+      edit-task: "Edit Task"
+      destroy-task: "Destroy Task"
