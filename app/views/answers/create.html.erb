@@ -2,5 +2,10 @@
 <p>Find me in app/views/answers/create.html.erb</p>
 
 Your answer is <%= @answer.content %>
+<% if @answer.correct %>
+Answer is correct.
+<% else %>
+Answer is not correct. Try again.
+<% end %>
 
 <%= debug @answer %>

@@ -19,6 +19,10 @@ class User < ActiveRecord::Base
     find_by_provider_and_uid(auth["provider"], auth["uid"]) || create_with_omniauth(auth)
   end
 
+  def self.from_identity(params)
+    find_by(:provider => params[:provider], :email => params[:auth_key]) || create_with_identity(params)
+  end
+
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth["provider"]
@@ -28,7 +32,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.from_identity(params)
+  def self.create_with_identity(params)
     create! do |user|
       user.provider = params[:provider]
       user.name = params[:name]
@@ -37,4 +41,7 @@ class User < ActiveRecord::Base
       user.password = params[:password]
     end
   end
+
+
+    
 end
