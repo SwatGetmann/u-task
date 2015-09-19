@@ -45,10 +45,12 @@
 
         <% else %>
 
-          // add check if user has already got a correct answer
-
-          <%= link_to t('.give-answer'), user_task_answer_path(@task.user, @task), class: "btn btn-primary" %>
-
+          <% if current_user.gave_correct_answer?(@task) %>
+            You gave right answer: <%= @task.answer %>!
+          <% else %>
+            You didn't give a right answer yet.
+            <%= link_to t('.give-answer'), user_task_answer_path(@task.user, @task), class: "btn btn-primary" %>
+          <% end %>
         <% end %>
       <% else %>
         You have to <%= link_to t('.signin'), login_path %> to answer this task.

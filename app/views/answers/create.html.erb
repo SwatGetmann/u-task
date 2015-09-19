@@ -5,7 +5,11 @@ Your answer is <%= @answer.content %>
 <% if @answer.correct %>
 Answer is correct.
 <% else %>
-Answer is not correct. Try again.
+Answer is not correct. <%= link_to "Try again", user_task_answer_path(@task.user, @task) %>.
 <% end %>
+
+Correct answer is <%= @task.answer %>
+
+<%= link_to "Back to Task", user_task_path(@task.user, @task) %>.
 
 <%= debug @answer %>

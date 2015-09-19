@@ -42,6 +42,9 @@ class User < ActiveRecord::Base
     end
   end
 
+  def gave_correct_answer?(task)
+    self.answers.find_by(:task => task, :correct => true)
+  end
 
     
 end
