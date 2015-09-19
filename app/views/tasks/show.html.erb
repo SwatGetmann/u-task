@@ -36,24 +36,23 @@
       <% end %>
     </div>
     
-    <div class="col-md-12">
+    <div class="col-md-6">
       <% if session[:user_id] %> 
-        <% if session[:user_id] == @task.user.id %>
-          
+        <% if session[:user_id] == @task.user.id %>        
           <h4><%= t('.answer') %></h4>
           <%= @task.answer %>
-
         <% else %>
-
           <% if current_user.gave_correct_answer?(@task) %>
-            You gave right answer: <%= @task.answer %>!
+            <h4><%= t('.gave-answer') %></h4>
+            <h3><%= @task.answer %></h3>
           <% else %>
-            You didn't give a right answer yet.
+            <h4><%= t('.not-gave-answer') %></h4>
+
             <%= link_to t('.give-answer'), user_task_answer_path(@task.user, @task), class: "btn btn-primary" %>
           <% end %>
         <% end %>
       <% else %>
-        You have to <%= link_to t('.signin'), login_path %> to answer this task.
+        <h4><%= t('.you-have-to') %><%= link_to t('.signin'), login_path, class: "btn btn-warning" %><%= t('.to-answer') %></h4>
       <% end %>
     </div>
 

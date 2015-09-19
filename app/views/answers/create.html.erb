@@ -1,15 +1,8 @@
-<h1>Answers#create</h1>
-<p>Find me in app/views/answers/create.html.erb</p>
-
-Your answer is <%= @answer.content %>
+<%= t('.you-gave') %><%= @answer.content %>
 <% if @answer.correct %>
-Answer is correct.
+	<h2><%= t('.correct') %></h2>
 <% else %>
-Answer is not correct. <%= link_to "Try again", user_task_answer_path(@task.user, @task) %>.
+<h2><%= t('.not-correct') %></h2><%= link_to t('.try-again'), user_task_answer_path(@task.user, @task), class: "btn btn-default" %>.
 <% end %>
 
-Correct answer is <%= @task.answer %>
-
-<%= link_to "Back to Task", user_task_path(@task.user, @task) %>.
-
-<%= debug @answer %>
+<%= link_to t('.back'), user_task_path(@task.user, @task), class: "btn btn-primary" %>.

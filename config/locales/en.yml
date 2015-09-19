@@ -143,6 +143,10 @@ en:
       comments: "Comments"
       comment: "Comment"
       back: "Back to user's tasks"
+      gave-answer: "You gave a right answer: "
+      not-gave-answer: "You didn't give a right answer yet. "
+      you-have-to: "You have to "
+      to-answer: " to answer the task."
     index:
       tasks: "TASKS"
       search: "Search Tasks"
@@ -176,6 +180,19 @@ en:
       password_confirmation: "Password Confirmation"
       register: "Register"
       title: "New Account"
+  answers:
+    new:
+      title: "Put Your Answer"
+      back: "Back to the Task"
+    form:
+      put-answer: "Put Your Answer Here"
+      send-answer: "Send Your Answer"
+    create:
+      you-gave: "You gave an answer: "
+      correct: "It's correct."
+      not-correct: "It's not correct."
+      try-again: "Try again"
+      back: "Back to the Task"
   activerecord:
     errors:
       messages:

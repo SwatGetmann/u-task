@@ -114,6 +114,10 @@ ru:
       comments: "Комментарии"
       comment: "Комментарий"
       back: "Назад к заданиям участника"
+      gave-answer: "Вы ответили правильно: "
+      not-gave-answer: "Пока ещё вы не дали правильного ответа. "
+      you-have-to: "Вам надо "
+      to-answer: " чтобы ответить на задачу."
     index:
       tasks: "ЗАДАНИЯ"
       search: "Поиск заданий"
@@ -147,6 +151,19 @@ ru:
       password_confirmation: "Подтверждение пароля"
       register: "Зарегистрироваться"
       title: "Новый аккаунт"
+  answers:
+    new:
+      title: "Ввод ответа"
+      back: "Назад к задаче"
+    form:
+      put-answer: "Введите свой ответ"
+      send-answer: "Проверить"
+    create:
+      you-gave: "Вы дали ответ: "
+      correct: "Правильно!"
+      not-correct: "Неправильно!"
+      try-again: "Попробовать ещё раз"
+      back: "Назад к задаче"
   activerecord:
     errors:
       messages:

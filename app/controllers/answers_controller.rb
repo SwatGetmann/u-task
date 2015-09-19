@@ -6,6 +6,10 @@ class AnswersController < ApplicationController
     @answer.save
     @answer.correct = correct_answer?(@answer.content, @answer.task.answer)
   	@answer.save
+    if @answer.correct
+      @user.rating += @answer.task.level.value
+      @user.save!
+    end
   end
 
   def new

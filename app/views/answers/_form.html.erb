@@ -1,4 +1,4 @@
 <%= form_for @answer, url: user_task_answer_path(@task.user, @task), html: { method: :post } do |f| %>
-  <%= f.text_field :content, :placeholder => "Put Your Answer" %>
-  <%= f.submit "Send Answer!" %>
+  <%= f.text_field :content, :placeholder => t('.put-answer'), class: "form form-control" %>
+  <%= f.submit t('.send-answer'), class: "btn btn-success" %>
 <% end %>
