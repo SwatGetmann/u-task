@@ -47,21 +47,26 @@
   </div>
 </nav>
 
-<div class="container">
-  <% if notice %>
-    <div class="alert alert-success"><%= notice %></div>
-  <% elsif alert %>
-    <div class="alert alert-danger"><%= alert %></div>
-  <% end %>
-  
-  <%= yield %>
-</div>
+    <div id="wrap">
 
-<footer class="footer"> 
-  <div class="container">
-    created by SwatGetmann
-  </div>
-</footer>
+      <!-- Begin page content -->
+      <% if notice %>
+        <div class="alert alert-success"><%= notice %></div>
+      <% elsif alert %>
+        <div class="alert alert-danger"><%= alert %></div>
+      <% end %>
 
-</body>
+      <div class="container">
+          <%= yield %>
+      </div>
+
+      <div id="push"></div>
+    </div><div id="footer">
+      <div class="container">
+        <p class="muted credit"><%= t('.example') %><%= link_to t('.project'), "https://github.com/SwatGetmann/u-task" %><%= t('.created_by') %>
+        <%= link_to "Swat Getmann", "http://www.github.com/SwatGetmann" %> </p>
+      </div>
+    </div>
+
+</body..
 </html>

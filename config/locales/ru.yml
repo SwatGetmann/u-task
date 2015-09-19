@@ -9,6 +9,9 @@ ru:
       signout: "Выйти из системы"
       welcome: "Привет"
       signin: "Войти в систему"
+      example: "Тестовый "
+      project: "проект "
+      created_by: "был сделан "
     front_tasks:
       tags: "Теги"
       category: "Категория"

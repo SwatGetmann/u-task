@@ -30,6 +30,9 @@ en:
       signout: "Sign Out"
       welcome: "Welcome"
       signin: "Sign In"
+      example: "Example "
+      project: "project "
+      created_by: "was created by "
     front_tasks:
       tags: "Tags"
       category: "Category"
