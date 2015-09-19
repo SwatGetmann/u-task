@@ -5,7 +5,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.from_omniauth(env["omniauth.auth"])
+    if params[:provider] == "identity"
+      user = User.from_identity(params)
+    else
+      user = User.from_omniauth(env["omniauth.auth"])
+    end
     session[:user_id] = user.id
     redirect_to root_url, notice: "Signed in!"
   end

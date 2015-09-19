@@ -27,4 +27,14 @@ class User < ActiveRecord::Base
       user.rating = 0.0
     end
   end
+
+  def self.from_identity(params)
+    create! do |user|
+      user.provider = params[:provider]
+      user.name = params[:name]
+      user.email = params[:email]
+      user.rating = 0.0
+      user.password = params[:password]
+    end
+  end
 end

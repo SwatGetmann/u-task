@@ -15,11 +15,6 @@ Rails.application.routes.draw do
 
 
   get 'admin' => 'admin#index'
-  controller :sessions do
-    get 'login' => :new
-    post 'login' => :create
-    delete 'logout' => :destroy
-  end
 
   get 'sessions/create'
   get "sessions/destroy"
@@ -28,21 +23,28 @@ Rails.application.routes.draw do
   
   match 'welcome/index', via: [:get, :post]
 
-  get "/auth/:provider/callback" => "sessions#create"
-  post "/auth/:provider/callback" => "sessions#create"
-  get "/signout" => "sessions#destroy", :as => :signout
-
-  match "/auth/:provider/callback", to: "sessions#create", via: [:get, :post]
-  match "/auth/failure", to: "sessions#failure", via: [:get, :post]
-  resources :identities
-
   scope '(:locale)' do
     resources :levels
     resources :categories
     resources :tasks
     resources :users do
-      resources :tasks
+      resources :tasks do
+        match "/answer", to: "tasks#answer", via: [:get, :post]
+      end
     end
+
+    get "/signout" => "sessions#destroy", :as => :signout
+
+    match "/auth/:provider/callback", to: "sessions#create", via: [:get, :post]
+    match "/auth/failure", to: "sessions#failure", via: [:get, :post]
+    resources :identities
+
+    controller :sessions do
+      get 'login' => :new
+      post 'login' => :create
+      delete 'logout' => :destroy
+    end
+
     root 'welcome#index', via: [:get, :post]
   end
 

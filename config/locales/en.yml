@@ -176,3 +176,18 @@ en:
       password_confirmation: "Password Confirmation"
       register: "Register"
       title: "New Account"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Invalid record."
+      models:
+        identity:
+          attributes:
+            password:
+              blank: "No password detected"
+            name:
+              blamk: "No name detected"
+            email:
+              blank: "No email detected"
+              invaild: "Invalid email"
+              taken: "Email was taken, please use another"

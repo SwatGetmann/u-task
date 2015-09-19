@@ -10,13 +10,13 @@ ru:
       welcome: "Привет"
       signin: "Войти в систему"
     front_tasks:
-      tags: "Тэги"
+      tags: "Теги"
       category: "Категория"
       level: "Уровень сложности"
       rating: "Рейтинг задачи"
       show-task: "Показать задачу"
     tasks:
-      tags: "Тэги"
+      tags: "Теги"
       category: "Категория"
       level: "Уровень"
       rating: "Рейтинг"
@@ -28,7 +28,7 @@ ru:
       slogan: "Ты создаёшь. Ты отвечаешь."
       top-rated-users: "ТОП УЧАСТНИКИ"
       top-rated-tasks: "ТОП ЗАДАНИЯ"
-      tag-cloud: "ОБЛАКО ТЭГОВ"
+      tag-cloud: "ОБЛАКО ТЕГОВ"
   users:
     index:
       users: "УЧАСТНИКИ"
@@ -54,7 +54,7 @@ ru:
       password-confirmation: "Подтверждение пароля"
       submit: "Подтвердить"
     tasks:      
-      tags: "Тэги"
+      tags: "Теги"
       category: "Категория"
       level: "Уровень"
       rating: "Рейтинг"
@@ -103,7 +103,7 @@ ru:
     show:
       edit: "Редактировать задание"
       destroy: "Удалить задание"
-      tags: "Тэги"
+      tags: "Теги"
       category: "Категория"
       level: "Уровень сложности"
       rating: "Рейтинг"
@@ -124,7 +124,7 @@ ru:
       description: "Описание (markdown)"
       category: "Категория"
       level: "Уровень"
-      tags: "Тэги"
+      tags: "Теги"
       answer: "Ответ"
       submit: "Подтвердить"
   sessions:
@@ -147,3 +147,18 @@ ru:
       password_confirmation: "Подтверждение пароля"
       register: "Зарегистрироваться"
       title: "Новый аккаунт"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Invalid record."
+      models:
+        identity:
+          attributes:
+            password:
+              blank: "No password detected"
+            name:
+              blank: "No name detected"
+            email:
+              blank: "No email detected"
+              invaild: "Invalid email"
+              taken: "Email was taken, please use another"
