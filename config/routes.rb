@@ -29,7 +29,8 @@ Rails.application.routes.draw do
     resources :tasks
     resources :users do
       resources :tasks do
-        match "/answer", to: "tasks#answer", via: [:get, :post]
+        get "/answer", to: "answers#new"
+        post "/answer", to: "answers#create"
       end
     end
 

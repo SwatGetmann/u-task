@@ -47,7 +47,7 @@
 
           // add check if user has already got a correct answer
 
-          <%= link_to t('.give-answer'), "#", class: "btn btn-primary" %>
+          <%= link_to t('.give-answer'), user_task_answer_path(@task.user, @task), class: "btn btn-primary" %>
 
         <% end %>
       <% else %>

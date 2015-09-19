@@ -86,7 +86,9 @@ class TasksController < ApplicationController
   end
 
   def answer
-    
+    @task = Task.find(params[:task_id])
+    @user = User.find(params[:user_id])
+    @user.answers.build
   end
 
   private
