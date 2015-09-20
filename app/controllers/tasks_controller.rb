@@ -80,7 +80,7 @@ class TasksController < ApplicationController
     end.results
 
     respond_to do |format|
-      format.html { render :action => "index" }
+      format.html { render :action => "index", :controller => :tasks }
       format.xml { render :xml => @tasks }
     end
   end

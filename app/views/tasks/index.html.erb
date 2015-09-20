@@ -11,19 +11,6 @@
 	</div>
 </div>
 
-
-
-<div class = "row">
-<%= form_tag search_tasks_path, :method => :get do %>
-	<div class = "col-md-10 col-xs-6">
-		<%= text_field_tag :query, params[:query], placeholder: t('.search'), class: "form-control" %>
-	</div>
-	<div class = "col-md-2 col-xs-6">
-		<%= submit_tag t('.search-submit'), class: "btn btn-primary" %>
-	</div>
-<% end %>
-</div>
-
 <%= render 'layouts/tasks' %>
 
 

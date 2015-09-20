@@ -27,6 +27,7 @@ ru:
       show-task: "Показать задание"
       edit-task: "Редактировать задание"
       destroy-task: "Удалить задание"
+      no-tasks-found: "Нет заданий."
   welcome:
     index:
       slogan: "Ты создаёшь. Ты отвечаешь."
@@ -136,6 +137,9 @@ ru:
       tags: "Теги"
       answer: "Ответ"
       submit: "Подтвердить"
+    search:
+      search: "Поиск заданий"
+      search-submit: "Искать!"
   sessions:
     new:
       twitter: "Войти через Twitter"

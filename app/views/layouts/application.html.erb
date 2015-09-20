@@ -34,19 +34,8 @@
         </li> 
       </ul>
 
+      <%= render :partial => 'tasks/search' %>
 
-      <div class="col-sm-3 col-md-3">
-        <form class="navbar-form" role="search">
-        <%= form_tag search_tasks_path, :method => :get do %>
-        <div class="input-group">
-            <%= text_field_tag :query, params[:query], placeholder: t('.search'), class: "form-control", id:"srch-term" %>
-            <div class="input-group-btn">
-                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-            </div>
-        </div>
-        <% end %>
-        </form>
-      </div>
     </div><!--/.nav-collapse -->
   </div>
 </nav>

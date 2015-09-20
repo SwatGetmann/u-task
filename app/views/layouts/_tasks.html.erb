@@ -38,3 +38,5 @@
     </div>
   </div>
 <% end %>
+
+<%= t('.no-tasks-found') if @tasks.empty? %>

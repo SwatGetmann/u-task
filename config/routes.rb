@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :tasks do
     get :autocomplete_tag_name, :on => :collection
     collection do
-      get :search
+      match :search, via: [:get, :post]
     end
   end
   resources :sessions

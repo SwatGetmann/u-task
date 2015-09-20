@@ -48,6 +48,7 @@ en:
       show-task: "Show Task"
       edit-task: "Edit Task"
       destroy-task: "Destroy Task"
+      no-tasks-found: "No tasks found."
   welcome:
     index:
       slogan: "You task. You answer."
@@ -165,6 +166,9 @@ en:
       tags: "Tags"
       answer: "Answer"
       submit: "Submit"
+    search:
+      search: "Search Tasks"
+      search-submit: "Search!"
   sessions:
     new:
       twitter: "Sign Up via Twitter"
