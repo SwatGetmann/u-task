@@ -47,5 +47,8 @@ class User < ActiveRecord::Base
     self.answers.find_by(:task => task, :correct => true)
   end
 
+  def show_rating
+    self.rating / self.answers.where(:correct => true).count
+  end
     
 end
