@@ -6,9 +6,9 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     if params[:user_id]
-      @tasks = Task.where(user_id: params[:user_id])
+      @tasks = Task.where(user_id: params[:user_id]).paginate(:page => params[:page], :per_page => 2)
     else
-      @tasks = Task.all
+      @tasks = Task.all.paginate(:page => params[:page], :per_page => 2)
     end
   end
 

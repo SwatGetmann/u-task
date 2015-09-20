@@ -195,3 +195,7 @@ ru:
               blank: "No email detected"
               invaild: "Invalid email"
               taken: "Email was taken, please use another"
+  will_paginate:
+    previous_label: "&#8592; Предыдущие"
+    next_label: "Следующие &#8594;"
+    page_gap: "&hellip;"

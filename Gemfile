@@ -54,6 +54,9 @@ gem "pygments.rb"
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 
+# use for pagination
+gem 'will_paginate'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
