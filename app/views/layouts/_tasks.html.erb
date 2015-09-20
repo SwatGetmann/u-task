@@ -1,38 +1,40 @@
 <% @tasks.each do |task| %>
-  <div class="col-md-12">
-    <h1><%= task.name %></h1>
-    <%= task.description[0..250] %>
+  <div class="col-md-6">
+    <h1><b><%= link_to task.name, user_task_path(task.user, task) %></b></h1>
+    <%= markdown(task.description[0..250]) %>
     <div class="row">
       <% if !task.tags.empty? %>
           <div class="col-md-12">
             <h4><%= t('.tags') %></h4>
-              <% task.tag_list.each do |tag| %>
-              <div class="btn btn-default">
-                <%= tag %>
-              </div>
+              <% task.tags.each do |tag| %>
+                <%= link_to tag.name, tag_path(tag.name), :class => "btn btn-default" %>
               <% end %>
           </div>
       <% end %>
       <div class="col-md-4">
-        <h3><%= t('.category') %></h3>
+        <h4><%= t('.category') %></h4>
         <%= task.show_category %>
       </div>
       <div class="col-md-4">
-        <h3><%= t('.level') %></h3>
+        <h4><%= t('.level') %></h4>
         <%= task.show_level %>
       </div>
       <div class="col-md-4">
-        <h3><%= t('.rating') %></h3>
+        <h4><%= t('.rating') %></h4>
         <%= task.rating %>
       </div>
     </div>
     <br>
-    <% if task.user %>
-      <%=link_to t('.show-task'), user_task_path(task.user, task), class: "btn btn-success" %> 
-      <% if task.user.id == session[:user_id] %>
-        <%= link_to t('.edit-task'), edit_user_task_path(task.user, task), class: "btn btn-primary" %> 
-        <%= link_to t('.destroy-task'), task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %> 
-      <% end %>
-    <% end %>
+    <div class="row">
+      <div class="col-md-12">
+        <% if task.user %>
+          <%=link_to t('.show-task'), user_task_path(task.user, task), class: "btn btn-success" %> 
+          <% if task.user.id == session[:user_id] %>
+            <%= link_to t('.edit-task'), edit_user_task_path(task.user, task), class: "btn btn-primary" %> 
+            <%= link_to t('.destroy-task'), task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %> 
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
 <% end %>

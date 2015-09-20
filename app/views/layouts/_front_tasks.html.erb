@@ -1,8 +1,10 @@
 <div class="row">
   <% @tasks.each do |task| %>
     <div class="col-md-12">
-      <h1><%= link_to task.name, user_task_path(task.user, task) %></h1>
+      <h1><b><%= link_to task.name, user_task_path(task.user, task) %></b></h1>
+      <div class="description">
       <%= markdown(task.description[0..250]) %>
+      </div>
       <div class="row">
         <% if !task.tags.empty? %>
             <div class="col-md-12">

@@ -1,17 +1,37 @@
-<h1><%= t('.tasks') %></h1>
+<div class = "row">
+	<div class = "col-md-4">
+		<h1><%= t('.tasks') %></h1>
+	</div>
+	<div class = "col-md-4 pad-top">
+		<% if !session[:user_id].nil? %>
+		  <%= link_to new_user_task_path(User.find(session[:user_id])), class: "btn btn-success" do %>
+		    <i class="glyphicon glyphicon-plus"></i> <%= t('.new-task') %>
+		  <% end %>
+		<% end %>
+	</div>
+</div>
 
+
+
+<div class = "row">
 <%= form_tag search_tasks_path, :method => :get do %>
-<p>
-  <%= text_field_tag :query, params[:query], placeholder: t('.search'), class: "form-control" %> <%= submit_tag t('.search-submit'), class: "btn btn-primary" %>
-</p>
+	<div class = "col-md-10 col-xs-6">
+		<%= text_field_tag :query, params[:query], placeholder: t('.search'), class: "form-control" %>
+	</div>
+	<div class = "col-md-2 col-xs-6">
+		<%= submit_tag t('.search-submit'), class: "btn btn-primary" %>
+	</div>
 <% end %>
+</div>
+
+
+<p>
+   
+</p>
+
 
 <%= render 'layouts/tasks' %>
 
 <br>
 
-<% if !session[:user_id].nil? %>
-  <%= link_to new_user_task_path(User.find(session[:user_id])), class: "btn btn-success" do %>
-    <i class="glyphicon glyphicon-plus"></i> <%= t('.new-task') %>
-  <% end %>
-<% end %>
+

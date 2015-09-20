@@ -66,6 +66,7 @@ en:
       new-task: "Create New Task"
       rating: "User's Rating"
       user-tasks: "User's Tasks"
+      user-no-tasks: "User hasn't created any tasks yet."
       edit-user: "Edit"
       back: "Back to Users"
     edit:
