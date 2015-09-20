@@ -12,6 +12,7 @@ ru:
       example: "Тестовый "
       project: "проект "
       created_by: "был сделан "
+      search: "Поиск заданий"
     front_tasks:
       tags: "Теги"
       category: "Категория"

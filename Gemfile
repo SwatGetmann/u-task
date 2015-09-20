@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # Use Bootstrap
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+gem "font-awesome-rails"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

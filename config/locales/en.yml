@@ -33,6 +33,7 @@ en:
       example: "Example "
       project: "project "
       created_by: "was created by "
+      search: "Search Tasks"
     front_tasks:
       tags: "Tags"
       category: "Category"
