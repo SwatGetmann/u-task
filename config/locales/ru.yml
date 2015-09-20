@@ -4,7 +4,7 @@ ru:
     application:
       users:   "Участники"
       categories:  "Категории"
-      levels: "Уровни сложности"
+      levels: "Уровни"
       tasks:  "Задания"
       signout: "Выйти"
       welcome: "Привет"

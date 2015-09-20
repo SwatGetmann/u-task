@@ -29,6 +29,7 @@ class User < ActiveRecord::Base
       user.uid = auth["uid"]
       user.name = auth["info"]["name"]
       user.rating = 0.0
+      user.password = SecureRandom.urlsafe_base64(16)
     end
   end
 
