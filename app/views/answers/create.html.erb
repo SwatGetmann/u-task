@@ -1,8 +1,20 @@
-<%= t('.you-gave') %><%= @answer.content %>
-<% if @answer.correct %>
-	<h2><%= t('.correct') %></h2>
-<% else %>
-<h2><%= t('.not-correct') %></h2><%= link_to t('.try-again'), user_task_answer_path(@task.user, @task), class: "btn btn-default" %>.
-<% end %>
-
-<%= link_to t('.back'), user_task_path(@task.user, @task), class: "btn btn-primary" %>.
+<div class="row">
+	<div class = "col-md-12">
+		<h2><%= t('.you-gave') %><i><%= @answer.content %></h2></i>
+	</div>
+</div>
+<div class="row">
+	<div class = "col-md-12">
+		<% if @answer.correct %>
+			<h1><%= t('.correct') %></h1>
+		<% else %>
+			<h1><b><%= t('.not-correct') %></b></h1><%= link_to t('.try-again'), user_task_answer_path(@task.user, @task), class: "btn btn-default" %>
+		<% end %>
+	</div>
+</div>
+<div class="row">
+	<div class = "col-md-12">
+	<br>
+		<%= link_to t('.back'), user_task_path(@task.user, @task), class: "btn btn-primary" %>
+	</div>
+</div>

@@ -5,11 +5,13 @@ class AnswersController < ApplicationController
   	@answer = Answer.new(:content=> params[:answer][:content], :user => @user, :task => @task)
     @answer.save
     @answer.correct = correct_answer?(@answer.content, @answer.task.answer)
-  	@answer.save
     if @answer.correct
       @user.rating += @answer.task.level.value
+      @task.rating += 1
+      @task.save!
       @user.save!
     end
+    @answer.save!
   end
 
   def new

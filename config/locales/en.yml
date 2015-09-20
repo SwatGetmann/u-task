@@ -40,6 +40,7 @@ en:
       level: "Level"
       rating: "Rating"
       show-task: "Show Task"
+      no-tasks-found: "No tasks found."
     tasks:
       tags: "Tags"
       category: "Category"
@@ -55,6 +56,8 @@ en:
       top-rated-users: "TOP 10 RATED USERS"
       top-rated-tasks: "TOP 10 RATED TASKS"
       tag-cloud: "TAG CLOUD"
+    users:
+      no-users-found: "No users found."
   users:
     index:
       users: "USERS"
@@ -64,6 +67,7 @@ en:
       destroy-user: "Destroy"
     new:
       back: "Back to Users"
+      new-user: "New User"
     show:
       new-task: "Create New Task"
       rating: "User's Rating"
@@ -74,6 +78,7 @@ en:
     edit:
       show: "Show User"
       back: "Back to Users"
+      title: "Edit User"
     form:
       name: "Name"
       email: "Email"
@@ -96,8 +101,10 @@ en:
     edit:
       show-level: "Show Level"
       back: "Back to Levels"
+      title: "Edit Level"
     new:
       back: "Back to Levels"
+      title: "New Level"
     show:
       how-hard: "Points for answering this kind of task"
       tasks: "Tasks with this level"
@@ -121,8 +128,10 @@ en:
     edit:
       show: "Show Category"
       back: "Back to Categories"
+      title: "Edit Category"
     new:
       back: "Back to Categories"
+      title: "New Level"
     show:
       tasks: "Tasks with this category"
       back: "Back to Levels"
@@ -132,9 +141,11 @@ en:
   tasks:
     new:
       back: "Back"
+      title: "New Task"
     edit:
       show: "Show Task"
       back: "Back"
+      title: "Edit Task"
     show:
       edit: "Edit Task"
       destroy: "Destroy Task"

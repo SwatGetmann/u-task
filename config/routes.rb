@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  # resources :levels
-  # resources :categories
   resources :tasks do
     get :autocomplete_tag_name, :on => :collection
     collection do
@@ -9,10 +7,6 @@ Rails.application.routes.draw do
     end
   end
   resources :sessions
-  # resources :users do
-  #   resources :tasks
-  # end
-
 
   get 'admin' => 'admin#index'
 
