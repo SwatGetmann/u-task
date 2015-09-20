@@ -1,4 +1,4 @@
-<div class="col-sm-3 col-md-3 search">
+<div class=" col-md-3 search">
   <%= form_tag :controller => 'tasks', :action => 'search', :method => :get do %>
   <div class="input-group">
       <%= text_field_tag :query, params[:query], :id => 'search_field', placeholder: t('.search'), class: "form-control" %>
