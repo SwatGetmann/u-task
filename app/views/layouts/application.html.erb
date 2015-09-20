@@ -11,39 +11,40 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <%= link_to "UTASK", root_path, class: "navbar-brand" %>
     </div>
-    <ul class="nav navbar-nav">
-      <li>
-        <%= link_to t('.users'), users_path %>
-      </li>      
-      <li>
-        <%= link_to t('.categories'), categories_path %>
-      </li> 
-      <li>
-        <%= link_to t(".levels"), levels_path %>
-      </li>
-      <li>
-        <%= link_to t('.tasks'), tasks_path %>
-      </li>
-      <li>
-        <% if current_user %>
-          <li><%= link_to t('.signout'), signout_path %></li>
-          <p class="navbar-text" ><%= t('.welcome') %>, <%= link_to current_user.name, current_user %>!</p>
-        <% else %>
-          <%= link_to t('.signin'), login_path %>
-        <% end %>
-      </li> 
-    </ul>
-    <div class="lang-selector">
-      <%= form_tag root_path, class: 'locale' do %>
-        <%= select_tag 'set_locale', 
-        options_for_select(LANGUAGES, I18n.locale.to_s), 
-        onchange: 'this.form.submit()' %>
-        <%= submit_tag 'submit' %>
-        <%= javascript_tag "$('.locale input').hide()" %>
-      <% end %> 
-    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><%= link_to t('.users'), users_path %></li>
+        <li><%= link_to t('.categories'), categories_path %></li>
+        <li><%= link_to t(".levels"), levels_path %></li>
+        <li><%= link_to t('.tasks'), tasks_path %></li>
+        <li><% if current_user %>
+            <li><%= link_to t('.signout'), signout_path %></li>
+            <p class="navbar-text" ><%= t('.welcome') %>, <%= link_to current_user.name, current_user %>!</p>
+          <% else %>
+            <%= link_to t('.signin'), login_path %>
+          <% end %>
+        </li> 
+        <li>
+          <div class="lang-selector">
+            <%= form_tag root_path, class: 'locale' do %>
+              <%= select_tag 'set_locale', 
+              options_for_select(LANGUAGES, I18n.locale.to_s), 
+              onchange: 'this.form.submit()', class: "form-control", id: "sel1" %>
+              <%= submit_tag 'submit' %>
+              <%= javascript_tag "$('.locale input').hide()" %>
+            <% end %> 
+          </div>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
   </div>
 </nav>
 
