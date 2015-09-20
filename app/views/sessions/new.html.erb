@@ -11,13 +11,13 @@
 <%= form_tag "/auth/identity/callback" do %>
   <div class="field">
     <%= label_tag :auth_key, t('.email') %><br>
-    <%= text_field_tag :auth_key %>
+    <%= text_field_tag :auth_key, nil, class: "form-control", id: "usr" %>
   </div>
   <div class="field">
     <%= label_tag :password, t('.password') %><br>
-    <%= password_field_tag :password %>
+    <%= password_field_tag :password, nil, class: "form-control", id: "pwd" %>
   </div>
-  <div class="actions"><%= submit_tag t('.login') %></div>
+  <div class=""><br><%= submit_tag t('.login'), class: "btn btn-primary" %></div>
 <% end %>
 
 

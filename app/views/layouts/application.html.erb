@@ -49,15 +49,14 @@
 </nav>
 
     <div id="wrap">
-
       <!-- Begin page content -->
-      <% if notice %>
-        <div class="alert alert-success"><%= notice %></div>
-      <% elsif alert %>
-        <div class="alert alert-danger"><%= alert %></div>
-      <% end %>
-
       <div class="container">
+        <% if notice %>
+          <div class="alert alert-success"><%= notice %></div>
+        <% elsif alert %>
+          <div class="alert alert-danger"><%= alert %></div>
+        <% end %>
+        
           <%= yield %>
       </div>
 
