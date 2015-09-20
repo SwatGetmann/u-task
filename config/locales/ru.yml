@@ -29,8 +29,8 @@ ru:
   welcome:
     index:
       slogan: "Ты создаёшь. Ты отвечаешь."
-      top-rated-users: "ТОП УЧАСТНИКИ"
-      top-rated-tasks: "ТОП ЗАДАНИЯ"
+      top-rated-users: "ТОП-10 УЧАСТНИКОВ"
+      top-rated-tasks: "ТОП-10 ЗАДАНИИЙ"
       tag-cloud: "ОБЛАКО ТЕГОВ"
   users:
     index:

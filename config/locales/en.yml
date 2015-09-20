@@ -50,8 +50,8 @@ en:
   welcome:
     index:
       slogan: "You task. You answer."
-      top-rated-users: "TOP RATED USERS"
-      top-rated-tasks: "TOP RATED TASKS"
+      top-rated-users: "TOP 10 RATED USERS"
+      top-rated-tasks: "TOP 10 RATED TASKS"
       tag-cloud: "TAG CLOUD"
   users:
     index:
