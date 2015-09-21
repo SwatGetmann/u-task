@@ -13,11 +13,11 @@
       <% end %>
       <div class="col-md-4">
         <h4><%= t('.category') %></h4>
-        <%= task.show_category %>
+        <%= link_to task.show_category, task.category %>
       </div>
       <div class="col-md-4">
         <h4><%= t('.level') %></h4>
-        <%= task.show_level %>
+        <%= link_to task.show_level, task.level %>
       </div>
       <div class="col-md-4">
         <h4><%= t('.rating') %></h4>
