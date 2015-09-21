@@ -1,28 +1,23 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version: **Ruby-2.2.2, Rails 4.2.4**
 
-Things you may want to cover:
+* System dependencies: **Linux Mint 17.2**
 
-* Ruby version: ruby-2.2.2, rails 4.2.4
+* Configuration: OmniAuth (providers + identity), Acts-As-Taggable, Acts-As-Commentable, Rails-4-Autocomplete, Redcarpet, Sunspot, will_paginate, bootstrap
 
-* System dependencies
+* Database creation: see db/migrate folder for more info
 
-* Configuration: bcrypt enabled
+* Database initialization: read db/seeds.rb 
 
-* Database creation
+== TODO
 
-* Database initialization
+* **Comments**. Need to use AJAX.
 
-* How to run the test suite
+* **Achievement system**.
 
-* Services (job queues, cache servers, search engines, etc.)
+* **Rating system**. Was not done due to unresolved dependencies in popular gems like _letsrate_ and _ajaxful-rating_
 
-* Deployment instructions
+* **Adding pictures to description with Drag-&-Drop**. 
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* **Multiple answering** with ability to add lines for new answers or delete existing ones.
