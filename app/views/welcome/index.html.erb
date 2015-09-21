@@ -10,7 +10,11 @@
 		<%= render 'users' %>
 	</div>
 	<div class="col-md-4">
-		<h3><%= t('.top-rated-tasks') %></h3>
+		<% if params[:tag] %>
+			<h3><%= t('.tags-found') %><%= params[:tag] %></h3>
+		<% else %>
+			<h3><%= t('.top-rated-tasks') %></h3>
+		<% end %>
 		<%= render 'layouts/front_tasks' %>
 	</div>
 	<div class="col-md-4">

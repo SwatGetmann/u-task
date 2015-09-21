@@ -57,6 +57,7 @@ en:
       top-rated-users: "TOP 10 RATED USERS"
       top-rated-tasks: "TOP 10 RATED TASKS"
       tag-cloud: "TAG CLOUD"
+      tags-found: "TASKS WITH TAG: "
     users:
       no-users-found: "No users found."
   users:

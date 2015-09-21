@@ -5,8 +5,12 @@
     </div>
     <div class="col-md-12">
       <% if @task.user && session[:user_id] == @task.user.id %>
-        <%= link_to t('.edit'), edit_user_task_path(@task.user, @task), class: "btn btn-primary" %> 
-        <%= link_to t('.destroy'), @task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %> 
+        <%= link_to t('.edit'), 
+          edit_user_task_path(@task.user, @task), 
+          class: "btn btn-primary" %> 
+        <%= link_to t('.destroy'), 
+          @task, method: :delete, data: { confirm: 'Are you sure?' }, 
+          class: "btn btn-warning" %> 
       <% end %>
     </div>
   </div>
@@ -14,7 +18,8 @@
     <% if !@task.tags.empty? %>
         <div class="col-md-12">
           <h4><%= t('.tags') %></h4>
-          <%= @task.tag_list.map { |t| link_to t, tag_path(t), class: "btn btn-default" }.join(', ').html_safe %>
+          <%= @task.tag_list.map { |t| link_to t, tag_path(t), 
+            class: "btn btn-default" }.join(', ').html_safe %>
         </div>
     <% end %>
     <div class="col-md-4">
@@ -32,7 +37,8 @@
     <div class="col-md-4">
       <% if @task.user %>
         <h4><%= t('.author') %></h4>
-        <%= link_to @task.user.name, @task.user, class: "btn btn-default" %>
+        <%= link_to @task.user.name, @task.user, 
+        class: "btn btn-default" %>
       <% end %>
     </div>
     
@@ -47,12 +53,16 @@
             <h3><%= @task.answer %></h3>
           <% else %>
             <h4><%= t('.not-gave-answer') %></h4>
-
-            <%= link_to t('.give-answer'), user_task_answer_path(@task.user, @task), class: "btn btn-primary" %>
+            <%= link_to t('.give-answer'), 
+              user_task_answer_path(@task.user, @task), 
+              class: "btn btn-primary" %>
           <% end %>
         <% end %>
       <% else %>
-        <h4><%= t('.you-have-to') %><%= link_to t('.signin'), login_path, class: "btn btn-warning" %><%= t('.to-answer') %></h4>
+        <h4><%= t('.you-have-to') %>
+        <%= link_to t('.signin'), login_path, 
+        class: "btn btn-warning" %>
+        <%= t('.to-answer') %></h4>
       <% end %>
     </div>
 
@@ -83,6 +93,8 @@
 <div class="row"> 
   <div class="col-md-12">
     <br>
-    <%= link_to t('.back'), user_tasks_path(@task.user), class: "btn btn-primary" %>
+    <%= link_to t('.back'), 
+    user_tasks_path(@task.user), 
+    class: "btn btn-primary" %>
   </div>
 </div>

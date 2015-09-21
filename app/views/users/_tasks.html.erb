@@ -7,7 +7,8 @@
           <div class="col-md-12">
             <h4><%= t('.tags') %></h4>
               <% task.tags.each do |tag| %>
-                <%= link_to tag.name, tag_path(tag.name), :class => "btn btn-default" %>
+                <%= link_to tag.name, tag_path(tag.name), 
+                  class: "btn btn-default" %>
               <% end %>
           </div>
       <% end %>
@@ -28,10 +29,16 @@
     <div class="row">
       <div class="col-md-12">
         <% if task.user %>
-          <%=link_to t('.show-task'), user_task_path(task.user, task), class: "btn btn-success" %> 
+          <%=link_to t('.show-task'), 
+            user_task_path(task.user, task), 
+            class: "btn btn-success" %> 
           <% if task.user.id == session[:user_id] %>
-            <%= link_to t('.edit-task'), edit_user_task_path(task.user, task), class: "btn btn-primary" %> 
-            <%= link_to t('.destroy-task'), task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %> 
+            <%= link_to t('.edit-task'), 
+              edit_user_task_path(task.user, task), 
+              class: "btn btn-primary" %> 
+            <%= link_to t('.destroy-task'), 
+              task, method: :delete, data: { confirm: 'Are you sure?' }, 
+              class: "btn btn-warning" %> 
           <% end %>
         <% end %>
       </div>

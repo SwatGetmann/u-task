@@ -36,6 +36,7 @@ ru:
       top-rated-users: "ТОП-10 УЧАСТНИКОВ"
       top-rated-tasks: "ТОП-10 ЗАДАНИИЙ"
       tag-cloud: "ОБЛАКО ТЕГОВ"
+      tags-found: "ЗАДАНИЯ С ТЕГОМ: "
     users:
       no-users-found: "Не найдено участников."
   users:
