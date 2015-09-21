@@ -11,16 +11,16 @@ class SessionsController < ApplicationController
       user = User.from_omniauth(env["omniauth.auth"])
     end
     session[:user_id] = user.id
-    redirect_to root_url, notice: "Signed in!"
+    redirect_to root_url, notice: t('.sign-in')
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, notice: "Signed out!"
+    redirect_to root_url, notice: t('.sign-out')
   end
 
   def failure
-    redirect_to :back, alert: "Authentication failed, please try again."
+    redirect_to :back, alert: t('.auth-failed')
   end
 	
 end

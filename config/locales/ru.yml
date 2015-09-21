@@ -149,18 +149,6 @@ ru:
     search:
       search: "Поиск заданий"
       search-submit: "Искать!"
-  sessions:
-    new:
-      twitter: "Войти через Twitter"
-      github: "Войти через GitHub"
-      facebook: "Войти через Facebook"
-      vk: "Войти через VKontakte"
-      dont_use: "Не используете сети выше?"
-      create: "Создайте аккаунт"
-      login_below: " или войдите ниже"
-      email: "Электронная почта"
-      password: "Пароль"
-      login: "Войти"
   identities:
     new:
       name: "Имя (никнейм)"
@@ -201,3 +189,20 @@ ru:
     previous_label: "&#8592; Предыдущие"
     next_label: "Следующие &#8594;"
     page_gap: "&hellip;"
+  sessions:
+    failure:
+      auth-failed: "Аутентифиация провалена. Попробуйте ещё раз."
+    destroy:
+      sign-out: "Вы успешно вышли!"
+      sign-in: "Вы успешно зашли!"
+    new:
+      twitter: "Войти через Twitter"
+      github: "Войти через GitHub"
+      facebook: "Войти через Facebook"
+      vk: "Войти через VKontakte"
+      dont_use: "Не используете сети выше?"
+      create: "Создайте аккаунт"
+      login_below: " или войдите ниже"
+      email: "Электронная почта"
+      password: "Пароль"
+      login: "Войти"
