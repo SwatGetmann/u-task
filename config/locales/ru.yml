@@ -172,19 +172,22 @@ ru:
       back: "Назад к задаче"
   activerecord:
     errors:
-      messages:
-        record_invalid: "Invalid record."
       models:
         identity:
           attributes:
             password:
-              blank: "No password detected"
+              blank: "Не введён пароль"
+              invaild: "Пароль некорректный"
             name:
-              blank: "No name detected"
+              blank: "Не введено имя"
+              invaild: "Имя некорректное"
+              taken: "Имя занято, возьмите другое"
             email:
-              blank: "No email detected"
-              invaild: "Invalid email"
-              taken: "Email was taken, please use another"
+              blank: "Не введена почта"
+              invaild: "Почта некорректная"
+              taken: "Почта занята, возьмите другую"
+      messages:
+        record_invalid: "Invalid record."
   will_paginate:
     previous_label: "&#8592; Предыдущие"
     next_label: "Следующие &#8594;"
@@ -194,6 +197,7 @@ ru:
       auth-failed: "Аутентифиация провалена. Попробуйте ещё раз."
     destroy:
       sign-out: "Вы успешно вышли!"
+    create:
       sign-in: "Вы успешно зашли!"
     new:
       twitter: "Войти через Twitter"

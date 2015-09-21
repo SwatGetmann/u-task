@@ -95,6 +95,24 @@ en:
       show-task: "Show Task"
       edit-task: "Edit Task"
       destroy-task: "Destroy Task"
+  sessions:
+    new:
+      twitter: "Sign Up via Twitter"
+      github: "Sign Up via GitHub"
+      facebook: "Sign Up via Facebook"
+      vk: "Sign Up via VKontakte"
+      dont_use: "Don't use this services?"
+      create: "Create an account"
+      login_below: " or login below"
+      email: "Email"
+      password: "Password"
+      login: "Log In"
+    failure:
+      auth-failed: "Authentication failed. Please, try again."
+    destroy:
+      sign-out: "Singed out!"
+    create:
+      sign-in: "Вы успешно зашли!"
   levels:
     index:
       levels: "LEVELS"
@@ -182,18 +200,6 @@ en:
     search:
       search: "Search Tasks"
       search-submit: "Search!"
-  sessions:
-    new:
-      twitter: "Sign Up via Twitter"
-      github: "Sign Up via GitHub"
-      facebook: "Sign Up via Facebook"
-      vk: "Sign Up via VKontakte"
-      dont_use: "Don't use this services?"
-      create: "Create an account"
-      login_below: " or login below"
-      email: "Email"
-      password: "Password"
-      login: "Log In"
   identities:
     new:
       name: "Name"
@@ -234,9 +240,3 @@ en:
       previous_label: "&#8592; Previous"
       next_label: "Next &#8594;"
       page_gap: "&hellip;"
-    sessions:
-      failure:
-        auth-failed: "Authentication failed. Please, try again."
-      destroy:
-        sign-out: "Singed out!"
-        sign-in: "Signed in!"
