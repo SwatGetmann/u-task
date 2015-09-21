@@ -1,10 +1,15 @@
 <div class="row">
-	<%= form_for @answer, url: user_task_answer_path(@task.user, @task), html: { method: :post } do |f| %>
-	<div class="col-md-8">
- 		<%= f.text_field :content, :placeholder => t('.put-answer'), class: "form form-control" %>
+	<%= form_for @answer, 
+		url: user_task_answer_path(@task.user, @task), 
+		html: { method: :post } do |f| %>
+	<div class="col-md-8 col-xs-6">
+ 		<%= f.text_field :content, 
+ 			:placeholder => t('.put-answer'), 
+ 			class: "form form-control" %>
 	</div>
-	<div class="col-md-4">
-		<%= f.submit t('.send-answer'), class: "btn btn-success" %>
+	<div class="col-md-4 col-xs-6">
+		<%= f.submit t('.send-answer'), 
+			class: "btn btn-success" %>
 	</div>
 	<% end %>
 </div>

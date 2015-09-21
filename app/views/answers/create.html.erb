@@ -1,20 +1,25 @@
 <div class="row">
 	<div class = "col-md-12">
-		<h2><%= t('.you-gave') %><i><%= @answer.content %></h2></i>
+		<h2><%= t('.you-gave') %><i><%= @answer.content %></i></h2>
 	</div>
 </div>
 <div class="row">
 	<div class = "col-md-12">
 		<% if @answer.correct %>
-			<h1><%= t('.correct') %></h1>
+			<h1><b><%= t('.correct') %></b></h1>
 		<% else %>
-			<h1><b><%= t('.not-correct') %></b></h1><%= link_to t('.try-again'), user_task_answer_path(@task.user, @task), class: "btn btn-default" %>
+			<h1><b><%= t('.not-correct') %></b></h1>
+			<%= link_to t('.try-again'), 
+				user_task_answer_path(@task.user, @task), 
+				class: "btn btn-default" %>
 		<% end %>
 	</div>
 </div>
 <div class="row">
 	<div class = "col-md-12">
 	<br>
-		<%= link_to t('.back'), user_task_path(@task.user, @task), class: "btn btn-primary" %>
+		<%= link_to t('.back'), 
+			user_task_path(@task.user, @task), 
+			class: "btn btn-primary" %>
 	</div>
 </div>
