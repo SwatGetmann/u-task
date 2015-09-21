@@ -1,8 +1,8 @@
 == README
 
-* Ruby version: **Ruby-2.2.2, Rails 4.2.4**
+* Ruby version: *Ruby-2.2.2, Rails 4.2.4*
 
-* System dependencies: **Linux Mint 17.2**
+* System dependencies: *Linux Mint 17.2*
 
 * Configuration: OmniAuth (providers + identity), Acts-As-Taggable, Acts-As-Commentable, Rails-4-Autocomplete, Redcarpet, Sunspot, will_paginate, bootstrap
 
@@ -12,12 +12,12 @@
 
 == TODO
 
-* **Comments**. Need to use AJAX.
+* *Comments*. Need to use AJAX.
 
-* **Achievement system**.
+* *Achievement system*.
 
-* **Rating system**. Was not done due to unresolved dependencies in popular gems like _letsrate_ and _ajaxful-rating_
+* *Rating system**. Was not done due to unresolved dependencies in popular gems like _letsrate_ and _ajaxful-rating_
 
-* **Adding pictures to description with Drag-&-Drop**. 
+* *Adding pictures to description with Drag-&-Drop*. 
 
-* **Multiple answering** with ability to add lines for new answers or delete existing ones.
+* *Multiple answering* with ability to add lines for new answers or delete existing ones.
